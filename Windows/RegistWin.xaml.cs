@@ -15,7 +15,6 @@ using System.Text.RegularExpressions;
 using System.Security.Cryptography;
 
 
-
 namespace ITBankBigFarm.Windows
 {
     /// <summary>
@@ -23,14 +22,16 @@ namespace ITBankBigFarm.Windows
     /// </summary>
     public partial class RegistWin : Window
     {
+        
         public RegistWin()
         {
             InitializeComponent();
+
         }
      
         public void Checker()
         {
-
+            SimpleComand.CheckTextBox(txtlog);
         }
 
         private void btnReg_Click(object sender, RoutedEventArgs e)

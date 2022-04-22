@@ -60,7 +60,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Class\SimpleComand.cs" />
+    <Compile Include="SimpleComand.cs" />
     <Compile Include="Windows\RegistWin.xaml.cs">
       <DependentUpon>RegistWin.xaml</DependentUpon>
     </Compile>
