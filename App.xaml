@@ -1,8 +1,9 @@
-﻿<Application x:Class="ITBankBigFarm.App"
+﻿ 
+    <Application x:Class="ITBankBigFarm.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:ITBankBigFarm"
-             StartupUri="MainWindow.xaml">
+             StartupUri="Windows/StartLocal.xaml">
     <Application.Resources>
          
     </Application.Resources>

@@ -1,0 +1,158 @@
+﻿<Window x:Name="window" x:Class="ITBankBigFarm.Windows.StartLocal"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ITBankBigFarm.Windows"
+        mc:Ignorable="d"
+        Title="StartLocal" Height="530" Width="800"  WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <Storyboard x:Key="Storyboard1">
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="Login_In">
+                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[0].(LineSegment.Point)" Storyboard.TargetName="path">
+                <EasingPointKeyFrame KeyTime="0" Value="52.5000108699829,501.445127173791"/>
+                <EasingPointKeyFrame KeyTime="0:0:0.1" Value="7.74999969228793,502.944792799067"/>
+                <EasingPointKeyFrame KeyTime="0:0:0.6" Value="7.74999969228793,502.944792799067"/>
+            </PointAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="path">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="-81"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="-200"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="-378"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="-378"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="path">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.StartPoint)" Storyboard.TargetName="path">
+                <EasingPointKeyFrame KeyTime="0:0:0.3" Value="0.500003988193782,2.0548776624976"/>
+                <EasingPointKeyFrame KeyTime="0:0:0.4" Value="8.25,2"/>
+                <EasingPointKeyFrame KeyTime="0:0:0.6" Value="8.25,2"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[1].(LineSegment.Point)" Storyboard.TargetName="path">
+                <EasingPointKeyFrame KeyTime="0:0:0.3" Value="430.625000046493,501.306407764959"/>
+                <EasingPointKeyFrame KeyTime="0:0:0.4" Value="430.75,501.999999999999"/>
+                <EasingPointKeyFrame KeyTime="0:0:0.5" Value="367.75,501.999999999999"/>
+                <EasingPointKeyFrame KeyTime="0:0:0.6" Value="352.75,501.999999999999"/>
+            </PointAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="Registration">
+                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Hidden}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.6" Value="{x:Static Visibility.Visible}"/>
+            </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="Storyboard_Copy2">
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="Login_In">
+                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Hidden}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Hidden}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.6" Value="{x:Static Visibility.Visible}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[0].(LineSegment.Point)" Storyboard.TargetName="path">
+                <EasingPointKeyFrame KeyTime="0" Value="7.74999969228793,502.944792799067"/>
+                <EasingPointKeyFrame KeyTime="0:0:0.5" Value="7.74999969228793,502.944792799067"/>
+                <EasingPointKeyFrame KeyTime="0:0:0.6" Value="52.5000108699829,501.445127173791"/>
+            </PointAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="path">
+                <EasingDoubleKeyFrame KeyTime="0" Value="-378"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="-378"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="-200"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="-81"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="path">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.StartPoint)" Storyboard.TargetName="path">
+                <EasingPointKeyFrame KeyTime="0" Value="8.25,2"/>
+                <EasingPointKeyFrame KeyTime="0:0:0.2" Value="8.25,2"/>
+                <EasingPointKeyFrame KeyTime="0:0:0.3" Value="0.500003988193782,2.0548776624976"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[1].(LineSegment.Point)" Storyboard.TargetName="path">
+                <EasingPointKeyFrame KeyTime="0" Value="352.75,501.999999999999"/>
+                <EasingPointKeyFrame KeyTime="0:0:0.1" Value="367.75,501.999999999999"/>
+                <EasingPointKeyFrame KeyTime="0:0:0.2" Value="430.75,501.999999999999"/>
+                <EasingPointKeyFrame KeyTime="0:0:0.3" Value="430.625000046493,501.306407764959"/>
+            </PointAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="Registration">
+                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Hidden}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.5" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+    </Window.Resources>
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="button">
+            <BeginStoryboard Storyboard="{StaticResource Storyboard1}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="button1">
+            <BeginStoryboard x:Name="Storyboard_Copy2_BeginStoryboard" Storyboard="{StaticResource Storyboard_Copy2}"/>
+        </EventTrigger>
+    </Window.Triggers>
+    <Grid x:Name="grid" Background="White" Width="800" Height="500">
+        <Path x:Name="path" Fill="#FF2222C5" HorizontalAlignment="Left" Height="503.5" Margin="369.25,-2,-11.375,-1.5" Stroke="Black" VerticalAlignment="Top" Width="442.125" RenderTransformOrigin="0.5,0.5">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform X="1" Y="1"/>
+                </TransformGroup>
+            </Path.RenderTransform>
+            <Path.Data>
+                <PathGeometry>
+                    <PathFigure IsClosed="True" StartPoint="0.500003988193782,2.0548776624976">
+                        <LineSegment Point="52.5000108699829,501.445127173791"/>
+                        <LineSegment Point="430.625000046493,501.306407764959"/>
+                        <LineSegment Point="430.749999966882,2.05487765140005"/>
+                    </PathFigure>
+                </PathGeometry>
+            </Path.Data>
+        </Path>
+        <Grid x:Name="Login_In" >
+            <TextBlock HorizontalAlignment="Left" Height="21.334" Margin="4,0,0,0" TextWrapping="Wrap" Text="ITBankBigFarm" VerticalAlignment="Top" Width="132.667" FontWeight="Bold" FontSize="16" Foreground="#FF2222C5"/>
+            <TextBlock HorizontalAlignment="Left" Height="21.334" Margin="0,68.333,0,0" TextWrapping="Wrap" Text="Войдите в свою учетную запись" VerticalAlignment="Top" Width="354.25" FontWeight="Bold" FontSize="16" Foreground="#FF02020C" TextAlignment="Center"/>
+            <TextBlock HorizontalAlignment="Left" Height="40" Margin="19.333,103.334,0,0" TextWrapping="Wrap" Text="Войдите в свою учетную запись, чтобы продолжить и отредактировать свои потоки ввода в эксплуатацию" VerticalAlignment="Top" Width="320.917" Foreground="#FF02020C" TextAlignment="Center"/>
+            <TextBlock HorizontalAlignment="Left" Height="21.334" Margin="13.333,161.667,0,0" TextWrapping="Wrap" Text="Login" VerticalAlignment="Top" Width="354.25" FontWeight="Bold" FontSize="16" Foreground="#FF02020C"/>
+            <TextBox HorizontalAlignment="Left" Height="40" Margin="13.333,188.001,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="340" Foreground="#FF02020C" Background="White" Text="Введите свой логин" VerticalContentAlignment="Center"/>
+            <TextBlock HorizontalAlignment="Left" Height="21.334" Margin="13.333,240.667,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Width="354.25" FontWeight="Bold" FontSize="16" Foreground="#FF02020C"/>
+            <TextBox HorizontalAlignment="Left" Height="40" Margin="13.333,267.001,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="340" Foreground="#FF02020C" Background="White" Text="Введите свой пароль" VerticalContentAlignment="Center"/>
+            <TextBlock HorizontalAlignment="Left" Height="19.999" Margin="183.333,312.001,0,0" TextWrapping="Wrap" Text="Забыл пароль?" VerticalAlignment="Top" Width="170"  Background="{x:Null}" TextAlignment="Right" Foreground="#FF151580" />
+            <Button Content="Аворизоваться" HorizontalAlignment="Left" Height="40" Margin="13.333,352.5,0,0" VerticalAlignment="Top" Width="340" Background="#FF151580" BorderBrush="White" Foreground="White" FontWeight="Bold"/>
+            <TextBlock HorizontalAlignment="Left"  Height="21.334" Margin="425,126.666,0,0" TextWrapping="Wrap" Text="У вас нет учетной записи?" VerticalAlignment="Top" Width="354.25" FontWeight="Bold" FontSize="16" Foreground="White" TextAlignment="Center"/>
+            <TextBlock HorizontalAlignment="Left" Height="40" Margin="444.333,161.667,0,0" TextWrapping="Wrap" Text="Давайте подготовим вас ко всему, чтобы вы могли начать создавать свой первый опыт адаптации" VerticalAlignment="Top" Width="320.917" Foreground="White" TextAlignment="Center"/>
+            <Button x:Name="button" Content="Регистрация" HorizontalAlignment="Left" Height="40" Margin="504.75,206.667,0,0" VerticalAlignment="Top" Width="180" Background="#FF2222C5" BorderBrush="White" Foreground="White" FontWeight="Bold"/>
+
+        </Grid>
+        <Grid x:Name="Registration" Visibility="Hidden">
+            <TextBlock HorizontalAlignment="Left" Height="21.334" Margin="4,0,0,0" TextWrapping="Wrap" Text="ITBankBigFarm" VerticalAlignment="Top" Width="132.667" FontWeight="Bold" FontSize="16" Foreground="#FF2222C5"/>
+            <TextBlock HorizontalAlignment="Left" Height="21.334" Margin="425,22.666,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="354.25" FontWeight="Bold" FontSize="16" Foreground="#FF02020C" TextAlignment="Center"><Run Text="Р"/><Run Text="егистрация учетной записи"/></TextBlock>
+            <TextBlock HorizontalAlignment="Left" Height="40" Margin="441.666,49,0,0" TextWrapping="Wrap" Text="Войдите в свою учетную запись, чтобы продолжить и отредактировать свои потоки ввода в эксплуатацию" VerticalAlignment="Top" Width="320.917" Foreground="#FF02020C" TextAlignment="Center"/>
+            <TextBlock HorizontalAlignment="Left" Height="21.334" Margin="435,89.696,0,0" TextWrapping="Wrap" Text="Login" VerticalAlignment="Top" Width="354.25" FontWeight="Bold" FontSize="16" Foreground="#FF02020C"/>
+            <TextBox HorizontalAlignment="Left" Height="40" Margin="435,116.03,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="340" Foreground="#FF02020C" Background="White" Text="Введите свой логин" VerticalContentAlignment="Center"/>
+            <TextBlock HorizontalAlignment="Left" Height="21.334" Margin="435,162.333,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Width="354.25" FontWeight="Bold" FontSize="16" Foreground="#FF02020C"/>
+            <TextBox HorizontalAlignment="Left" Height="40" Margin="435,188.667,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="340" Foreground="#FF02020C" Background="White" Text="Введите свой пароль" VerticalContentAlignment="Center"/>
+            <Button Content="Аворизоваться" HorizontalAlignment="Left" Height="40" Margin="435,428.167,0,0" VerticalAlignment="Top" Width="340" Background="#FF151580" BorderBrush="White" Foreground="White" FontWeight="Bold"/>
+            <TextBlock HorizontalAlignment="Left" Height="21.334" Margin="14,126.666,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="354.25" FontWeight="Bold" FontSize="16" Foreground="White" TextAlignment="Center"><Run Text="Есть учетная запись"/><Run Text="?"/></TextBlock>
+            <TextBlock HorizontalAlignment="Left" Height="40" Margin="33.333,161.667,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="320.917" Foreground="White" TextAlignment="Center"><Run Text="Авторизайтесь"/><Run Text="в свою учетную запись, чтобы "/><Run Text="управлять счетами в банке"/></TextBlock>
+            <Button x:Name="button1" Content="Авторизоавться" HorizontalAlignment="Left" Height="40" Margin="93.75,206.667,0,0" VerticalAlignment="Top" Width="180" Background="#FF2222C5" BorderBrush="White" Foreground="White" FontWeight="Bold"/>
+            <TextBlock HorizontalAlignment="Left" Height="21.334" Margin="435,232.332,0,0" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top" Width="354.25" FontWeight="Bold" FontSize="16" Foreground="#FF02020C"/>
+            <TextBox HorizontalAlignment="Left" Height="40" Margin="435,258.666,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="340" Foreground="#FF02020C" Background="White" Text="Введите свою почту" VerticalContentAlignment="Center"/>
+            <TextBlock HorizontalAlignment="Left" Height="21.334" Margin="435,325.333,0,0" TextWrapping="Wrap" Text="SecretWord" VerticalAlignment="Top" Width="354.25" FontWeight="Bold" FontSize="16" Foreground="#FF02020C"/>
+            <TextBox HorizontalAlignment="Left" Height="40" Margin="435,351.667,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="340" Foreground="#FF02020C" Background="White" Text="Введите секретное слово" VerticalContentAlignment="Center"/>
+            <CheckBox Content="Не использовать" HorizontalAlignment="Left" Height="21.667" Margin="435,303.666,0,0" VerticalAlignment="Top" Width="340" FontWeight="Bold"/>
+            <CheckBox Content="Не использовать" HorizontalAlignment="Left" Height="21.667" Margin="435,396.667,0,0" VerticalAlignment="Top" Width="340" FontWeight="Bold"/>
+
+        </Grid>
+
+    </Grid>
+</Window>

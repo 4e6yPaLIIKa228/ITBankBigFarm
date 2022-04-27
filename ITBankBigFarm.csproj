@@ -67,6 +67,9 @@
     <Compile Include="Windows\RegistWin.xaml.cs">
       <DependentUpon>RegistWin.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\StartLocal.xaml.cs">
+      <DependentUpon>StartLocal.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -81,6 +84,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Windows\RegistWin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\StartLocal.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
