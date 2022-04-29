@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         Title="MenuBank" Height="500" Width="900" AllowsTransparency="True" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Rectangle Fill="#262f34" HorizontalAlignment="Left" Height="500" VerticalAlignment="Top" Width="900"/>
+        <Rectangle Fill="#262f34" HorizontalAlignment="Left" Height="500" VerticalAlignment="Top"  Width="900"/>
         <Rectangle Fill="#f34a4a" HorizontalAlignment="Left" Height="500" VerticalAlignment="Top" Width="120"/>
         <Image HorizontalAlignment="Left" Height="50" Margin="30,102.5,0,0" VerticalAlignment="Top" Width="50" Source="/ITBankBigFarm;component/Img/premium-icon-house-4188482.png"/>
         <Image HorizontalAlignment="Left" Height="50" Margin="30.083,203.166,0,0" VerticalAlignment="Top" Width="50" Source="/ITBankBigFarm;component/Img/premium-icon-settings-3405519.png"/>
