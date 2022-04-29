@@ -28,10 +28,10 @@
                 <PasswordBox x:Name="txtpass" Width="250" FontSize="17"/>
                 <TextBlock Text="Ваш email:" FontSize="17" HorizontalAlignment="Center" Margin="10"/>
                 <TextBox x:Name="txtemail" Width="250" FontSize="17"/>
-                <CheckBox Content="Неиспользовать почту" Margin="0 5 0 0"/>
+                <CheckBox x:Name="chekmail" Content="Неиспользовать почту" Margin="0 5 0 0" Checked="chekmail_Checked" Unchecked="chekmail_Unchecked"/>
                 <TextBlock Text="Ваше секретное слово:" FontSize="17" HorizontalAlignment="Center" Margin="10"/>
                 <TextBox x:Name="txtsecret" Width="250" FontSize="17"/>
-                <CheckBox Content="Неиспользовать секретное слово" Margin="0 5 0 0" />
+                <CheckBox x:Name="checksecretword" Content="Неиспользовать секретное слово" Margin="0 5 0 0" Checked="checksecretword_Checked" Unchecked="checksecretword_Unchecked" />
             </StackPanel>
         </StackPanel>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="3" >
