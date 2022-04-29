@@ -8,14 +8,30 @@
         mc:Ignorable="d"
         Title="MenuBank" Height="500" Width="900" AllowsTransparency="True" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Rectangle Fill="#FFDC1F0C" HorizontalAlignment="Left" Height="500" VerticalAlignment="Top" Width="900"/>
-        <Rectangle Fill="#FFBA13D4" HorizontalAlignment="Left" Height="500" VerticalAlignment="Top" Width="120"/>
-        <Path Data="M51.945148,10 L25.75,64.601627 75.75,64.5 z" Fill="#FF6E5754" HorizontalAlignment="Left" Height="62.333" Margin="25.833,10,0,0" Stretch="Fill" Stroke="White" VerticalAlignment="Top" Width="60.25"/>
-        <Image HorizontalAlignment="Left" Height="51.25" Margin="42.833,21.25,0,0" VerticalAlignment="Top" Width="28.5" Source="bill-cipher-icons-png-549684.png" Stretch="Fill"/>
-        <Image HorizontalAlignment="Left" Height="50" Margin="30.083,106.5,0,0" VerticalAlignment="Top" Width="50" Source="premium-icon-house-4188482.png"/>
-        <Image HorizontalAlignment="Left" Height="50" Margin="30.083,189.833,0,0" VerticalAlignment="Top" Width="50" Source="premium-icon-settings-3405519.png"/>
-        <Image HorizontalAlignment="Left" Height="50" Margin="30.083,290.333,0,0" VerticalAlignment="Top" Width="50" Source="premium-icon-account-2487810.png"/>
-        <Image HorizontalAlignment="Left" Height="50" Margin="30.083,440,0,0" VerticalAlignment="Top" Width="50" Source="premium-icon-exit-1629166.png"/>
+        <Rectangle Fill="#262f34" HorizontalAlignment="Left" Height="500" VerticalAlignment="Top" Width="900"/>
+        <Rectangle Fill="#f34a4a" HorizontalAlignment="Left" Height="500" VerticalAlignment="Top" Width="120"/>
+        <Image HorizontalAlignment="Left" Height="50" Margin="30,102.5,0,0" VerticalAlignment="Top" Width="50" Source="/ITBankBigFarm;component/Img/premium-icon-house-4188482.png"/>
+        <Image HorizontalAlignment="Left" Height="50" Margin="30.083,203.166,0,0" VerticalAlignment="Top" Width="50" Source="/ITBankBigFarm;component/Img/premium-icon-settings-3405519.png"/>
+        <Image HorizontalAlignment="Left" Height="50" Margin="30.083,290.333,0,0" VerticalAlignment="Top" Width="50" Source="/ITBankBigFarm;component/Img/free-icon-profile-3462240.png"/>
+        <Image HorizontalAlignment="Left" Height="50" Margin="30,416.333,0,0" VerticalAlignment="Top" Width="50" Source="/ITBankBigFarm;component/Img/free-icon-sign-out-876779.png"/>
+        <Image HorizontalAlignment="Left" Height="50" Margin="30,10,0,0" VerticalAlignment="Top" Width="50" Source="/ITBankBigFarm;component/Img/premium-icon-ruble-4612322.png"/>
+        <TextBlock HorizontalAlignment="Left" Height="18.667" Margin="5.5,258.166,0,0" TextWrapping="Wrap" Text="Настройки" VerticalAlignment="Top" Width="99" FontWeight="Bold" TextAlignment="Center"/>
+        <TextBlock HorizontalAlignment="Left" Height="18.667" Margin="5.5,157.5,0,0" TextWrapping="Wrap" Text="Главная" VerticalAlignment="Top" Width="99" FontWeight="Bold" TextAlignment="Center" Foreground="#f1d3bc"/>
+        <TextBlock HorizontalAlignment="Left" Height="18.667" Margin="5.5,345.333,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="99" FontWeight="Bold" TextAlignment="Center"><Run Text="Проф"/><Run Text="и"/><Run Text="ль"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="18.667" Margin="10,471.333,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="99" FontWeight="Bold" TextAlignment="Center" Text="Выйти"/>
+        <Rectangle Fill="#f34a4a" HorizontalAlignment="Left" Height="60" Margin="588.667,0,0,0" VerticalAlignment="Top" Width="311.333"/>
+        <TextBlock HorizontalAlignment="Left" Height="32" Margin="594,17.333,0,0" TextWrapping="Wrap" Text="Login:" VerticalAlignment="Top" Width="56" FontSize="18" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Height="32" Margin="650,17.333,0,0" TextWrapping="Wrap" Text="Aboba" VerticalAlignment="Top" Width="56" FontSize="18" Foreground="#f1d3bc"/>
+        <TextBlock HorizontalAlignment="Left" Height="32" Margin="152,17.333,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210.666" FontSize="18" FontWeight="Bold" Foreground="#f1d3bc"><Run Text="Пятница"/><Run Text=", 29"/><Run Text="."/><Run Text="04.2022"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="32" Margin="152,49.333,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210.666" FontSize="18" FontWeight="Bold" Foreground="#f1d3bc"><Run Text="Время: "/><Run Text="13:23 "/></TextBlock>
+        <Rectangle Fill="#615049" HorizontalAlignment="Left" Height="212" Margin="152,137,0,0" VerticalAlignment="Center" Width="714"/>
+        <TextBlock HorizontalAlignment="Left" Height="18.667" Margin="5.5,157.5,0,0" TextWrapping="Wrap" Text="Главная" VerticalAlignment="Top" Width="99" FontWeight="Bold" TextAlignment="Center" Foreground="#f1d3bc"/>
+        <TextBlock HorizontalAlignment="Left" Height="27.334" Margin="163.333,218.292,0,0" TextWrapping="Wrap" Text="Номер счета:" VerticalAlignment="Top" Width="121.334" FontWeight="Bold" Foreground="#f1d3bc" FontSize="18"/>
+        <TextBlock HorizontalAlignment="Left" Height="27.334" Margin="284.667,219.319,0,0" TextWrapping="Wrap" Text="000001" VerticalAlignment="Top" Width="62.666" FontWeight="Bold" TextAlignment="Center" Foreground="#f1d3bc" FontSize="18"/>
+        <TextBlock HorizontalAlignment="Left" Height="88.307" Margin="152,275.693,0,0" TextWrapping="Wrap" Text="₽ 6666.00" VerticalAlignment="Top" Width="714" FontWeight="Bold" Foreground="#f1d3bc" FontSize="65" TextAlignment="Center"/>
+        <TextBlock HorizontalAlignment="Left" Height="27.334" Margin="163.333,248.359,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="121.334" FontWeight="Bold" Foreground="#f1d3bc" FontSize="18" Text="На счету"/>
+        <TextBlock HorizontalAlignment="Left" Height="27.334" Margin="365.333,219.319,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="121.334" FontWeight="Bold" Foreground="#f1d3bc" FontSize="18" Text="Тип счета:"/>
+        <Button Content="Отркыть счет" HorizontalAlignment="Left" Height="45" Margin="152,157.5,0,0" VerticalAlignment="Top" Width="300" Background="#f34a4a" Foreground="#f1d3bc" FontWeight="Bold" FontSize="16"/>
 
     </Grid>
 </Window>

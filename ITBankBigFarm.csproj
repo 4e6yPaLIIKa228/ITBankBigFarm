@@ -129,9 +129,23 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Img\premium-icon-settings-3405519.png" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Img\maxresdefault.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Img\free-icon-sign-out-876779.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Img\premium-icon-house-4188482.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Img\premium-icon-ruble-4612322.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Img\free-icon-profile-3462240.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets" Condition="Exists('packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" />
