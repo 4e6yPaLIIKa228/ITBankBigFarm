@@ -1,0 +1,21 @@
+﻿<Window x:Class="ITBankBigFarm.Windows.MenuBank"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:hc="https://handyorg.github.io/handycontrol"
+        xmlns:local="clr-namespace:ITBankBigFarm.Windows"
+        mc:Ignorable="d"
+        Title="MenuBank" Height="500" Width="900" AllowsTransparency="True" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Rectangle Fill="#FFDC1F0C" HorizontalAlignment="Left" Height="500" VerticalAlignment="Top" Width="900"/>
+        <Rectangle Fill="#FFBA13D4" HorizontalAlignment="Left" Height="500" VerticalAlignment="Top" Width="120"/>
+        <Path Data="M51.945148,10 L25.75,64.601627 75.75,64.5 z" Fill="#FF6E5754" HorizontalAlignment="Left" Height="62.333" Margin="25.833,10,0,0" Stretch="Fill" Stroke="White" VerticalAlignment="Top" Width="60.25"/>
+        <Image HorizontalAlignment="Left" Height="51.25" Margin="42.833,21.25,0,0" VerticalAlignment="Top" Width="28.5" Source="bill-cipher-icons-png-549684.png" Stretch="Fill"/>
+        <Image HorizontalAlignment="Left" Height="50" Margin="30.083,106.5,0,0" VerticalAlignment="Top" Width="50" Source="premium-icon-house-4188482.png"/>
+        <Image HorizontalAlignment="Left" Height="50" Margin="30.083,189.833,0,0" VerticalAlignment="Top" Width="50" Source="premium-icon-settings-3405519.png"/>
+        <Image HorizontalAlignment="Left" Height="50" Margin="30.083,290.333,0,0" VerticalAlignment="Top" Width="50" Source="premium-icon-account-2487810.png"/>
+        <Image HorizontalAlignment="Left" Height="50" Margin="30.083,440,0,0" VerticalAlignment="Top" Width="50" Source="premium-icon-exit-1629166.png"/>
+
+    </Grid>
+</Window>

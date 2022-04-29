@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ITBankBigFarm.Windows"
         mc:Ignorable="d"
-        Title="StartLocal" Height="530" Width="800"  WindowStartupLocation="CenterScreen">
+        Title="StartLocal" Height="500" Width="800" AllowsTransparency="True"  WindowStyle="None" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <Storyboard x:Key="Storyboard1">
             <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="Login_In">
@@ -127,7 +127,7 @@
             <TextBlock HorizontalAlignment="Left" Height="21.334" Margin="13.333,240.667,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Width="354.25" FontWeight="Bold" FontSize="16" Foreground="#FF02020C"/>
             <TextBox HorizontalAlignment="Left" Height="40" Margin="13.333,267.001,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="340" Foreground="#FF02020C" Background="White" Text="Введите свой пароль" VerticalContentAlignment="Center"/>
             <TextBlock HorizontalAlignment="Left" Height="19.999" Margin="183.333,312.001,0,0" TextWrapping="Wrap" Text="Забыл пароль?" VerticalAlignment="Top" Width="170"  Background="{x:Null}" TextAlignment="Right" Foreground="#FF151580" />
-            <Button Content="Аворизоваться" HorizontalAlignment="Left" Height="40" Margin="13.333,352.5,0,0" VerticalAlignment="Top" Width="340" Background="#FF151580" BorderBrush="White" Foreground="White" FontWeight="Bold"/>
+            <Button x:Name="btnavtoriz" Content="Аворизоваться" HorizontalAlignment="Left" Height="40" Margin="13.333,352.5,0,0" VerticalAlignment="Top" Width="340" Background="#FF151580" BorderBrush="White" Foreground="White" FontWeight="Bold" Click="btnavtoriz_Click"/>
             <TextBlock HorizontalAlignment="Left"  Height="21.334" Margin="425,126.666,0,0" TextWrapping="Wrap" Text="У вас нет учетной записи?" VerticalAlignment="Top" Width="354.25" FontWeight="Bold" FontSize="16" Foreground="White" TextAlignment="Center"/>
             <TextBlock HorizontalAlignment="Left" Height="40" Margin="444.333,161.667,0,0" TextWrapping="Wrap" Text="Давайте подготовим вас ко всему, чтобы вы могли начать создавать свой первый опыт адаптации" VerticalAlignment="Top" Width="320.917" Foreground="White" TextAlignment="Center"/>
             <Button x:Name="button" Content="Регистрация" HorizontalAlignment="Left" Height="40" Margin="504.75,206.667,0,0" VerticalAlignment="Top" Width="180" Background="#FF2222C5" BorderBrush="White" Foreground="White" FontWeight="Bold"/>

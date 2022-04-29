@@ -11,25 +11,17 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using ITBankBigFarm.Windows;
 
 namespace ITBankBigFarm.Windows
 {
     /// <summary>
-    /// Логика взаимодействия для StartLocal.xaml
+    /// Логика взаимодействия для MenuBank.xaml
     /// </summary>
-    public partial class StartLocal : Window
+    public partial class MenuBank : Window
     {
-        public StartLocal()
+        public MenuBank()
         {
             InitializeComponent();
-        }
-
-        private void btnavtoriz_Click(object sender, RoutedEventArgs e)
-        {
-            MenuBank Aftoriz = new MenuBank();
-            this.Close();
-            Aftoriz.ShowDialog();
         }
     }
 }
