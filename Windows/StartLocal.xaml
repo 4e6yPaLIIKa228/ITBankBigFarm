@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:hc="https://handyorg.github.io/handycontrol" 
         xmlns:local="clr-namespace:ITBankBigFarm.Windows"
         mc:Ignorable="d"
         Title="StartLocal" Height="500" Width="800" AllowsTransparency="True"  WindowStyle="None" WindowStartupLocation="CenterScreen">
@@ -44,6 +45,10 @@
             </PointAnimationUsingKeyFrames>
             <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="Registration">
                 <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Hidden}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.6" Value="{x:Static Visibility.Visible}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="image">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Hidden}"/>
                 <DiscreteObjectKeyFrame KeyTime="0:0:0.6" Value="{x:Static Visibility.Visible}"/>
             </ObjectAnimationUsingKeyFrames>
         </Storyboard>
@@ -88,6 +93,10 @@
                 <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Hidden}"/>
                 <DiscreteObjectKeyFrame KeyTime="0:0:0.5" Value="{x:Static Visibility.Hidden}"/>
             </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="image">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Hidden}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.6" Value="{x:Static Visibility.Visible}"/>
+            </ObjectAnimationUsingKeyFrames>
         </Storyboard>
     </Window.Resources>
     <Window.Triggers>
@@ -99,7 +108,7 @@
         </EventTrigger>
     </Window.Triggers>
     <Grid x:Name="grid" Background="White" Width="800" Height="500">
-        <Path x:Name="path" Fill="#FF2222C5" HorizontalAlignment="Left" Height="503.5" Margin="369.25,-2,-11.375,-1.5" Stroke="Black" VerticalAlignment="Top" Width="442.125" RenderTransformOrigin="0.5,0.5">
+        <Path x:Name="path" Fill="#FF2222C5" HorizontalAlignment="Left" Height="501" Margin="369.25,-1,-11.375,0" Stroke="Black" VerticalAlignment="Top" Width="442.125" RenderTransformOrigin="0.5,0.5" Stretch="Fill">
             <Path.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -123,9 +132,9 @@
             <TextBlock HorizontalAlignment="Left" Height="21.334" Margin="0,68.333,0,0" TextWrapping="Wrap" Text="Войдите в свою учетную запись" VerticalAlignment="Top" Width="354.25" FontWeight="Bold" FontSize="16" Foreground="#FF02020C" TextAlignment="Center"/>
             <TextBlock HorizontalAlignment="Left" Height="40" Margin="19.333,103.334,0,0" TextWrapping="Wrap" Text="Войдите в свою учетную запись, чтобы продолжить и отредактировать свои потоки ввода в эксплуатацию" VerticalAlignment="Top" Width="320.917" Foreground="#FF02020C" TextAlignment="Center"/>
             <TextBlock HorizontalAlignment="Left" Height="21.334" Margin="13.333,161.667,0,0" TextWrapping="Wrap" Text="Login" VerticalAlignment="Top" Width="354.25" FontWeight="Bold" FontSize="16" Foreground="#FF02020C"/>
-            <TextBox HorizontalAlignment="Left" Height="40" Margin="13.333,188.001,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="340" Foreground="#FF02020C" Background="White" Text="Введите свой логин" VerticalContentAlignment="Center"/>
+            <hc:TextBox hc:InfoElement.Placeholder="Введите свой логин" x:Name="txtlog" HorizontalAlignment="Left" Height="40" Margin="13.333,188.001,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="340" Foreground="#FF02020C" Background="White" VerticalContentAlignment="Center"/>
             <TextBlock HorizontalAlignment="Left" Height="21.334" Margin="13.333,240.667,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Width="354.25" FontWeight="Bold" FontSize="16" Foreground="#FF02020C"/>
-            <TextBox HorizontalAlignment="Left" Height="40" Margin="13.333,267.001,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="340" Foreground="#FF02020C" Background="White" Text="Введите свой пароль" VerticalContentAlignment="Center"/>
+            <hc:PasswordBox hc:InfoElement.Placeholder="Введите пароль"  x:Name="txtpass" HorizontalAlignment="Left" Height="40" Margin="13.333,267.001,0,0"  VerticalAlignment="Top" Width="340" Foreground="#FF02020C" Background="White" VerticalContentAlignment="Center"/>
             <TextBlock HorizontalAlignment="Left" Height="19.999" Margin="183.333,312.001,0,0" TextWrapping="Wrap" Text="Забыл пароль?" VerticalAlignment="Top" Width="170"  Background="{x:Null}" TextAlignment="Right" Foreground="#FF151580" />
             <Button x:Name="btnavtoriz" Content="Аворизоваться" HorizontalAlignment="Left" Height="40" Margin="13.333,352.5,0,0" VerticalAlignment="Top" Width="340" Background="#FF151580" BorderBrush="White" Foreground="White" FontWeight="Bold" Click="btnavtoriz_Click"/>
             <TextBlock HorizontalAlignment="Left"  Height="21.334" Margin="425,126.666,0,0" TextWrapping="Wrap" Text="У вас нет учетной записи?" VerticalAlignment="Top" Width="354.25" FontWeight="Bold" FontSize="16" Foreground="White" TextAlignment="Center"/>
@@ -134,25 +143,26 @@
 
         </Grid>
         <Grid x:Name="Registration" Visibility="Hidden">
-            <TextBlock HorizontalAlignment="Left" Height="21.334" Margin="4,0,0,0" TextWrapping="Wrap" Text="ITBankBigFarm" VerticalAlignment="Top" Width="132.667" FontWeight="Bold" FontSize="16" Foreground="#FF2222C5"/>
+            <TextBlock HorizontalAlignment="Left"  Height="21.334" Margin="4,0,0,0" TextWrapping="Wrap" Text="ITBankBigFarm" VerticalAlignment="Top" Width="132.667" FontWeight="Bold" FontSize="16" Foreground="#FF2222C5"/>
             <TextBlock HorizontalAlignment="Left" Height="21.334" Margin="425,22.666,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="354.25" FontWeight="Bold" FontSize="16" Foreground="#FF02020C" TextAlignment="Center"><Run Text="Р"/><Run Text="егистрация учетной записи"/></TextBlock>
             <TextBlock HorizontalAlignment="Left" Height="40" Margin="441.666,49,0,0" TextWrapping="Wrap" Text="Войдите в свою учетную запись, чтобы продолжить и отредактировать свои потоки ввода в эксплуатацию" VerticalAlignment="Top" Width="320.917" Foreground="#FF02020C" TextAlignment="Center"/>
             <TextBlock HorizontalAlignment="Left" Height="21.334" Margin="435,89.696,0,0" TextWrapping="Wrap" Text="Login" VerticalAlignment="Top" Width="354.25" FontWeight="Bold" FontSize="16" Foreground="#FF02020C"/>
-            <TextBox HorizontalAlignment="Left" Height="40" Margin="435,116.03,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="340" Foreground="#FF02020C" Background="White" Text="Введите свой логин" VerticalContentAlignment="Center"/>
+            <hc:TextBox hc:InfoElement.Placeholder="Введите свой логин" HorizontalAlignment="Left" x:Name="txtlogreg"  Height="40" Margin="435,116.03,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="340" Foreground="#FF02020C" Background="White"  VerticalContentAlignment="Center"/>
             <TextBlock HorizontalAlignment="Left" Height="21.334" Margin="435,162.333,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Width="354.25" FontWeight="Bold" FontSize="16" Foreground="#FF02020C"/>
-            <TextBox HorizontalAlignment="Left" Height="40" Margin="435,188.667,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="340" Foreground="#FF02020C" Background="White" Text="Введите свой пароль" VerticalContentAlignment="Center"/>
-            <Button Content="Аворизоваться" HorizontalAlignment="Left" Height="40" Margin="435,428.167,0,0" VerticalAlignment="Top" Width="340" Background="#FF151580" BorderBrush="White" Foreground="White" FontWeight="Bold"/>
+            <hc:PasswordBox hc:InfoElement.Placeholder="Введите пароль" HorizontalAlignment="Left" x:Name="txtpassreg" Height="40" Margin="435,188.667,0,0"  VerticalAlignment="Top" Width="340" Foreground="#FF02020C" Background="White"  VerticalContentAlignment="Center"  />
+            <Button Content="Зарегистрироваться" x:Name="btnReg" HorizontalAlignment="Left" Height="40" Margin="435,428.167,0,0" VerticalAlignment="Top" Width="340" Background="#FF151580" BorderBrush="White" Foreground="White" FontWeight="Bold" Click="btnReg_Click"/>
             <TextBlock HorizontalAlignment="Left" Height="21.334" Margin="14,126.666,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="354.25" FontWeight="Bold" FontSize="16" Foreground="White" TextAlignment="Center"><Run Text="Есть учетная запись"/><Run Text="?"/></TextBlock>
             <TextBlock HorizontalAlignment="Left" Height="40" Margin="33.333,161.667,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="320.917" Foreground="White" TextAlignment="Center"><Run Text="Авторизайтесь"/><Run Text="в свою учетную запись, чтобы "/><Run Text="управлять счетами в банке"/></TextBlock>
             <Button x:Name="button1" Content="Авторизоавться" HorizontalAlignment="Left" Height="40" Margin="93.75,206.667,0,0" VerticalAlignment="Top" Width="180" Background="#FF2222C5" BorderBrush="White" Foreground="White" FontWeight="Bold"/>
             <TextBlock HorizontalAlignment="Left" Height="21.334" Margin="435,232.332,0,0" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top" Width="354.25" FontWeight="Bold" FontSize="16" Foreground="#FF02020C"/>
-            <TextBox HorizontalAlignment="Left" Height="40" Margin="435,258.666,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="340" Foreground="#FF02020C" Background="White" Text="Введите свою почту" VerticalContentAlignment="Center"/>
+            <hc:TextBox hc:InfoElement.Placeholder="Введите свою почту" HorizontalAlignment="Left" x:Name="txtemail" Height="40" Margin="435,258.666,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="340" Foreground="#FF02020C" Background="White"  VerticalContentAlignment="Center"/>
             <TextBlock HorizontalAlignment="Left" Height="21.334" Margin="435,325.333,0,0" TextWrapping="Wrap" Text="SecretWord" VerticalAlignment="Top" Width="354.25" FontWeight="Bold" FontSize="16" Foreground="#FF02020C"/>
-            <TextBox HorizontalAlignment="Left" Height="40" Margin="435,351.667,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="340" Foreground="#FF02020C" Background="White" Text="Введите секретное слово" VerticalContentAlignment="Center"/>
-            <CheckBox Content="Не использовать" HorizontalAlignment="Left" Height="21.667" Margin="435,303.666,0,0" VerticalAlignment="Top" Width="340" FontWeight="Bold"/>
-            <CheckBox Content="Не использовать" HorizontalAlignment="Left" Height="21.667" Margin="435,396.667,0,0" VerticalAlignment="Top" Width="340" FontWeight="Bold"/>
-
+            <hc:TextBox hc:InfoElement.Placeholder="Введите секретное слово" HorizontalAlignment="Left" x:Name="txtsecret" Height="40" Margin="435,351.667,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="340" Foreground="#FF02020C" Background="White"  VerticalContentAlignment="Center"/>
+            <CheckBox Content="Не использовать" x:Name="chekmail" HorizontalAlignment="Left" Height="21.667" Margin="435,303.666,0,0" VerticalAlignment="Top" Width="340" FontWeight="Bold" Checked="chekmail_Checked" Unchecked="chekmail_Unchecked"/>
+            <CheckBox Content="Не использовать" x:Name="checksecretword" HorizontalAlignment="Left" Height="21.667" Margin="435,396.667,0,0" VerticalAlignment="Top" Width="340" FontWeight="Bold" Checked="checksecretword_Checked" Unchecked="checksecretword_Unchecked"/>
+            <!--<hc:PasswordBox hc:InfoElement.Placeholder="Please enter the content" hc:InfoElement.Title="Title" />-->
         </Grid>
+        <Image x:Name="image" HorizontalAlignment="Left" Height="40" Margin="750,10,0,0" VerticalAlignment="Top" Width="40" Source="/ITBankBigFarm;component/Img/free-icon-cross-rounded-outline-54822.png" PreviewMouseLeftButtonDown="image_PreviewMouseLeftButtonDown"/>
 
     </Grid>
 </Window>

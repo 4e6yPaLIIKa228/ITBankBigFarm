@@ -32,6 +32,7 @@
         <TextBlock HorizontalAlignment="Left" Height="27.334" Margin="163.333,248.359,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="121.334" FontWeight="Bold" Foreground="#f1d3bc" FontSize="18" Text="На счету"/>
         <TextBlock HorizontalAlignment="Left" Height="27.334" Margin="365.333,219.319,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="121.334" FontWeight="Bold" Foreground="#f1d3bc" FontSize="18" Text="Тип счета:"/>
         <Button Content="Отркыть счет" HorizontalAlignment="Left" Height="45" Margin="152,157.5,0,0" VerticalAlignment="Top" Width="300" Background="#f34a4a" Foreground="#f1d3bc" FontWeight="Bold" FontSize="16"/>
+        <Image x:Name="imgclouse" HorizontalAlignment="Left" Height="50" Margin="840,4,0,0" VerticalAlignment="Top" Width="50" Source="/ITBankBigFarm;component/Img/free-icon-cross-rounded-outline-54822.png" MouseLeftButtonDown="imgclouse_MouseLeftButtonDown"/>
 
     </Grid>
 </Window>

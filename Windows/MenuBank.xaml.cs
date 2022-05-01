@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ITBankBigFarm.Windows;
 
 namespace ITBankBigFarm.Windows
 {
@@ -22,6 +23,11 @@ namespace ITBankBigFarm.Windows
         public MenuBank()
         {
             InitializeComponent();
+        }
+
+        private void imgclouse_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            Environment.Exit(0);
         }
     }
 }
