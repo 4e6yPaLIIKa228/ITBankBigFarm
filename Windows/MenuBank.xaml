@@ -7,31 +7,348 @@
         xmlns:local="clr-namespace:ITBankBigFarm.Windows"
         mc:Ignorable="d"
         Title="MenuBank" Height="500" Width="900" AllowsTransparency="True" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <Storyboard x:Key="Home-Profile">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="textBlock">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="-25.333"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="-59.333"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="-81.333"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="-105.333"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="-145.333"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="-168.333"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="textBlock">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="1.333"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="textBlock1">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="-28.667"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="-62.667"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="-84.667"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="-108.667"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="-148.667"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="-171.667"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="textBlock1">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="-0.667"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="button">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="-65.333"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="-99.333"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="-121.333"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="-145.333"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="-185.333"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="-208.333"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="button">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="1.333"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="rectangle">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="-3"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="rectangle">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="72"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="129"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="168"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="206"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="266"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="298"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="txttypescope">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="-3"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="txttypescope">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="72"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="129"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="168"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="206"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="266"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="298"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="textBlock2">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="-3"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="textBlock2">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="72"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="129"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="168"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="206"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="266"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="298"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="txtnumberscore">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="-3"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="txtnumberscore">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="72"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="129"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="168"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="206"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="266"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="298"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="txtmoney">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="-3"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="txtmoney">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="72"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="129"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="168"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="206"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="266"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="298"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="textBlock3">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="-3"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="textBlock3">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="72"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="129"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="168"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="206"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="266"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="298"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="textBlock4">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="-3"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="textBlock4">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="72"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="129"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="168"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="206"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="266"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="298"/>
+            </DoubleAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="textBlock">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.5" Value="{x:Static Visibility.Visible}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.6" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="textBlock1">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.5" Value="{x:Static Visibility.Visible}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.6" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="button">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.5" Value="{x:Static Visibility.Visible}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.6" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="Profile">
+                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Hidden}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.6" Value="{x:Static Visibility.Visible}"/>
+            </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+    </Window.Resources>
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="FrameworkElement.Loaded"/>
+        <EventTrigger RoutedEvent="UIElement.MouseLeftButtonUp" SourceName="image">
+            <BeginStoryboard x:Name="Home_Profile_BeginStoryboard" Storyboard="{StaticResource Home-Profile}"/>
+        </EventTrigger>
+    </Window.Triggers>
     <Grid>
         <Rectangle Fill="#262f34" HorizontalAlignment="Left" Height="500" VerticalAlignment="Top"  Width="900"/>
-        <Rectangle Fill="#f34a4a" HorizontalAlignment="Left" Height="500" VerticalAlignment="Top" Width="120"/>
-        <Image HorizontalAlignment="Left" Height="50" Margin="30,102.5,0,0" VerticalAlignment="Top" Width="50" Source="/ITBankBigFarm;component/Img/premium-icon-house-4188482.png"/>
-        <Image HorizontalAlignment="Left" Height="50" Margin="30.083,203.166,0,0" VerticalAlignment="Top" Width="50" Source="/ITBankBigFarm;component/Img/premium-icon-settings-3405519.png"/>
-        <Image HorizontalAlignment="Left" Height="50" Margin="30.083,290.333,0,0" VerticalAlignment="Top" Width="50" Source="/ITBankBigFarm;component/Img/free-icon-profile-3462240.png"/>
-        <Image HorizontalAlignment="Left" Height="50" Margin="30,416.333,0,0" VerticalAlignment="Top" Width="50" Source="/ITBankBigFarm;component/Img/free-icon-sign-out-876779.png"/>
-        <Image HorizontalAlignment="Left" Height="50" Margin="30,10,0,0" VerticalAlignment="Top" Width="50" Source="/ITBankBigFarm;component/Img/premium-icon-ruble-4612322.png"/>
-        <TextBlock HorizontalAlignment="Left" Height="18.667" Margin="5.5,258.166,0,0" TextWrapping="Wrap" Text="Настройки" VerticalAlignment="Top" Width="99" FontWeight="Bold" TextAlignment="Center"/>
-        <TextBlock HorizontalAlignment="Left" Height="18.667" Margin="5.5,157.5,0,0" TextWrapping="Wrap" Text="Главная" VerticalAlignment="Top" Width="99" FontWeight="Bold" TextAlignment="Center" Foreground="#f1d3bc"/>
-        <TextBlock HorizontalAlignment="Left" Height="18.667" Margin="5.5,345.333,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="99" FontWeight="Bold" TextAlignment="Center"><Run Text="Проф"/><Run Text="и"/><Run Text="ль"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Height="18.667" Margin="10,471.333,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="99" FontWeight="Bold" TextAlignment="Center" Text="Выйти"/>
-        <Rectangle Fill="#f34a4a" HorizontalAlignment="Left" Height="60" Margin="588.667,0,0,0" VerticalAlignment="Top" Width="311.333"/>
-        <TextBlock HorizontalAlignment="Left" Height="32" Margin="594,17.333,0,0" TextWrapping="Wrap" Text="Login:" VerticalAlignment="Top" Width="56" FontSize="18" FontWeight="Bold"/>
-        <TextBlock HorizontalAlignment="Left" Height="32" Margin="650,17.333,0,0" TextWrapping="Wrap" Text="Aboba" VerticalAlignment="Top" Width="56" FontSize="18" Foreground="#f1d3bc"/>
-        <TextBlock HorizontalAlignment="Left" Height="32" Margin="152,17.333,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210.666" FontSize="18" FontWeight="Bold" Foreground="#f1d3bc"><Run Text="Пятница"/><Run Text=", 29"/><Run Text="."/><Run Text="04.2022"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Height="32" Margin="152,49.333,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210.666" FontSize="18" FontWeight="Bold" Foreground="#f1d3bc"><Run Text="Время: "/><Run Text="13:23 "/></TextBlock>
-        <Rectangle Fill="#615049" HorizontalAlignment="Left" Height="212" Margin="152,137,0,0" VerticalAlignment="Center" Width="714"/>
-        <TextBlock HorizontalAlignment="Left" Height="18.667" Margin="5.5,157.5,0,0" TextWrapping="Wrap" Text="Главная" VerticalAlignment="Top" Width="99" FontWeight="Bold" TextAlignment="Center" Foreground="#f1d3bc"/>
-        <TextBlock HorizontalAlignment="Left" Height="27.334" Margin="163.333,218.292,0,0" TextWrapping="Wrap" Text="Номер счета:" VerticalAlignment="Top" Width="121.334" FontWeight="Bold" Foreground="#f1d3bc" FontSize="18"/>
-        <TextBlock HorizontalAlignment="Left" Height="27.334" Margin="284.667,219.319,0,0" TextWrapping="Wrap" Text="000001" VerticalAlignment="Top" Width="62.666" FontWeight="Bold" TextAlignment="Center" Foreground="#f1d3bc" FontSize="18"/>
-        <TextBlock HorizontalAlignment="Left" Height="88.307" Margin="152,275.693,0,0" TextWrapping="Wrap" Text="₽ 6666.00" VerticalAlignment="Top" Width="714" FontWeight="Bold" Foreground="#f1d3bc" FontSize="65" TextAlignment="Center"/>
-        <TextBlock HorizontalAlignment="Left" Height="27.334" Margin="163.333,248.359,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="121.334" FontWeight="Bold" Foreground="#f1d3bc" FontSize="18" Text="На счету"/>
-        <TextBlock HorizontalAlignment="Left" Height="27.334" Margin="365.333,219.319,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="121.334" FontWeight="Bold" Foreground="#f1d3bc" FontSize="18" Text="Тип счета:"/>
-        <Button Content="Отркыть счет" HorizontalAlignment="Left" Height="45" Margin="152,157.5,0,0" VerticalAlignment="Top" Width="300" Background="#f34a4a" Foreground="#f1d3bc" FontWeight="Bold" FontSize="16"/>
+        <Grid x:Name="PanelLeft" Margin="0,0,780,0">
+            <Rectangle Fill="#f34a4a" HorizontalAlignment="Left" Height="500" VerticalAlignment="Top" Width="120"/>
+            <Image HorizontalAlignment="Left" Height="50" Margin="30,102.5,0,0" VerticalAlignment="Top" Width="50" Source="/ITBankBigFarm;component/Img/premium-icon-house-4188482.png"/>
+            <Image HorizontalAlignment="Left" Height="50" Margin="30.083,203.166,0,0" VerticalAlignment="Top" Width="50" Source="/ITBankBigFarm;component/Img/premium-icon-settings-3405519.png"/>
+            <Image x:Name="image" HorizontalAlignment="Left" Height="50" Margin="30.083,290.333,0,0" VerticalAlignment="Top" Width="50" Source="/ITBankBigFarm;component/Img/free-icon-profile-3462240.png" MouseLeftButtonUp="image_MouseLeftButtonUp"/>
+            <Image HorizontalAlignment="Left" Height="50" Margin="30,416.333,0,0" VerticalAlignment="Top" Width="50" Source="/ITBankBigFarm;component/Img/free-icon-sign-out-876779.png" PreviewMouseLeftButtonUp="Image_PreviewMouseLeftButtonUp"/>
+            <Image HorizontalAlignment="Left" Height="50" Margin="30,10,0,0" VerticalAlignment="Top" Width="50" Source="/ITBankBigFarm;component/Img/premium-icon-ruble-4612322.png"/>
+            <TextBlock HorizontalAlignment="Left" Height="18.667" Margin="5.5,258.166,0,0" TextWrapping="Wrap" Text="Настройки" VerticalAlignment="Top" Width="99" FontWeight="Bold" TextAlignment="Center"/>
+            <TextBlock x:Name="textBlock6" HorizontalAlignment="Left" Height="18.667" Margin="5.5,157.5,0,0" TextWrapping="Wrap" Text="Главная" VerticalAlignment="Top" Width="99" FontWeight="Bold" TextAlignment="Center" Foreground="#f1d3bc"/>
+            <TextBlock x:Name="textBlock5" HorizontalAlignment="Left" Height="18.667" Margin="5.5,345.333,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="99" FontWeight="Bold" TextAlignment="Center"><Run Text="Проф"/><Run Text="и"/><Run Text="ль"/></TextBlock>
+            <TextBlock HorizontalAlignment="Left" Height="18.667" Margin="10,471.333,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="99" FontWeight="Bold" TextAlignment="Center" Text="Выйти"/>
+        </Grid>
+        <Grid x:Name="Login" Margin="588.667,0,0,440">
+            <Rectangle Fill="#f34a4a" HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="311.333"/>
+            <TextBlock HorizontalAlignment="Left" Height="32" Margin="61.333,17.333,0,0" x:Name="txtlogin"  TextWrapping="Wrap"  VerticalAlignment="Top" Width="169.5" FontSize="18" Foreground="#f1d3bc"/>
+            <Image x:Name="imgclouse" HorizontalAlignment="Left" Height="50" Margin="251.333,4,0,0" VerticalAlignment="Top" Width="50" Source="/ITBankBigFarm;component/Img/free-icon-cross-rounded-outline-54822.png" MouseLeftButtonDown="imgclouse_MouseLeftButtonDown"/>
+            <TextBlock HorizontalAlignment="Left" Height="32" Margin="10,17.333,0,0" TextWrapping="Wrap" Text="Login:" VerticalAlignment="Top" Width="56" FontSize="18" FontWeight="Bold"/>
+        </Grid>
+        <Grid x:Name="Home" Margin="152,17.333,34,75.5">
+            <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" VerticalAlignment="Top" Width="210.666" FontSize="18" FontWeight="Bold" Foreground="#f1d3bc" RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform><Run Text="Пятница"/><Run Text=", 29"/><Run Text="."/><Run Text="04.2022"/></TextBlock>
+            <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Height="32" Margin="0,32,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210.666" FontSize="18" FontWeight="Bold" Foreground="#f1d3bc" RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform><Run Text="Время: "/><Run Text="13:23 "/></TextBlock>
+            <Button x:Name="button" Content="Отркыть счет" HorizontalAlignment="Left" Height="45" Margin="0,140.167,0,0" VerticalAlignment="Top" Width="300" Background="#f34a4a" Foreground="#f1d3bc" FontWeight="Bold" FontSize="16" RenderTransformOrigin="0.5,0.5">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Grid x:Name="grid1" Margin="0,195.167,0,0">
+                <Rectangle x:Name="rectangle" Fill="#615049" HorizontalAlignment="Left" Height="212" VerticalAlignment="Center" Width="714" RenderTransformOrigin="0.5,0.5">
+                    <Rectangle.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Rectangle.RenderTransform>
+                </Rectangle>
+                <TextBlock x:Name="txttypescope" HorizontalAlignment="Left" Height="27.334" Margin="309.667,6.819,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="96.334" FontWeight="Bold" Foreground="#f1d3bc" FontSize="18" RenderTransformOrigin="0.5,0.5" >
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform>
+                </TextBlock>
+                <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Height="27.334" Margin="11.333,5.792,0,0" TextWrapping="Wrap" Text="Номер счета:" VerticalAlignment="Top" Width="121.334" FontWeight="Bold" Foreground="Black" FontSize="18" RenderTransformOrigin="0.5,0.5">
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform>
+                </TextBlock>
+                <TextBlock x:Name="txtnumberscore" HorizontalAlignment="Left" Height="27.334" Margin="132.667,6.819,0,0" TextWrapping="Wrap" Text="000001" VerticalAlignment="Top" Width="62.666" FontWeight="Bold" TextAlignment="Center" Foreground="#f1d3bc" FontSize="18" RenderTransformOrigin="0.5,0.5">
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform>
+                </TextBlock>
+                <TextBlock x:Name="txtmoney" HorizontalAlignment="Left" Height="88.307" Margin="0,63.193,0,0" TextWrapping="Wrap" Text="₽ 6666.00" VerticalAlignment="Top" Width="714" FontWeight="Bold" Foreground="#f1d3bc" FontSize="65" TextAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform>
+                </TextBlock>
+                <TextBlock x:Name="textBlock3" HorizontalAlignment="Left" Height="27.334" Margin="11.333,35.859,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="121.334" FontWeight="Bold" Foreground="#f1d3bc" FontSize="18" Text="На счету" RenderTransformOrigin="0.5,0.5">
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform>
+                </TextBlock>
+                <TextBlock x:Name="textBlock4" HorizontalAlignment="Left" Height="27.334" Margin="213.333,6.819,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="96.334" FontWeight="Bold" Foreground="Black" FontSize="18" Text="Тип счета:" RenderTransformOrigin="0.5,0.5">
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform>
+                </TextBlock>
+
+            </Grid>
+
+        </Grid>
+        <Grid x:Name="Profile" Margin="120,17.333,125,48.5" d:IsHidden="True">
+            <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" VerticalAlignment="Top" Width="210.666" FontSize="22" FontWeight="Bold" Foreground="#f1d3bc" RenderTransformOrigin="0.5,0.5" Margin="82,0,0,0" Text="Ваш профиль" TextAlignment="Center">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform></TextBlock>
+            <ComboBox HorizontalAlignment="Left" Height="36.5" Margin="149.5,58.167,0,0" VerticalAlignment="Top" Width="205.5"/>
+            <TextBlock x:Name="textBlock_Copy1" HorizontalAlignment="Left" Height="36.5" TextWrapping="Wrap" VerticalAlignment="Top" Width="156.166" FontSize="22" FontWeight="Bold" Foreground="#f1d3bc" RenderTransformOrigin="0.5,0.5" Margin="0,58.167,0,0" Text="Субъект " TextAlignment="Center">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform></TextBlock>
+            <TextBlock x:Name="textBlock_Copy2" HorizontalAlignment="Center" Height="36.5" TextWrapping="Wrap" VerticalAlignment="Top" Width="205.5" FontSize="22" FontWeight="Bold" Foreground="#f1d3bc" RenderTransformOrigin="0.5,0.5" Margin="149.5,147.667,300,0" Text="Фамилия" TextAlignment="Center">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform></TextBlock>
+            <TextBlock x:Name="textBlock_Copy3" HorizontalAlignment="Center" Height="36.5" TextWrapping="Wrap" VerticalAlignment="Top" Width="205.5" FontSize="22" FontWeight="Bold" Foreground="#f1d3bc" RenderTransformOrigin="0.5,0.5" Margin="149.5,197.667,300,0" Text="Имя" TextAlignment="Center">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform></TextBlock>
+            <TextBlock x:Name="textBlock_Copy4" HorizontalAlignment="Center" Height="36.5" TextWrapping="Wrap" VerticalAlignment="Top" Width="205.5" FontSize="22" FontWeight="Bold" Foreground="#f1d3bc" RenderTransformOrigin="0.5,0.5" Margin="149.5,247.667,300,0" Text="Отчество" TextAlignment="Center">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform></TextBlock>
+            <TextBlock x:Name="textBlock_Copy5" HorizontalAlignment="Center" Height="36.5" TextWrapping="Wrap" VerticalAlignment="Top" Width="205.5" FontSize="22" FontWeight="Bold" Foreground="#f1d3bc" RenderTransformOrigin="0.5,0.5" Margin="149.5,297.667,300,0" Text="Пол" TextAlignment="Center">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform></TextBlock>
+            <TextBlock x:Name="textBlock_Copy6" HorizontalAlignment="Center" Height="36.5" TextWrapping="Wrap" VerticalAlignment="Top" Width="205.5" FontSize="22" FontWeight="Bold" Foreground="#f1d3bc" RenderTransformOrigin="0.5,0.5" Margin="149.5,347.667,300,0" Text="Серия паспорта" TextAlignment="Center">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform></TextBlock>
+            <TextBlock x:Name="textBlock_Copy7" HorizontalAlignment="Center" Height="36.5" TextWrapping="Wrap" VerticalAlignment="Top" Width="205.5" FontSize="22" FontWeight="Bold" Foreground="#f1d3bc" RenderTransformOrigin="0.5,0.5" Margin="149.5,397.667,300,0" Text="Номер паспорта" TextAlignment="Center">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform></TextBlock>
+            <hc:TextBox hc:InfoElement.Placeholder="Фамилия" HorizontalAlignment="Left" Height="36.5" Margin="355,147.667,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="300"/>
+            <hc:TextBox hc:InfoElement.Placeholder="Имя" HorizontalAlignment="Left" Height="36.5" Margin="355,197.667,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="300"/>
+            <hc:TextBox hc:InfoElement.Placeholder="Отчество" HorizontalAlignment="Left" Height="36.5" Margin="355,247.667,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="300"/>
+            <hc:TextBox hc:InfoElement.Placeholder="Серия паспорта" HorizontalAlignment="Left" Height="36.5" Margin="355,347.667,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="300"/>
+            <hc:TextBox hc:InfoElement.Placeholder="Номер паспорта" HorizontalAlignment="Left" Height="36.5" Margin="355,397.667,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="300"/>
+            <hc:ComboBox hc:InfoElement.Placeholder="Пол" HorizontalAlignment="Left" Height="36.5" Margin="355,297.667,0,0" VerticalAlignment="Top"  Width="300"/>
+
+        </Grid>
 
     </Grid>
 </Window>

@@ -19,7 +19,9 @@ namespace ITBankBigFarm.Connection
         //         "Network Library=DBMSSOCN;" +
         //         "Data Source=DESKTOP-4625JV3;" +
         //         "Initial Catalog=BaseBank;";
-        public static string connection =
-                    "Server=DESKTOP-4625JV3" + "Database = BaseBank" + "Trusted_Connection = True";
+        //public static string connection =
+        //            "Server=DESKTOP-4625JV3" + "Database = BaseBank" + "Trusted_Connection = True";
+
+        public static string connection = $@"Data Source=ITBank.db;Version=3;";
     }
 }

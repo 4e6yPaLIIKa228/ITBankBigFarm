@@ -36,7 +36,7 @@ namespace ITBankBigFarm.Windows
             try
             {
                 SimpleComand.CheckTextBox(txtlog);
-                SimpleComand.CheckTextBox(txtpass);
+               // SimpleComand.CheckTextBox(txtpass);
                 if (chekmail.IsChecked == false)
                 {
                     SimpleComand.CheckTextBox(txtemail);
@@ -153,8 +153,7 @@ namespace ITBankBigFarm.Windows
         {
             if (checksecretword.IsChecked == false)
             {
-                txtsecret.IsEnabled = true;
-                
+                txtsecret.IsEnabled = true;                
             }
         }
 

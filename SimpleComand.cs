@@ -25,7 +25,7 @@ namespace ITBankBigFarm
                 return true;
             }
         }
-        public static bool CheckTextBox(PasswordBox tb)
+        public static bool CheckPassBox(PasswordBox tb)
         {
             if (string.IsNullOrEmpty(tb.Password))
             {
