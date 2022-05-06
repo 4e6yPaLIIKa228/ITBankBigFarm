@@ -346,9 +346,9 @@
                 </TextBlock.RenderTransform></TextBlock>
             <hc:TextBox x:Name="txtfame" hc:InfoElement.Placeholder="Фамилия" HorizontalAlignment="Left" Height="36.5" Margin="355,127.667,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="300"/>
             <hc:TextBox x:Name="txtname" hc:InfoElement.Placeholder="Имя" HorizontalAlignment="Left" Height="36.5" Margin="355,177.667,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="300"/>
-            <hc:TextBox hc:InfoElement.Placeholder="Отчество" HorizontalAlignment="Left" Height="36.5" Margin="355,227.667,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="300"/>
-            <hc:TextBox hc:InfoElement.Placeholder="Серия паспорта" HorizontalAlignment="Left" Height="36.5" Margin="355,327.667,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="300"/>
-            <hc:TextBox hc:InfoElement.Placeholder="Номер паспорта" HorizontalAlignment="Left" Height="36.5" Margin="355,377.667,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="300"/>
+            <hc:TextBox x:Name="txtOtchest" hc:InfoElement.Placeholder="Отчество" HorizontalAlignment="Left" Height="36.5" Margin="355,227.667,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="300"/>
+            <hc:TextBox x:Name="txtserpass" hc:InfoElement.Placeholder="Серия паспорта" HorizontalAlignment="Left" Height="36.5" Margin="355,327.667,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="300"/>
+            <hc:TextBox x:Name="txtnumberpas" hc:InfoElement.Placeholder="Номер паспорта" HorizontalAlignment="Left" Height="36.5" Margin="355,377.667,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="300"/>
             <hc:ComboBox x:Name="cmbPols" hc:InfoElement.Placeholder="Пол" HorizontalAlignment="Left" Height="36.5" Margin="355,277.667,0,0" VerticalAlignment="Top"  Width="300"/>
 
         </Grid>

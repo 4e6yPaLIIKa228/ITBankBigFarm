@@ -148,7 +148,10 @@ namespace ITBankBigFarm.Windows
                         if (count == 1)
                         {
                             MessageBox.Show("1");
-                            query = "SELECT Name,Family FROM PhysicalPerson WHERE ID = 1;";
+                            query = $@"SELECT Name,Family,MiddleName,SerriaPas,NumberPas,Pols.Pol 
+                                        FROM PhysicalPerson JOIN Pols 
+                                        ON PhysicalPerson.IDPol = Pols.ID
+                                        WHERE PhysicalPerson.ID = {Saver.IDAcc};";
                             SQLiteDataReader dr = null;
                             SQLiteCommand cmd1 = new SQLiteCommand(query, connection);
                             dr = cmd1.ExecuteReader();
@@ -158,6 +161,10 @@ namespace ITBankBigFarm.Windows
 
                             txtfame.Text = dr["Family"].ToString();
                             txtname.Text = dr["Name"].ToString();
+                            txtOtchest.Text = dr["MiddleName"].ToString();
+                            txtserpass.Text = dr["SerriaPas"].ToString();
+                            txtnumberpas.Text = dr["NumberPas"].ToString();
+                            cmbPols.Text = dr["Pol"].ToString();
 
                         }
                     }
