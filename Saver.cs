@@ -8,7 +8,7 @@ namespace ITBankBigFarm
 {
     class Saver
     {
-        public static int IDAcc;
-        public static string Login;
+        //public static int IDAcc;
+        public static string Login, IDAcc;
     }
 }

@@ -53,11 +53,21 @@ namespace ITBankBigFarm.Windows
                         if (count == 1)
                         {
                             connection.Open();
-                            query = $@"SELECT ID FROM Account WHERE Login=@Login";
-                            cmd.Parameters.AddWithValue("@Login", txtlog.Text.ToLower());
-                            int countID = Convert.ToInt32(cmd.ExecuteScalar());
+                            string smaltxt = txtlog.Text.ToLower();
+                            query = $@"SELECT ID FROM Account WHERE Login={smaltxt}";
+                           // cmd.Parameters.AddWithValue("@Login", txtlog.Text.ToLower());
+                           // int countID = Convert.ToInt32(cmd.ExecuteScalar());
                             Saver.Login = txtlog.Text.ToLower();
-                            Saver.IDAcc = countID;
+
+                            SQLiteDataReader dr = null;
+                            SQLiteCommand cmd1 = new SQLiteCommand(query, connection);
+                            dr = cmd1.ExecuteReader();
+                            while (dr.Read())
+                            {
+
+                                Saver.IDAcc = dr["ID"].ToString();
+                                //  Saver.IDAcc = countID;
+                            }
                             connection.Close();
                             MessageBox.Show("Добро пожаловать! " + $@"{txtlog.Text}");
                             MenuBank Aftoriz = new MenuBank();

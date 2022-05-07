@@ -135,8 +135,8 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Content Include="Connection\ITBank.db">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <Content Include="ITBank.db">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

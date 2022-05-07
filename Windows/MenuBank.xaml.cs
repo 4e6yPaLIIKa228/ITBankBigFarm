@@ -24,7 +24,7 @@ namespace ITBankBigFarm.Windows
     /// </summary>
     public partial class MenuBank : Window
     {
-        int NumberFaceFiz, NumberFaceYur;
+        int NumberFaceFiz, NumberFaceYur,ClickProf;
         public MenuBank()
         {
             InitializeComponent();
@@ -70,10 +70,21 @@ namespace ITBankBigFarm.Windows
 
         }
 
-        private void image_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        private void imageProf_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            textBlock5.Foreground = new SolidColorBrush(color: (Color)ColorConverter.ConvertFromString("#f1d3bc"));
-            textBlock6.Foreground = new SolidColorBrush(color: (Color)ColorConverter.ConvertFromString("Black"));
+            if (ClickProf != 1)
+            {
+                ClickProf = 1;
+                textBlock5.Foreground = new SolidColorBrush(color: (Color)ColorConverter.ConvertFromString("#f1d3bc"));
+                textBlock6.Foreground = new SolidColorBrush(color: (Color)ColorConverter.ConvertFromString("Black"));
+                FuzPerson.Visibility = Visibility.Hidden;
+                btnsave.Visibility = Visibility.Hidden;
+                btneddit.Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                imageProf.IsEnabled = false;
+            }
         }
 
         private void Image_PreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
@@ -107,7 +118,6 @@ namespace ITBankBigFarm.Windows
 
         }
 
-       
 
         private void cmbFace_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -116,6 +126,7 @@ namespace ITBankBigFarm.Windows
                 MessageBox.Show("Физ");
                // NumberFaceFiz = 1;
                 FizFace();
+                FuzPerson.Visibility = Visibility.Visible;
             }
             else
             {
@@ -133,9 +144,7 @@ namespace ITBankBigFarm.Windows
         }
         public void FizFace()
         {
-          // if(NumberFaceFiz == 1)
-
-          //  {
+         
                 try
                 {
                     using (SQLiteConnection connection = new SQLiteConnection(SqlDBConnection.connection))
@@ -146,8 +155,9 @@ namespace ITBankBigFarm.Windows
                        // cmd3.Parameters.AddWithValue("IDBrand", IdKab);
                         int count = Convert.ToInt32(cmd.ExecuteScalar());
                         if (count == 1)
-                        {
+                    {
                             MessageBox.Show("1");
+                            btneddit.Visibility = Visibility.Visible;
                             query = $@"SELECT Name,Family,MiddleName,SerriaPas,NumberPas,Pols.Pol 
                                         FROM PhysicalPerson JOIN Pols 
                                         ON PhysicalPerson.IDPol = Pols.ID
@@ -171,6 +181,7 @@ namespace ITBankBigFarm.Windows
                         else
                         {
                             MessageBox.Show("0");
+                            btnsave.Visibility = Visibility.Visible;
                         }
                     }
                 }
@@ -178,7 +189,81 @@ namespace ITBankBigFarm.Windows
                 {
                     MessageBox.Show("Ошибка" + ex);
                 }
-            } 
-        //}
+            }
+
+       
+
+        public void Checker() //Для проверки
+        {
+            try
+            {
+                SimpleComand.CheckTextBox(txtfame);
+                SimpleComand.CheckTextBox(txtname);
+                SimpleComand.CheckTextBox(txtfame);
+                SimpleComand.CheckTextBox(txtfame);
+                SimpleComand.CheckComboBox(cmbPols);
+                SimpleComand.CheckTextBox(txtfame);
+
+                //SimpleComand.CheckTextBox(txtpassreg);
+                //SimpleComand.CheckPassBox(txtpassreg);
+
+                if (txtserpass.Text.Length != 4  )
+                {
+                    // MessageBox.Show("Логин должне быть больше 5 символов!", "Ошбика", MessageBoxButton.OK, MessageBoxImage.Error);
+                    txtserpass.BorderBrush = Brushes.Red;
+                }
+                else
+                {
+                    txtserpass.BorderBrush = new SolidColorBrush(color: (Color)ColorConverter.ConvertFromString("#89000000")); ;
+                }
+
+
+                if (txtnumberpas.Text.Length != 6)
+                {
+                    // MessageBox.Show("Пароль должне быть больше 5 символов!", "Ошбика", MessageBoxButton.OK, MessageBoxImage.Error);
+                    txtnumberpas.BorderBrush = Brushes.Red;
+                }
+                else
+                {
+                    txtnumberpas.BorderBrush = new SolidColorBrush(color: (Color)ColorConverter.ConvertFromString("#89000000")); ;
+                }
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show(Convert.ToString(er));
+            }
+        }
+
+        private void btnsave_Click(object sender, RoutedEventArgs e)
+        {
+                if(txtfame.Text != "" && txtname.Text != "" && cmbPols.SelectedIndex !=-1 && txtserpass.Text != "" && txtserpass.Text.Length ==4 && txtnumberpas.Text.Length ==6 && txtnumberpas.Text != "")
+                {
+                    try
+                    {
+                        using (SQLiteConnection connection = new SQLiteConnection(SqlDBConnection.connection))
+                        {
+                        MessageBox.Show("111");
+                        Checker();
+                        connection.Open();
+                        bool resultClass = int.TryParse(cmbPols.SelectedValue.ToString(), out int idPols);
+                        string query = $@"INSERT INTO PhysicalPerson ('ID','Name','Family','MiddleName','SerriaPas','NumberPas','IDPol') VALUES ({Saver.IDAcc},{txtname.Text},{txtfame.Text},{txtOtchest.Text},{txtserpass.Text},{txtnumberpas.Text},{idPols})"; //Получение данных из таблицы Девайсы
+                        SQLiteCommand cmd = new SQLiteCommand(query, connection);
+                        cmd.ExecuteNonQuery();
+                        connection.Close();
+                        MessageBox.Show("Данные сохранены");
+                        FizFace();
+                        }
+                    }
+                    catch (SqlException ex)
+                    {
+                        MessageBox.Show("Ошибка" + ex);
+                    }
+                }
+                else
+                {
+                    Checker();
+                    MessageBox.Show("2222");
+                }
+        }
     }
 }
