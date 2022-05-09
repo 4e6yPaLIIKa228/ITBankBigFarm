@@ -108,7 +108,7 @@
         </EventTrigger>
     </Window.Triggers>
     <Grid x:Name="grid" Background="White" Width="800" Height="500">
-        <Path x:Name="path" Fill="#FF2222C5" HorizontalAlignment="Left" Height="501" Margin="369.25,-1,-11.375,0" Stroke="Black" VerticalAlignment="Top" Width="442.125" RenderTransformOrigin="0.5,0.5" Stretch="Fill">
+        <Path x:Name="path" Fill="#FFF92626" HorizontalAlignment="Left" Height="501" Margin="369.25,-1,-11.375,0" Stroke="Black" VerticalAlignment="Top" Width="442.125" RenderTransformOrigin="0.5,0.5" Stretch="Fill">
             <Path.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -136,24 +136,24 @@
             <TextBlock HorizontalAlignment="Left" Height="21.334" Margin="13.333,240.667,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Width="354.25" FontWeight="Bold" FontSize="16" Foreground="#FF02020C"/>
             <hc:PasswordBox hc:InfoElement.Placeholder="Введите пароль"  x:Name="txtpass" HorizontalAlignment="Left" Height="40" Margin="13.333,267.001,0,0"  VerticalAlignment="Top" Width="340" Foreground="#FF02020C" Background="White" VerticalContentAlignment="Center"/>
             <TextBlock HorizontalAlignment="Left" Height="19.999" Margin="183.333,312.001,0,0" TextWrapping="Wrap" Text="Забыл пароль?" VerticalAlignment="Top" Width="170"  Background="{x:Null}" TextAlignment="Right" Foreground="#FF151580" />
-            <Button x:Name="btnavtoriz" Content="Аворизоваться" HorizontalAlignment="Left" Height="40" Margin="13.333,352.5,0,0" VerticalAlignment="Top" Width="340" Background="#FF151580" BorderBrush="White" Foreground="White" FontWeight="Bold" Click="btnavtoriz_Click"/>
+            <Button x:Name="btnavtoriz" Content="Аворизоваться" HorizontalAlignment="Left" Height="40" Margin="13.333,352.5,0,0" VerticalAlignment="Top" Width="340" Background="#f34a4a"  BorderBrush="White" Foreground="White" FontWeight="Bold" Click="btnavtoriz_Click"/>
             <TextBlock HorizontalAlignment="Left"  Height="21.334" Margin="425,126.666,0,0" TextWrapping="Wrap" Text="У вас нет учетной записи?" VerticalAlignment="Top" Width="354.25" FontWeight="Bold" FontSize="16" Foreground="White" TextAlignment="Center"/>
             <TextBlock HorizontalAlignment="Left" Height="40" Margin="444.333,161.667,0,0" TextWrapping="Wrap" Text="Давайте подготовим вас ко всему, чтобы вы могли начать создавать свой первый опыт адаптации" VerticalAlignment="Top" Width="320.917" Foreground="White" TextAlignment="Center"/>
-            <Button x:Name="button" Content="Регистрация" HorizontalAlignment="Left" Height="40" Margin="504.75,206.667,0,0" VerticalAlignment="Top" Width="180" Background="#FF2222C5" BorderBrush="White" Foreground="White" FontWeight="Bold"/>
+            <Button x:Name="button" Content="Регистрация" HorizontalAlignment="Left" Height="40" Margin="504.75,206.667,0,0" VerticalAlignment="Top" Width="180" Background="#f34a4a" BorderBrush="White" Foreground="White" FontWeight="Bold"/>
 
         </Grid>
         <Grid x:Name="Registration" Visibility="Hidden">
-            <TextBlock HorizontalAlignment="Left"  Height="21.334" Margin="4,0,0,0" TextWrapping="Wrap" Text="ITBankBigFarm" VerticalAlignment="Top" Width="132.667" FontWeight="Bold" FontSize="16" Foreground="#FF2222C5"/>
+            <TextBlock HorizontalAlignment="Left"  Height="21.334" Margin="4,0,0,0" TextWrapping="Wrap" Text="ITBankBigFarm" VerticalAlignment="Top" Width="132.667" FontWeight="Bold" FontSize="16"  Foreground="#f34a4a"/>
             <TextBlock HorizontalAlignment="Left" Height="21.334" Margin="425,22.666,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="354.25" FontWeight="Bold" FontSize="16" Foreground="#FF02020C" TextAlignment="Center"><Run Text="Р"/><Run Text="егистрация учетной записи"/></TextBlock>
             <TextBlock HorizontalAlignment="Left" Height="40" Margin="441.666,49,0,0" TextWrapping="Wrap" Text="Войдите в свою учетную запись, чтобы продолжить и отредактировать свои потоки ввода в эксплуатацию" VerticalAlignment="Top" Width="320.917" Foreground="#FF02020C" TextAlignment="Center"/>
             <TextBlock HorizontalAlignment="Left" Height="21.334" Margin="435,89.696,0,0" TextWrapping="Wrap" Text="Login" VerticalAlignment="Top" Width="354.25" FontWeight="Bold" FontSize="16" Foreground="#FF02020C"/>
             <hc:TextBox hc:InfoElement.Placeholder="Введите свой логин" HorizontalAlignment="Left" x:Name="txtlogreg"  Height="40" Margin="435,116.03,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="340" Foreground="#FF02020C" Background="White"  VerticalContentAlignment="Center"/>
             <TextBlock HorizontalAlignment="Left" Height="21.334" Margin="435,162.333,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Width="354.25" FontWeight="Bold" FontSize="16" Foreground="#FF02020C"/>
             <hc:PasswordBox hc:InfoElement.Placeholder="Введите пароль" HorizontalAlignment="Left" x:Name="txtpassreg" Height="40" Margin="435,188.667,0,0"  VerticalAlignment="Top" Width="340" Foreground="#FF02020C" Background="White"  VerticalContentAlignment="Center"  />
-            <Button Content="Зарегистрироваться" x:Name="btnReg" HorizontalAlignment="Left" Height="40" Margin="435,428.167,0,0" VerticalAlignment="Top" Width="340" Background="#FF151580" BorderBrush="White" Foreground="White" FontWeight="Bold" Click="btnReg_Click"/>
+            <Button Content="Зарегистрироваться" x:Name="btnReg" HorizontalAlignment="Left" Height="40" Margin="435,428.167,0,0" VerticalAlignment="Top" Width="340" Background="#f34a4a" BorderBrush="White" Foreground="White" FontWeight="Bold" Click="btnReg_Click"/>
             <TextBlock HorizontalAlignment="Left" Height="21.334" Margin="14,126.666,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="354.25" FontWeight="Bold" FontSize="16" Foreground="White" TextAlignment="Center"><Run Text="Есть учетная запись"/><Run Text="?"/></TextBlock>
             <TextBlock HorizontalAlignment="Left" Height="40" Margin="33.333,161.667,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="320.917" Foreground="White" TextAlignment="Center"><Run Text="Авторизайтесь"/><Run Text="в свою учетную запись, чтобы "/><Run Text="управлять счетами в банке"/></TextBlock>
-            <Button x:Name="button1" Content="Авторизоавться" HorizontalAlignment="Left" Height="40" Margin="93.75,206.667,0,0" VerticalAlignment="Top" Width="180" Background="#FF2222C5" BorderBrush="White" Foreground="White" FontWeight="Bold"/>
+            <Button x:Name="button1" Content="Авторизоавться" HorizontalAlignment="Left" Height="40" Margin="93.75,206.667,0,0" VerticalAlignment="Top" Width="180" Background="#f34a4a" BorderBrush="White" Foreground="White" FontWeight="Bold"/>
             <TextBlock HorizontalAlignment="Left" Height="21.334" Margin="435,232.332,0,0" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top" Width="354.25" FontWeight="Bold" FontSize="16" Foreground="#FF02020C"/>
             <hc:TextBox hc:InfoElement.Placeholder="Введите свою почту" HorizontalAlignment="Left" x:Name="txtemail" Height="40" Margin="435,258.666,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="340" Foreground="#FF02020C" Background="White"  VerticalContentAlignment="Center"/>
             <TextBlock HorizontalAlignment="Left" Height="21.334" Margin="435,325.333,0,0" TextWrapping="Wrap" Text="SecretWord" VerticalAlignment="Top" Width="354.25" FontWeight="Bold" FontSize="16" Foreground="#FF02020C"/>
