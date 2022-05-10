@@ -24,7 +24,7 @@ namespace ITBankBigFarm.Windows
     /// </summary>
     public partial class MenuBank : Window
     {
-        int NumberFaceFiz, NumberFaceYur,ClickProf;
+        int NumberFaceFiz, NumberFaceYur,ClickProf, ClickHome=1;
         public MenuBank()
         {
             InitializeComponent();
@@ -63,14 +63,14 @@ namespace ITBankBigFarm.Windows
 
 
             }
-            catch (SqlException ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Ошибка" + ex);
             }
 
         }
 
-        private void imageProf_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        private void imageProf_MouseLeftButtonUp(object sender, MouseButtonEventArgs e) //Иконка профиля
         {
             if (ClickProf != 1)
             {
@@ -80,6 +80,10 @@ namespace ITBankBigFarm.Windows
                 FuzPerson.Visibility = Visibility.Hidden;
                 btnsave.Visibility = Visibility.Hidden;
                 btneddit.Visibility = Visibility.Hidden;
+                Profile.Visibility = Visibility.Visible;
+                Home.Visibility = Visibility.Hidden;
+                ClickHome = 0;
+                image.IsEnabled = true;
             }
             else
             {
@@ -111,14 +115,12 @@ namespace ITBankBigFarm.Windows
                     cmbPols.SelectedValuePath = "ID";
                 }
             }
-            catch (SqlException ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Ошибка" + ex);
             }
 
         }
-
-
         private void cmbFace_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (cmbFace.SelectedIndex == 0)
@@ -144,9 +146,8 @@ namespace ITBankBigFarm.Windows
         }
         public void FizFace()
         {
-         
-                try
-                {
+           try
+           {
                     using (SQLiteConnection connection = new SQLiteConnection(SqlDBConnection.connection))
                     {
                         connection.Open();
@@ -184,15 +185,36 @@ namespace ITBankBigFarm.Windows
                             btnsave.Visibility = Visibility.Visible;
                         }
                     }
-                }
-                catch (SqlException ex)
-                {
+           }
+           catch (Exception ex)
+           {
                     MessageBox.Show("Ошибка" + ex);
-                }
+           }
+        }
+        private void image_MouseLeftButtonUp(object sender, MouseButtonEventArgs e) //Главаня Иконка
+        {
+          
+            if (ClickHome != 1)
+            {
+                ClickHome = 1;
+                textBlock6.Foreground = new SolidColorBrush(color: (Color)ColorConverter.ConvertFromString("#f1d3bc"));
+                textBlock5.Foreground = new SolidColorBrush(color: (Color)ColorConverter.ConvertFromString("Black"));
+                textBlock7.Foreground = new SolidColorBrush(color: (Color)ColorConverter.ConvertFromString("Black"));
+                FuzPerson.Visibility = Visibility.Hidden;
+                btnsave.Visibility = Visibility.Hidden;
+                btneddit.Visibility = Visibility.Hidden;
+                Profile.Visibility = Visibility.Hidden;
+                Home.Visibility = Visibility.Visible;
+                ClickProf = 0;
+                cmbFace.SelectedIndex = -1;
+                image.IsEnabled = true;
+                imageProf.IsEnabled = true;
             }
-
-       
-
+            else
+            {
+                image.IsEnabled = false;
+            }
+        }
         public void Checker() //Для проверки
         {
             try
@@ -207,7 +229,7 @@ namespace ITBankBigFarm.Windows
                 //SimpleComand.CheckTextBox(txtpassreg);
                 //SimpleComand.CheckPassBox(txtpassreg);
 
-                if (txtserpass.Text.Length != 4  )
+                if (txtserpass.Text.Length != 4)
                 {
                     // MessageBox.Show("Логин должне быть больше 5 символов!", "Ошбика", MessageBoxButton.OK, MessageBoxImage.Error);
                     txtserpass.BorderBrush = Brushes.Red;
@@ -233,7 +255,6 @@ namespace ITBankBigFarm.Windows
                 MessageBox.Show(Convert.ToString(er));
             }
         }
-
         private void btnsave_Click(object sender, RoutedEventArgs e)
         {
                 if(txtfame.Text != "" && txtname.Text != "" && cmbPols.SelectedIndex !=-1 && txtserpass.Text != "" && txtserpass.Text.Length ==4 && txtnumberpas.Text.Length ==6 && txtnumberpas.Text != "")
@@ -254,7 +275,7 @@ namespace ITBankBigFarm.Windows
                         FizFace();
                         }
                     }
-                    catch (SqlException ex)
+                    catch (Exception ex)
                     {
                         MessageBox.Show("Ошибка" + ex);
                     }
@@ -264,6 +285,39 @@ namespace ITBankBigFarm.Windows
                     Checker();
                     MessageBox.Show("2222");
                 }
+
+
+
+        }
+        private void buttonopenscore_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                using (SQLiteConnection connection = new SQLiteConnection(SqlDBConnection.connection))
+                {
+                    connection.Open();
+                    string query = $@"SELECT COUNT(1) FROM PhysicalPerson WHERE ID = {Saver.IDAcc};"; //Получение данных из таблицы Физ.лица
+                    SQLiteCommand cmd = new SQLiteCommand(query, connection);
+                    // cmd3.Parameters.AddWithValue("IDBrand", IdKab);
+                    int countfiz = Convert.ToInt32(cmd.ExecuteScalar());
+                    query = $@"SELECT COUNT(1) FROM LegalPerson WHERE ID = {Saver.IDAcc};"; //Получение данных из таблицы Физ.лица
+                    SQLiteCommand cmd1 = new SQLiteCommand(query, connection);
+                    int countyur = Convert.ToInt32(cmd1.ExecuteScalar());
+                    if (countfiz == 1 || countyur == 1)
+                    {
+                        MessageBox.Show("Yes acc");
+                    }
+                    else
+                    {
+                        MessageBox.Show("No acc");
+                    }
+                    connection.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка" + ex);
+            }
         }
     }
 }

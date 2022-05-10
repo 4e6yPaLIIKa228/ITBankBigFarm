@@ -85,6 +85,9 @@
     <Compile Include="Windows\MenuBank.xaml.cs">
       <DependentUpon>MenuBank.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\OpenScore.xaml.cs">
+      <DependentUpon>OpenScore.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\RegistWin.xaml.cs">
       <DependentUpon>RegistWin.xaml</DependentUpon>
     </Compile>
@@ -105,6 +108,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Windows\MenuBank.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\OpenScore.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

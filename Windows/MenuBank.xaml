@@ -31,7 +31,7 @@
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="textBlock1">
                 <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="-0.667"/>
             </DoubleAnimationUsingKeyFrames>
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="button">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="buttonopenscore">
                 <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="-65.333"/>
                 <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="-99.333"/>
                 <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="-121.333"/>
@@ -39,7 +39,7 @@
                 <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="-185.333"/>
                 <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="-208.333"/>
             </DoubleAnimationUsingKeyFrames>
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="button">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="buttonopenscore">
                 <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="1.333"/>
             </DoubleAnimationUsingKeyFrames>
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="rectangle">
@@ -127,7 +127,7 @@
                 <DiscreteObjectKeyFrame KeyTime="0:0:0.5" Value="{x:Static Visibility.Visible}"/>
                 <DiscreteObjectKeyFrame KeyTime="0:0:0.6" Value="{x:Static Visibility.Hidden}"/>
             </ObjectAnimationUsingKeyFrames>
-            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="button">
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="buttonopenscore">
                 <DiscreteObjectKeyFrame KeyTime="0:0:0.5" Value="{x:Static Visibility.Visible}"/>
                 <DiscreteObjectKeyFrame KeyTime="0:0:0.6" Value="{x:Static Visibility.Hidden}"/>
             </ObjectAnimationUsingKeyFrames>
@@ -135,24 +135,86 @@
                 <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Hidden}"/>
                 <DiscreteObjectKeyFrame KeyTime="0:0:0.6" Value="{x:Static Visibility.Visible}"/>
             </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="Home">
+                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.6" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="Profile-Home">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="textBlock_Copy">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="-19"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="-47"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="-63"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="-81"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="-97"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="-114"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="cmbFace">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="-19"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="-47"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="-63"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="-81"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="-97"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="-114"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="textBlock_Copy1">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="-19"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="-47"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="-63"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="-81"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="-97"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="-114"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="FuzPerson">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="69"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="124"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="200"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="276"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="320"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="363"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="btnsave">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="69"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="124"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="200"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="276"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="320"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="363"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="btneddit">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="69"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="124"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="200"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="276"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="320"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="363"/>
+            </DoubleAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="Profile">
+                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.7" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="Home">
+                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Hidden}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.7" Value="{x:Static Visibility.Visible}"/>
+            </ObjectAnimationUsingKeyFrames>
         </Storyboard>
     </Window.Resources>
-    <Window.Triggers>
-        <EventTrigger RoutedEvent="FrameworkElement.Loaded"/>
-        <EventTrigger RoutedEvent="UIElement.MouseLeftButtonUp" SourceName="imageProf">
-            <BeginStoryboard x:Name="Home_Profile_BeginStoryboard" Storyboard="{StaticResource Home-Profile}"/>
-        </EventTrigger>
-    </Window.Triggers>
     <Grid>
         <Rectangle Fill="#262f34" HorizontalAlignment="Left" Height="500" VerticalAlignment="Top"  Width="900"/>
         <Grid x:Name="PanelLeft" Margin="0,0,780,0">
             <Rectangle Fill="#f34a4a" HorizontalAlignment="Left" Height="500" VerticalAlignment="Top" Width="120"/>
-            <Image HorizontalAlignment="Left" Height="50" Margin="30,102.5,0,0" VerticalAlignment="Top" Width="50" Source="/ITBankBigFarm;component/Img/premium-icon-house-4188482.png"/>
+            <Image x:Name="image" HorizontalAlignment="Left" Height="50" Margin="30,102.5,0,0" VerticalAlignment="Top" Width="50" Source="/ITBankBigFarm;component/Img/premium-icon-house-4188482.png" MouseLeftButtonUp="image_MouseLeftButtonUp"/>
             <Image HorizontalAlignment="Left" Height="50" Margin="30.083,203.166,0,0" VerticalAlignment="Top" Width="50" Source="/ITBankBigFarm;component/Img/premium-icon-settings-3405519.png"/>
             <Image x:Name="imageProf" HorizontalAlignment="Left" Height="50" Margin="30.083,290.333,0,0" VerticalAlignment="Top" Width="50" Source="/ITBankBigFarm;component/Img/free-icon-profile-3462240.png"  MouseLeftButtonUp="imageProf_MouseLeftButtonUp"/>
             <Image HorizontalAlignment="Left" Height="50" Margin="30,416.333,0,0" VerticalAlignment="Top" Width="50" Source="/ITBankBigFarm;component/Img/free-icon-sign-out-876779.png" PreviewMouseLeftButtonUp="Image_PreviewMouseLeftButtonUp"/>
             <Image HorizontalAlignment="Left" Height="50" Margin="30,10,0,0" VerticalAlignment="Top" Width="50" Source="/ITBankBigFarm;component/Img/premium-icon-ruble-4612322.png"/>
-            <TextBlock HorizontalAlignment="Left" Height="18.667" Margin="5.5,258.166,0,0" TextWrapping="Wrap" Text="Настройки" VerticalAlignment="Top" Width="99" FontWeight="Bold" TextAlignment="Center"/>
+            <TextBlock x:Name="textBlock7" HorizontalAlignment="Left" Height="18.667" Margin="5.5,258.166,0,0" TextWrapping="Wrap" Text="Настройки" VerticalAlignment="Top" Width="99" FontWeight="Bold" TextAlignment="Center"/>
             <TextBlock x:Name="textBlock6" HorizontalAlignment="Left" Height="18.667" Margin="5.5,157.5,0,0" TextWrapping="Wrap" Text="Главная" VerticalAlignment="Top" Width="99" FontWeight="Bold" TextAlignment="Center" Foreground="#f1d3bc"/>
             <TextBlock x:Name="textBlock5" HorizontalAlignment="Left" Height="18.667" Margin="5.5,345.333,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="99" FontWeight="Bold" TextAlignment="Center"><Run Text="Проф"/><Run Text="и"/><Run Text="ль"/></TextBlock>
             <TextBlock HorizontalAlignment="Left" Height="18.667" Margin="10,471.333,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="99" FontWeight="Bold" TextAlignment="Center" Text="Выйти"/>
@@ -163,7 +225,7 @@
             <Image x:Name="imgclouse" HorizontalAlignment="Left" Height="50" Margin="251.333,4,0,0" VerticalAlignment="Top" Width="50" Source="/ITBankBigFarm;component/Img/free-icon-cross-rounded-outline-54822.png" MouseLeftButtonDown="imgclouse_MouseLeftButtonDown"/>
             <TextBlock HorizontalAlignment="Left" Height="32" Margin="10,17.333,0,0" TextWrapping="Wrap" Text="Login:" VerticalAlignment="Top" Width="56" FontSize="18" FontWeight="Bold"/>
         </Grid>
-        <Grid x:Name="Home" Margin="152,17.333,34,75.5" d:IsHidden="True">
+        <Grid x:Name="Home" Margin="152,17.333,34,75.5">
             <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" VerticalAlignment="Top" Width="210.666" FontSize="18" FontWeight="Bold" Foreground="#f1d3bc" RenderTransformOrigin="0.5,0.5">
                 <TextBlock.RenderTransform>
                     <TransformGroup>
@@ -182,7 +244,7 @@
                         <TranslateTransform/>
                     </TransformGroup>
                 </TextBlock.RenderTransform><Run Text="Время: "/><Run Text="13:23 "/></TextBlock>
-            <Button x:Name="button" Content="Отркыть счет" HorizontalAlignment="Left" Height="45" Margin="0,140.167,0,0" VerticalAlignment="Top" Width="300" Background="#f34a4a" Foreground="#f1d3bc" FontWeight="Bold" FontSize="16" RenderTransformOrigin="0.5,0.5">
+            <Button x:Name="buttonopenscore" Content="Отркыть счет" HorizontalAlignment="Left" Height="45" Margin="0,140.167,0,0" VerticalAlignment="Top" Width="300" Background="#f34a4a" Foreground="#f1d3bc" FontWeight="Bold" FontSize="16" RenderTransformOrigin="0.5,0.5" Click="buttonopenscore_Click">
                 <Button.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -267,7 +329,7 @@
             </Grid>
 
         </Grid>
-        <Grid x:Name="Profile" Margin="120,17.333,125,48.5">
+        <Grid x:Name="Profile" Margin="120,17.333,125,48.5" d:IsHidden="True">
             <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" VerticalAlignment="Top" Width="210.666" FontSize="22" FontWeight="Bold" Foreground="#f1d3bc" RenderTransformOrigin="0.5,0.5" Margin="82,0,0,0" Text="Ваш профиль" TextAlignment="Center">
                 <TextBlock.RenderTransform>
                     <TransformGroup>
@@ -277,7 +339,15 @@
                         <TranslateTransform/>
                     </TransformGroup>
                 </TextBlock.RenderTransform></TextBlock>
-            <ComboBox x:Name="cmbFace" HorizontalAlignment="Left" Height="36.5" Margin="149.5,58.167,0,0" VerticalAlignment="Top" Width="205.5" SelectionChanged="cmbFace_SelectionChanged">
+            <ComboBox x:Name="cmbFace" HorizontalAlignment="Left" Height="36.5" Margin="149.5,58.167,0,0" VerticalAlignment="Top" Width="205.5" SelectionChanged="cmbFace_SelectionChanged" RenderTransformOrigin="0.5,0.5">
+                <ComboBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </ComboBox.RenderTransform>
                 <ComboBoxItem Content="Физичесок лицо"></ComboBoxItem>
                 <ComboBoxItem Content="Юридическое лицо"></ComboBoxItem>
             </ComboBox>
@@ -290,7 +360,15 @@
                         <TranslateTransform/>
                     </TransformGroup>
                 </TextBlock.RenderTransform></TextBlock>
-            <Grid x:Name="FuzPerson" Margin="149.5,127.667,0,20">
+            <Grid x:Name="FuzPerson" Margin="149.5,127.667,0,20" RenderTransformOrigin="0.5,0.5">
+                <Grid.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Grid.RenderTransform>
                 <TextBlock x:Name="textBlock_Copy2" HorizontalAlignment="Center" Height="36.5" TextWrapping="Wrap" VerticalAlignment="Top" Width="205.5" FontSize="22" FontWeight="Bold" Foreground="#f1d3bc" RenderTransformOrigin="0.5,0.5" Margin="0,0,300,0" Text="Фамилия" TextAlignment="Center">
                     <TextBlock.RenderTransform>
                         <TransformGroup>
@@ -352,8 +430,26 @@
                 <hc:TextBox x:Name="txtnumberpas" hc:InfoElement.Placeholder="Номер паспорта" HorizontalAlignment="Left" Height="36.5" Margin="205.5,250,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="300"/>
                 <hc:ComboBox x:Name="cmbPols" hc:InfoElement.Placeholder="Пол" HorizontalAlignment="Left" Height="36.5" Margin="205.5,150,0,0" VerticalAlignment="Top"  Width="300"/>
             </Grid>
-            <Button x:Name="btnsave" Content="Сохранить" HorizontalAlignment="Left" Height="36" Margin="320,428.53,0,-30.363" VerticalAlignment="Top" Width="131" Click="btnsave_Click" />
-            <Button x:Name="btneddit" Content="Изменить" HorizontalAlignment="Left" Height="36" Margin="320,428.53,0,-30.363" VerticalAlignment="Top" Width="131"/>
+            <Button x:Name="btnsave" Content="Сохранить" HorizontalAlignment="Left" Height="36" Margin="320,428.53,0,-30.363" VerticalAlignment="Top" Width="131" Click="btnsave_Click" RenderTransformOrigin="0.5,0.5" >
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Button x:Name="btneddit" Content="Изменить" HorizontalAlignment="Left" Height="36" Margin="320,428.53,0,-30.363" VerticalAlignment="Top" Width="131" RenderTransformOrigin="0.5,0.5">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
 
         </Grid>
 
