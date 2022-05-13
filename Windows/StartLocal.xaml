@@ -6,7 +6,7 @@
         xmlns:hc="https://handyorg.github.io/handycontrol" 
         xmlns:local="clr-namespace:ITBankBigFarm.Windows"
         mc:Ignorable="d"
-        Title="StartLocal" Height="500" Width="800" AllowsTransparency="True"  WindowStyle="None" WindowStartupLocation="CenterScreen">
+        Title="StartLocal" Height="500" Width="800" AllowsTransparency="True"  WindowStyle="None" WindowStartupLocation="CenterScreen" MouseLeftButtonDown="window_MouseLeftButtonDown">
     <Window.Resources>
         <Storyboard x:Key="Storyboard1">
             <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="Login_In">

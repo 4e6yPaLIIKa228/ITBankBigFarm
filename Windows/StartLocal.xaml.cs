@@ -391,6 +391,11 @@ namespace ITBankBigFarm.Windows
             Environment.Exit(0);
         }
 
+        private void window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            this.DragMove();
+        }
+
         private void chekmail_Unchecked(object sender, RoutedEventArgs e)
         {
             if (chekmail.IsChecked == false)

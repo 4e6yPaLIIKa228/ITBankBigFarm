@@ -50,8 +50,8 @@
                         <TranslateTransform/>
                     </TransformGroup>
                 </TextBlock.RenderTransform></TextBlock>
-            <hc:ComboBox x:Name="txtfame" hc:InfoElement.Placeholder="Филиал" HorizontalAlignment="Left" Height="36.5" Margin="205.5,0,0,0"  VerticalAlignment="Top" Width="300"/>
-            <hc:ComboBox x:Name="txtname" hc:InfoElement.Placeholder="Вид счета" HorizontalAlignment="Left" Height="36.5" Margin="205.5,50,0,0"  VerticalAlignment="Top" Width="300"/>
+            <hc:ComboBox x:Name="txtfill" hc:InfoElement.Placeholder="Филиал" HorizontalAlignment="Left" Height="36.5" Margin="205.5,0,0,0"  VerticalAlignment="Top" Width="300"/>
+            <hc:ComboBox x:Name="txtscore" hc:InfoElement.Placeholder="Вид счета" HorizontalAlignment="Left" Height="36.5" Margin="205.5,50,0,0"  VerticalAlignment="Top" Width="300"/>
             <hc:ComboBox x:Name="txtOtchest" hc:InfoElement.Placeholder="Город" HorizontalAlignment="Left" Height="36.5" Margin="205.5,100,0,0"  VerticalAlignment="Top" Width="300" Visibility="Hidden"/>
         </Grid>
         <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Center" Height="36.5" TextWrapping="Wrap" VerticalAlignment="Top" Width="329.5" FontSize="22" FontWeight="Bold" Foreground="#f1d3bc" RenderTransformOrigin="0.5,0.5" Margin="112.5,36.26,98,0" Text="Открытие счета" TextAlignment="Center" Grid.ColumnSpan="2">
