@@ -306,6 +306,17 @@ namespace ITBankBigFarm.Windows
                     if (countfiz == 1 || countyur == 1)
                     {
                         MessageBox.Show("Yes acc");
+                        //OpenScore EddTitl = new OpenScore();
+                        //EddTitl.Owner = this;
+                        //bool? result = EddTitl.ShowDialog();
+                        //switch (result)
+                        //{
+                        //    default:
+                        //    break;
+                        //}
+                        OpenScore Aftoriz = new OpenScore();
+                        this.Close();
+                        Aftoriz.ShowDialog();
                     }
                     else
                     {

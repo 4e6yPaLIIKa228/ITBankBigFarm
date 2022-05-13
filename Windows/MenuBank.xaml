@@ -225,7 +225,7 @@
             <Image x:Name="imgclouse" HorizontalAlignment="Left" Height="50" Margin="251.333,4,0,0" VerticalAlignment="Top" Width="50" Source="/ITBankBigFarm;component/Img/free-icon-cross-rounded-outline-54822.png" MouseLeftButtonDown="imgclouse_MouseLeftButtonDown"/>
             <TextBlock HorizontalAlignment="Left" Height="32" Margin="10,17.333,0,0" TextWrapping="Wrap" Text="Login:" VerticalAlignment="Top" Width="56" FontSize="18" FontWeight="Bold"/>
         </Grid>
-        <Grid x:Name="Home" Margin="152,17.333,34,75.5">
+        <Grid x:Name="Home" Margin="152,17.333,34,75.5" d:IsHidden="True">
             <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" VerticalAlignment="Top" Width="210.666" FontSize="18" FontWeight="Bold" Foreground="#f1d3bc" RenderTransformOrigin="0.5,0.5">
                 <TextBlock.RenderTransform>
                     <TransformGroup>
@@ -329,7 +329,7 @@
             </Grid>
 
         </Grid>
-        <Grid x:Name="Profile" Margin="120,17.333,125,48.5" d:IsHidden="True">
+        <Grid x:Name="Profile" Margin="120,17.333,125,48.5">
             <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" VerticalAlignment="Top" Width="210.666" FontSize="22" FontWeight="Bold" Foreground="#f1d3bc" RenderTransformOrigin="0.5,0.5" Margin="82,0,0,0" Text="Ваш профиль" TextAlignment="Center">
                 <TextBlock.RenderTransform>
                     <TransformGroup>
@@ -440,7 +440,7 @@
                     </TransformGroup>
                 </Button.RenderTransform>
             </Button>
-            <Button x:Name="btneddit" Content="Изменить" HorizontalAlignment="Left" Height="36" Margin="320,428.53,0,-30.363" VerticalAlignment="Top" Width="131" RenderTransformOrigin="0.5,0.5">
+            <Button x:Name="btneddit" Content="Изменить" HorizontalAlignment="Left" Height="36" Width="131" Margin="320,428.53,0,-30.363" VerticalAlignment="Top"  RenderTransformOrigin="0.5,0.5">
                 <Button.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
