@@ -28,7 +28,17 @@ namespace ITBankBigFarm.Windows
         public StartLocal()
         {
             InitializeComponent();
-
+        }
+        public void InfoIP() //Получение ip-адреса.
+        {
+            // Получение имени компьютера.
+            String host = System.Net.Dns.GetHostName();
+            // Получение ip-адреса.
+            System.Net.IPAddress IPReg0 = System.Net.Dns.GetHostByName(host).AddressList[0];
+            System.Net.IPAddress IPLast0 = System.Net.Dns.GetHostByName(host).AddressList[0];
+            IPLast = IPLast0.ToString();
+            IPReg = IPReg0.ToString();
+            // MessageBox.Show(IPReg.ToString());
         }
 
         private void btnavtoriz_Click(object sender, RoutedEventArgs e)
@@ -49,25 +59,28 @@ namespace ITBankBigFarm.Windows
                         cmd.Parameters.AddWithValue("@Login", txtlog.Text.ToLower());
                         cmd.Parameters.AddWithValue("@Pass", Pass);
                         int count = Convert.ToInt32(cmd.ExecuteScalar());
-                        connection.Close();
                         if (count == 1)
                         {
-                            connection.Open();
+                            InfoIP();
+                            query = $@"UPDATE Account SET IPLast=@IPLast WHERE Login=@Login;";
+                            cmd = new SQLiteCommand(query, connection);
+                            cmd.Parameters.AddWithValue("@IPLast",IPLast);
+                            cmd.Parameters.AddWithValue("@Login", txtlog.Text.ToLower());
+                            cmd.ExecuteReader();
                             string smaltxt = txtlog.Text.ToLower();
                             query = $@"SELECT ID FROM Account WHERE Login={smaltxt}";
                            // cmd.Parameters.AddWithValue("@Login", txtlog.Text.ToLower());
                            // int countID = Convert.ToInt32(cmd.ExecuteScalar());
                             Saver.Login = txtlog.Text.ToLower();
-
                             SQLiteDataReader dr = null;
                             SQLiteCommand cmd1 = new SQLiteCommand(query, connection);
                             dr = cmd1.ExecuteReader();
                             while (dr.Read())
                             {
-
                                 Saver.IDAcc = dr["ID"].ToString();
                                 //  Saver.IDAcc = countID;
                             }
+
                             connection.Close();
                             MessageBox.Show("Добро пожаловать! " + $@"{txtlog.Text}");
                             MenuBank Aftoriz = new MenuBank();
@@ -76,9 +89,7 @@ namespace ITBankBigFarm.Windows
                         }
                         else
                         {
-                            {
                                 MessageBox.Show("Неверный логин или пароль");
-                            }
                         }
 
                     }
@@ -90,7 +101,7 @@ namespace ITBankBigFarm.Windows
 
                 }
             }
-            catch (SqlException ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Ошибка" + ex);
             }
@@ -194,23 +205,13 @@ namespace ITBankBigFarm.Windows
                     connection.Close();
                 }
             }
-            catch(SqlException ex)
+            catch(Exception ex)
             {
                 MessageBox.Show("Ошибка" + ex);
             }
         }
 
-        public void InfoIP() //Получение ip-адреса.
-        {
-            // Получение имени компьютера.
-            String host = System.Net.Dns.GetHostName();
-            // Получение ip-адреса.
-            System.Net.IPAddress IPReg0 = System.Net.Dns.GetHostByName(host).AddressList[0];
-            System.Net.IPAddress IPLast0 = System.Net.Dns.GetHostByName(host).AddressList[0];
-            IPLast = IPLast0.ToString();
-            IPReg = IPReg0.ToString();
-           // MessageBox.Show(IPReg.ToString());
-        }
+       
 
         private void btnReg_Click(object sender, RoutedEventArgs e)
         {
@@ -351,7 +352,7 @@ namespace ITBankBigFarm.Windows
                     }
                 }
             }
-            catch (SqlException ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Ошибка" + ex);
             }

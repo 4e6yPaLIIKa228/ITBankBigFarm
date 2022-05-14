@@ -28,23 +28,71 @@ namespace ITBankBigFarm.Windows
         public MenuBank()
         {
             InitializeComponent();
-            LoadHome();
             Profile.Visibility = Visibility.Hidden;
             LoadProfelComb();
-            
+            LoadcmbTypeScore();
+            LoadHome();
         }
 
         private void imgclouse_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             Environment.Exit(0);
         }
-
-        public void LoadHome()
+        public void InfoFace() //Узнаем физ или юр
         {
             try
             {
                 using (SQLiteConnection connection = new SQLiteConnection(SqlDBConnection.connection))
                 {
+                    string query = $@"SELECT NameType,ID FROM BillsTypes WHERE IDFace = 1";
+                    SQLiteDataReader dr = null;
+                    SQLiteCommand cmd1 = new SQLiteCommand(query, connection);
+                    dr = cmd1.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        Saver.IDAcc = dr["ID"].ToString();
+                        //  Saver.IDAcc = countID;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка" + ex);
+            }
+        }
+        public void LoadcmbTypeScore()
+        {
+            try
+            {
+                using (SQLiteConnection connection = new SQLiteConnection(SqlDBConnection.connection))
+                {
+                    string query = $@"SELECT BillsTypes.ID, BillsTypes.NameType FROM Bills 
+                                      JOIN BillsTypes on Bills.IDType = BillsTypes.ID
+                                      WHERE IDAccount = {Saver.IDAcc} ";
+                    SQLiteCommand cmd = new SQLiteCommand(query, connection);
+                    SQLiteDataAdapter SDA = new SQLiteDataAdapter(cmd);
+                    DataTable dt = new DataTable("BillsTypes");
+                    SDA.Fill(dt);
+                    cmbScoreHome.ItemsSource = dt.DefaultView;
+                    cmbScoreHome.DisplayMemberPath = "NameType";
+                    cmbScoreHome.SelectedValuePath = "ID";
+                    //cmbScoreHome.SelectedIndex = 0;
+                    cmbScoreHome.SelectedValue = 1;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка" + ex);
+            }
+        }
+
+        public void LoadHome() //Загрузка счетов клиента
+        {
+            try
+            {
+                using (SQLiteConnection connection = new SQLiteConnection(SqlDBConnection.connection))
+                {
+                    
                     txtlogin.Text = Saver.Login;
                     connection.Open();
                     string query = $@"SELECT count (ID) FROM Bills WHERE IDAccount = {Saver.IDAcc}";
@@ -55,10 +103,30 @@ namespace ITBankBigFarm.Windows
                         txtnumberscore.Text = "Null";
                         txtmoney.Text = "Null";
                         txttypescope.Text = "Null";
-                       // MessageBox.Show("Login занят", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                        cmbScoreHome.Visibility = Visibility.Hidden;
+                        // MessageBox.Show("Login занят", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
 
                     }
+                    else
+                    {
 
+                      bool resultClass = int.TryParse(cmbScoreHome.SelectedValue.ToString(), out int idScoreHome);
+                        query = $@"SELECT Bills.ID, NameType, DataOpen, Money FROM Bills 
+                                JOIN BillsTypes on Bills.IDType = BillsTypes.ID
+                                WHERE IDAccount = {Saver.IDAcc} and Bills.IDType = {idScoreHome}";
+                        cmd = new SQLiteCommand(query, connection);
+                        SQLiteDataReader dr = null;
+                        dr = cmd.ExecuteReader();
+                        while (dr.Read())
+                        {
+                            txtnumberscore.Text = dr["ID"].ToString();
+                            txtmoney.Text = dr["Money"].ToString();
+                            txttypescope.Text = dr["NameType"].ToString();
+                            //Saver.IDAcc = dr["ID"].ToString();
+                            //  Saver.IDAcc = countID;
+                        }
+                    }
+                    connection.Close();
                 }
 
 
@@ -119,7 +187,6 @@ namespace ITBankBigFarm.Windows
             {
                 MessageBox.Show("Ошибка" + ex);
             }
-
         }
         private void cmbFace_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -215,6 +282,12 @@ namespace ITBankBigFarm.Windows
                 image.IsEnabled = false;
             }
         }
+
+        private void cmbScoreHome_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            LoadHome();
+        }
+
         public void Checker() //Для проверки
         {
             try
@@ -300,7 +373,7 @@ namespace ITBankBigFarm.Windows
                     SQLiteCommand cmd = new SQLiteCommand(query, connection);
                     // cmd3.Parameters.AddWithValue("IDBrand", IdKab);
                     int countfiz = Convert.ToInt32(cmd.ExecuteScalar());
-                    query = $@"SELECT COUNT(1) FROM LegalPerson WHERE ID = {Saver.IDAcc};"; //Получение данных из таблицы Физ.лица
+                    query = $@"SELECT COUNT(1) FROM LegalPerson WHERE ID = {Saver.IDAcc};"; //Получение данных из таблицы Юр.лица
                     SQLiteCommand cmd1 = new SQLiteCommand(query, connection);
                     int countyur = Convert.ToInt32(cmd1.ExecuteScalar());
                     if (countfiz == 1 || countyur == 1)

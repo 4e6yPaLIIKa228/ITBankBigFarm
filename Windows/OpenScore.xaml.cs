@@ -37,7 +37,8 @@ namespace ITBankBigFarm.Windows
                 using (SQLiteConnection connection = new SQLiteConnection(SqlDBConnection.connection))
                 {
                     connection.Open();
-                    string query = $@"SELECT NameType,ID FROM BillsTypes WHERE IDFace = 1";
+                    //string query = $@"SELECT NameType,ID FROM BillsTypes WHERE IDFace = 1";
+                    string query = $@"SELECT NameType,ID FROM BillsTypes";
                     SQLiteCommand cmd = new SQLiteCommand(query, connection);
                     SQLiteDataAdapter SDA = new SQLiteDataAdapter(cmd);
                     DataTable dt = new DataTable("BillsTypes");
@@ -102,19 +103,27 @@ namespace ITBankBigFarm.Windows
                 {
                     using (SQLiteConnection connection = new SQLiteConnection(SqlDBConnection.connection))
                     {
-                        MessageBox.Show("111");
                         connection.Open();
                         bool resultClass = int.TryParse(txtfill.SelectedValue.ToString(), out int idFils);
                         bool resultClass2 = int.TryParse(txtscore.SelectedValue.ToString(), out int idScore);
-                        Open();
-
-                        // int.TryParse(txtname.SelectedValue.ToString(), out int idScore);
-
-                        string query = $@"INSERT INTO Bills ('IDFilial','IDType','IDAccount','DataOpen','Money') VALUES ({idFils},{idScore},{Saver.IDAcc},{Saver.Date},{1000})"; //Получение данных из таблицы Девайсы
+                        string query = $@"SELECT  COUNT(1) FROM Bills WHERE IDAccount = {Saver.IDAcc} AND IDType = {idScore}"; //Получение данных из таблицы Девайсы
                         SQLiteCommand cmd = new SQLiteCommand(query, connection);
-                        cmd.ExecuteNonQuery();
-                        connection.Close();
-                        MessageBox.Show("Счет Открыт");
+                        int count = Convert.ToInt32(cmd.ExecuteScalar());
+                        MessageBox.Show("111");
+                        if (count != 1)
+                        {
+                            Open();
+                            // int.TryParse(txtname.SelectedValue.ToString(), out int idScore);
+                            query = $@"INSERT INTO Bills ('IDFilial','IDType','IDAccount','DataOpen','Money') VALUES ({idFils},{idScore},{Saver.IDAcc},'{Saver.Date}',1000)"; //Получение данных из таблицы Девайсы
+                            cmd = new SQLiteCommand(query, connection);
+                            cmd.ExecuteNonQuery();
+                            connection.Close();
+                            MessageBox.Show("Счет Открыт");
+                        }
+                        else
+                        {
+                            MessageBox.Show("У вас уже открыт данный вид счета!");
+                        }   
                     }
                 }
                 catch (Exception ex)

@@ -225,7 +225,7 @@
             <Image x:Name="imgclouse" HorizontalAlignment="Left" Height="50" Margin="251.333,4,0,0" VerticalAlignment="Top" Width="50" Source="/ITBankBigFarm;component/Img/free-icon-cross-rounded-outline-54822.png" MouseLeftButtonDown="imgclouse_MouseLeftButtonDown"/>
             <TextBlock HorizontalAlignment="Left" Height="32" Margin="10,17.333,0,0" TextWrapping="Wrap" Text="Login:" VerticalAlignment="Top" Width="56" FontSize="18" FontWeight="Bold"/>
         </Grid>
-        <Grid x:Name="Home" Margin="152,17.333,34,75.5" d:IsHidden="True">
+        <Grid x:Name="Home" Margin="152,17.333,34,75.5">
             <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" VerticalAlignment="Top" Width="210.666" FontSize="18" FontWeight="Bold" Foreground="#f1d3bc" RenderTransformOrigin="0.5,0.5">
                 <TextBlock.RenderTransform>
                     <TransformGroup>
@@ -265,7 +265,7 @@
                         </TransformGroup>
                     </Rectangle.RenderTransform>
                 </Rectangle>
-                <TextBlock x:Name="txttypescope" HorizontalAlignment="Left" Height="27.334" Margin="309.667,6.819,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="96.334" FontWeight="Bold" Foreground="#f1d3bc" FontSize="18" RenderTransformOrigin="0.5,0.5" >
+                <TextBlock x:Name="txttypescope" HorizontalAlignment="Left" Height="27" Margin="310,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="219" FontWeight="Bold" Foreground="#f1d3bc" FontSize="18" RenderTransformOrigin="0.5,0.5" >
                     <TextBlock.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -285,7 +285,7 @@
                         </TransformGroup>
                     </TextBlock.RenderTransform>
                 </TextBlock>
-                <TextBlock x:Name="txtnumberscore" HorizontalAlignment="Left" Height="27.334" Margin="132.667,6.819,0,0" TextWrapping="Wrap" Text="000001" VerticalAlignment="Top" Width="62.666" FontWeight="Bold" TextAlignment="Center" Foreground="#f1d3bc" FontSize="18" RenderTransformOrigin="0.5,0.5">
+                <TextBlock x:Name="txtnumberscore" HorizontalAlignment="Left" Height="27" Margin="133,7,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="17" FontWeight="Bold" TextAlignment="Center" Foreground="#f1d3bc" FontSize="18" RenderTransformOrigin="0.5,0.5">
                     <TextBlock.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -295,7 +295,7 @@
                         </TransformGroup>
                     </TextBlock.RenderTransform>
                 </TextBlock>
-                <TextBlock x:Name="txtmoney" HorizontalAlignment="Left" Height="88.307" Margin="0,63.193,0,0" TextWrapping="Wrap" Text="₽ 6666.00" VerticalAlignment="Top" Width="714" FontWeight="Bold" Foreground="#f1d3bc" FontSize="65" TextAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                <TextBlock x:Name="txtmoney" HorizontalAlignment="Left" Height="89" Margin="197,63,0,0" TextWrapping="Wrap" Text="6666" VerticalAlignment="Top" Width="507" FontWeight="Bold" Foreground="#f1d3bc" FontSize="65" RenderTransformOrigin="0.5,0.5">
                     <TextBlock.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -325,11 +325,22 @@
                         </TransformGroup>
                     </TextBlock.RenderTransform>
                 </TextBlock>
+                <TextBlock x:Name="txtFalyte" HorizontalAlignment="Left" Height="89" Margin="123,63,0,0" TextWrapping="Wrap" Text="₽" VerticalAlignment="Top" Width="69" FontWeight="Bold" Foreground="#f1d3bc" FontSize="65" TextAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform>
+                </TextBlock>
 
             </Grid>
+            <hc:ComboBox x:Name="cmbScoreHome" hc:InfoElement.Placeholder="Тип счета" HorizontalAlignment="Left" Height="45" Margin="414,150.167,0,0" VerticalAlignment="Top" Width="300" SelectionChanged="cmbScoreHome_SelectionChanged"/>
 
         </Grid>
-        <Grid x:Name="Profile" Margin="120,17.333,125,48.5">
+        <Grid x:Name="Profile" Margin="120,17.333,125,48.5" d:IsHidden="True">
             <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" VerticalAlignment="Top" Width="210.666" FontSize="22" FontWeight="Bold" Foreground="#f1d3bc" RenderTransformOrigin="0.5,0.5" Margin="82,0,0,0" Text="Ваш профиль" TextAlignment="Center">
                 <TextBlock.RenderTransform>
                     <TransformGroup>
