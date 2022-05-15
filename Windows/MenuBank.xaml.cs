@@ -77,7 +77,7 @@ namespace ITBankBigFarm.Windows
                     cmbScoreHome.DisplayMemberPath = "NameType";
                     cmbScoreHome.SelectedValuePath = "ID";
                     //cmbScoreHome.SelectedIndex = 0;
-                    cmbScoreHome.SelectedValue = 1;
+                    
                 }
             }
             catch (Exception ex)
@@ -106,26 +106,49 @@ namespace ITBankBigFarm.Windows
                         cmbScoreHome.Visibility = Visibility.Hidden;
                         // MessageBox.Show("Login занят", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
 
-                    }
-                    else
-                    {
-
-                      bool resultClass = int.TryParse(cmbScoreHome.SelectedValue.ToString(), out int idScoreHome);
-                        query = $@"SELECT Bills.ID, NameType, DataOpen, Money FROM Bills 
-                                JOIN BillsTypes on Bills.IDType = BillsTypes.ID
-                                WHERE IDAccount = {Saver.IDAcc} and Bills.IDType = {idScoreHome}";
-                        cmd = new SQLiteCommand(query, connection);
-                        SQLiteDataReader dr = null;
-                        dr = cmd.ExecuteReader();
-                        while (dr.Read())
+                    }                    
+                        if (cmbScoreHome.SelectedIndex == -1)
                         {
-                            txtnumberscore.Text = dr["ID"].ToString();
-                            txtmoney.Text = dr["Money"].ToString();
-                            txttypescope.Text = dr["NameType"].ToString();
-                            //Saver.IDAcc = dr["ID"].ToString();
-                            //  Saver.IDAcc = countID;
-                        }
+                        //buttonopenscore.Visibility = Visibility.Hidden;
+                        btnactions.Visibility = Visibility.Hidden;
+                        btncontrol.Visibility = Visibility.Hidden;
+                        grid1.Visibility = Visibility.Hidden;
                     }
+                        else
+                        {
+                        // buttonopenscore.Visibility = Visibility.Visible;
+                         btnactions.Visibility = Visibility.Visible;
+                         btncontrol.Visibility = Visibility.Visible;
+                         grid1.Visibility = Visibility.Visible;
+                    }
+                    //    string idcomb;
+                    //    query = $@"SELECT BillsTypes.ID, BillsTypes.NameType FROM Bills 
+                    //                  JOIN BillsTypes on Bills.IDType = BillsTypes.ID
+                    //                  WHERE IDAccount = {Saver.IDAcc}";
+                    //    cmd = new SQLiteCommand(query, connection);
+                    //    SQLiteDataReader dr = null;
+                    //    dr = cmd.ExecuteReader();
+                    //    dr.Read();
+                        
+                    //        idcomb = dr["ID"].ToString();
+                    //        Saver.IDTypeScore = Convert.ToInt32(idcomb);
+                        
+                    //    cmbScoreHome.SelectedValue = Saver.IDTypeScore;
+                    //    bool resultClass = int.TryParse(cmbScoreHome.SelectedValue.ToString(), out Saver.IDTypeScore);
+                    //    query = $@"SELECT Bills.ID, NameType, DataOpen, Money FROM Bills 
+                    //            JOIN BillsTypes on Bills.IDType = BillsTypes.ID
+                    //            WHERE IDAccount = {Saver.IDAcc} and Bills.IDType = {Saver.IDTypeScore}";
+                    //    cmd = new SQLiteCommand(query, connection);
+                    //    dr = cmd.ExecuteReader();
+                    //    while (dr.Read())
+                    //    {
+                    //        txtnumberscore.Text = dr["ID"].ToString();
+                    //        txtmoney.Text = dr["Money"].ToString();
+                    //        txttypescope.Text = dr["NameType"].ToString();
+                    //        //Saver.IDAcc = dr["ID"].ToString();
+                    //        //  Saver.IDAcc = countID;
+                    //    }
+                    
                     connection.Close();
                 }
 
@@ -138,32 +161,35 @@ namespace ITBankBigFarm.Windows
 
         }
 
-        private void imageProf_MouseLeftButtonUp(object sender, MouseButtonEventArgs e) //Иконка профиля
+        public void LoadScore()
         {
-            if (ClickProf != 1)
+            try
             {
-                ClickProf = 1;
-                textBlock5.Foreground = new SolidColorBrush(color: (Color)ColorConverter.ConvertFromString("#f1d3bc"));
-                textBlock6.Foreground = new SolidColorBrush(color: (Color)ColorConverter.ConvertFromString("Black"));
-                FuzPerson.Visibility = Visibility.Hidden;
-                btnsave.Visibility = Visibility.Hidden;
-                btneddit.Visibility = Visibility.Hidden;
-                Profile.Visibility = Visibility.Visible;
-                Home.Visibility = Visibility.Hidden;
-                ClickHome = 0;
-                image.IsEnabled = true;
+                using (SQLiteConnection connection = new SQLiteConnection(SqlDBConnection.connection))
+                {
+                    connection.Open();
+                    bool resultClass = int.TryParse(cmbScoreHome.SelectedValue.ToString(), out Saver.IDTypeScore);
+                    string query = $@"SELECT Bills.ID, NameType, DataOpen, Money FROM Bills 
+                                JOIN BillsTypes on Bills.IDType = BillsTypes.ID
+                                WHERE IDAccount = {Saver.IDAcc} and Bills.IDType = {Saver.IDTypeScore}";
+                    SQLiteCommand cmd = new SQLiteCommand(query, connection);
+                    SQLiteDataReader dr = null;
+                    cmbScoreHome.SelectedValue = Saver.IDTypeScore;
+                    dr = cmd.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        txtnumberscore.Text = dr["ID"].ToString();
+                        txtmoney.Text = dr["Money"].ToString();
+                        txttypescope.Text = dr["NameType"].ToString();
+                        //Saver.IDAcc = dr["ID"].ToString();
+                        //  Saver.IDAcc = countID;
+                    }
+                }
             }
-            else
+            catch (Exception ex)
             {
-                imageProf.IsEnabled = false;
+                MessageBox.Show("Ошибка" + ex);
             }
-        }
-
-        private void Image_PreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
-        {
-            StartLocal Aftoriz = new StartLocal();
-            this.Close();
-            Aftoriz.ShowDialog();
         }
 
         public void LoadProfelComb() //данные для комбобокса
@@ -258,9 +284,8 @@ namespace ITBankBigFarm.Windows
                     MessageBox.Show("Ошибка" + ex);
            }
         }
-        private void image_MouseLeftButtonUp(object sender, MouseButtonEventArgs e) //Главаня Иконка
+        private void image_MouseEnter(object sender, MouseEventArgs e)
         {
-          
             if (ClickHome != 1)
             {
                 ClickHome = 1;
@@ -283,11 +308,49 @@ namespace ITBankBigFarm.Windows
             }
         }
 
-        private void cmbScoreHome_SelectionChanged(object sender, SelectionChangedEventArgs e)
+
+        private void imageProf_MouseEnter(object sender, MouseEventArgs e)
         {
-            LoadHome();
+           
+            if (ClickProf != 1)
+            {
+                ClickProf = 1;
+                textBlock5.Foreground = new SolidColorBrush(color: (Color)ColorConverter.ConvertFromString("#f1d3bc"));
+                textBlock6.Foreground = new SolidColorBrush(color: (Color)ColorConverter.ConvertFromString("Black"));
+                FuzPerson.Visibility = Visibility.Hidden;
+                btnsave.Visibility = Visibility.Hidden;
+                btneddit.Visibility = Visibility.Hidden;
+                Profile.Visibility = Visibility.Visible;
+                Home.Visibility = Visibility.Hidden;
+                ClickHome = 0;
+                image.IsEnabled = true;
+            }
+            else
+            {
+                imageProf.IsEnabled = false;
+            }
         }
 
+        private void cmbScoreHome_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (cmbScoreHome.SelectedIndex != -1)
+            {
+                LoadScore();
+                LoadHome();
+            }
+        }
+
+        private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            this.DragMove();
+        }
+
+        private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            StartLocal Aftoriz = new StartLocal();
+            this.Close();
+            Aftoriz.ShowDialog();
+        }
         public void Checker() //Для проверки
         {
             try
@@ -359,8 +422,6 @@ namespace ITBankBigFarm.Windows
                     MessageBox.Show("2222");
                 }
 
-
-
         }
         private void buttonopenscore_Click(object sender, RoutedEventArgs e)
         {
@@ -402,6 +463,14 @@ namespace ITBankBigFarm.Windows
             {
                 MessageBox.Show("Ошибка" + ex);
             }
+        }
+
+
+        private void btnactions_Click(object sender, RoutedEventArgs e)
+        {
+            TranslationMoney Aftoriz = new TranslationMoney();
+            this.Close();
+            Aftoriz.ShowDialog();
         }
     }
 }

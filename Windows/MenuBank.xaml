@@ -6,7 +6,7 @@
         xmlns:hc="https://handyorg.github.io/handycontrol"
         xmlns:local="clr-namespace:ITBankBigFarm.Windows"
         mc:Ignorable="d"
-        Title="MenuBank" Height="500" Width="900" AllowsTransparency="True" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="MenuBank" Height="500" Width="900" AllowsTransparency="True" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" MouseLeftButtonDown="Window_MouseLeftButtonDown">
     <Window.Resources>
         <Storyboard x:Key="Home-Profile">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="textBlock">
@@ -209,10 +209,10 @@
         <Rectangle Fill="#262f34" HorizontalAlignment="Left" Height="500" VerticalAlignment="Top"  Width="900"/>
         <Grid x:Name="PanelLeft" Margin="0,0,780,0">
             <Rectangle Fill="#f34a4a" HorizontalAlignment="Left" Height="500" VerticalAlignment="Top" Width="120"/>
-            <Image x:Name="image" HorizontalAlignment="Left" Height="50" Margin="30,102.5,0,0" VerticalAlignment="Top" Width="50" Source="/ITBankBigFarm;component/Img/premium-icon-house-4188482.png" MouseLeftButtonUp="image_MouseLeftButtonUp"/>
+            <Image x:Name="image" HorizontalAlignment="Left" Height="50" Margin="30,102.5,0,0" VerticalAlignment="Top" Width="50" Source="/ITBankBigFarm;component/Img/premium-icon-house-4188482.png" MouseEnter="image_MouseEnter"/>
             <Image HorizontalAlignment="Left" Height="50" Margin="30.083,203.166,0,0" VerticalAlignment="Top" Width="50" Source="/ITBankBigFarm;component/Img/premium-icon-settings-3405519.png"/>
-            <Image x:Name="imageProf" HorizontalAlignment="Left" Height="50" Margin="30.083,290.333,0,0" VerticalAlignment="Top" Width="50" Source="/ITBankBigFarm;component/Img/free-icon-profile-3462240.png"  MouseLeftButtonUp="imageProf_MouseLeftButtonUp"/>
-            <Image HorizontalAlignment="Left" Height="50" Margin="30,416.333,0,0" VerticalAlignment="Top" Width="50" Source="/ITBankBigFarm;component/Img/free-icon-sign-out-876779.png" PreviewMouseLeftButtonUp="Image_PreviewMouseLeftButtonUp"/>
+            <Image x:Name="imageProf" HorizontalAlignment="Left" Height="50" Margin="30.083,290.333,0,0" VerticalAlignment="Top" Width="50" Source="/ITBankBigFarm;component/Img/free-icon-profile-3462240.png" MouseEnter="imageProf_MouseEnter"/>
+            <Image HorizontalAlignment="Left" Height="50" Margin="30,416.333,0,0" VerticalAlignment="Top" Width="50" Source="/ITBankBigFarm;component/Img/free-icon-sign-out-876779.png" MouseLeftButtonDown="Image_MouseLeftButtonDown"/>
             <Image HorizontalAlignment="Left" Height="50" Margin="30,10,0,0" VerticalAlignment="Top" Width="50" Source="/ITBankBigFarm;component/Img/premium-icon-ruble-4612322.png"/>
             <TextBlock x:Name="textBlock7" HorizontalAlignment="Left" Height="18.667" Margin="5.5,258.166,0,0" TextWrapping="Wrap" Text="Настройки" VerticalAlignment="Top" Width="99" FontWeight="Bold" TextAlignment="Center"/>
             <TextBlock x:Name="textBlock6" HorizontalAlignment="Left" Height="18.667" Margin="5.5,157.5,0,0" TextWrapping="Wrap" Text="Главная" VerticalAlignment="Top" Width="99" FontWeight="Bold" TextAlignment="Center" Foreground="#f1d3bc"/>
@@ -337,7 +337,27 @@
                 </TextBlock>
 
             </Grid>
-            <hc:ComboBox x:Name="cmbScoreHome" hc:InfoElement.Placeholder="Тип счета" HorizontalAlignment="Left" Height="45" Margin="414,150.167,0,0" VerticalAlignment="Top" Width="300" SelectionChanged="cmbScoreHome_SelectionChanged"/>
+            <hc:ComboBox x:Name="cmbScoreHome" hc:InfoElement.Placeholder="Тип счета" HorizontalAlignment="Left" Height="45" Margin="0,105,0,0" VerticalAlignment="Top" Width="300" SelectionChanged="cmbScoreHome_SelectionChanged"/>
+            <Button x:Name="btncontrol" Content="Управление" HorizontalAlignment="Left" Height="45" Margin="533,140,0,0" VerticalAlignment="Top" Width="181" Background="#f34a4a" Foreground="#f1d3bc" FontWeight="Bold" FontSize="16" RenderTransformOrigin="0.5,0.5">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Button x:Name="btnactions" Content="Перевести" HorizontalAlignment="Left" Height="45" Margin="347,140,0,0" VerticalAlignment="Top" Width="181" Background="#f34a4a" Foreground="#f1d3bc" FontWeight="Bold" FontSize="16" RenderTransformOrigin="0.5,0.5" Click="btnactions_Click">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
 
         </Grid>
         <Grid x:Name="Profile" Margin="120,17.333,125,48.5" d:IsHidden="True">

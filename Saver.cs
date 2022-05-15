@@ -10,5 +10,7 @@ namespace ITBankBigFarm
     {
         //public static int IDAcc;
         public static string Login, IDAcc,Date;
+        public static int IDTypeScore=1;
     }
 }
+ 
