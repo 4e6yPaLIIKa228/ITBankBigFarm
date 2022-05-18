@@ -48,6 +48,7 @@ namespace ITBankBigFarm.Windows
                using (SQLiteConnection connection = new SQLiteConnection(SqlDBConnection.connection))
                 {
                     InfoIP();
+                    connection.Open();
                     string query = $@"UPDATE Account SET IPLast=@IPLast WHERE Login=@Login;";
                     SQLiteCommand cmd = new SQLiteCommand(query, connection);
                     cmd.Parameters.AddWithValue("@IPLast", IPLast);
@@ -193,26 +194,22 @@ namespace ITBankBigFarm.Windows
                             }                                
                             if (koll != "3")
                             {
-                               int kolint =  Convert.ToInt32(koll);
+                                int kolint =  Convert.ToInt32(koll);                              
+                                MessageBox.Show(dateOpen);
                               
-                               MessageBox.Show(dateOpen);
-                               //kolint = 0;
-                               kolint++;
-                               query = $@"UPDATE Proverka SET Kolltry=@Kolltry,TimeBegin=@TimeBegin,TimeEnd=@TimeEnd WHERE Login=@Login;";
-                               cmd = new SQLiteCommand(query, connection);
-                                // DateTime s1 = DateTime.Parse(dateOpen);
-                                //DateTime s2 = DateTime.Parse("0:01");
-                                // DateTime s3 = s1.TimeOfDay + s2.TimeOfDay;
+                                kolint++;
+                                query = $@"UPDATE Proverka SET Kolltry=@Kolltry,TimeBegin=@TimeBegin,TimeEnd=@TimeEnd WHERE Login=@Login;";
+                                cmd = new SQLiteCommand(query, connection);                                
                                 string timeban = "0:01";
                                 TimeSpan s1 = TimeSpan.Parse("0:01");
                                 TimeSpan s3 = s1 + s2;
-                               string times3 = s3.ToString("hh':'mm");
-                               cmd.Parameters.AddWithValue("@Kolltry", kolint);
-                               cmd.Parameters.AddWithValue("@TimeBegin", dateOpen);
-                               cmd.Parameters.AddWithValue("@TimeEnd", times3);
-                               cmd.Parameters.AddWithValue("@Login", txtlog.Text.ToLower());
-                               cmd.ExecuteReader();
-                               MessageBox.Show("Неверный логин или пароль");
+                                string times3 = s3.ToString("hh':'mm");
+                                cmd.Parameters.AddWithValue("@Kolltry", kolint);
+                                cmd.Parameters.AddWithValue("@TimeBegin", dateOpen);
+                                cmd.Parameters.AddWithValue("@TimeEnd", times3);
+                                cmd.Parameters.AddWithValue("@Login", txtlog.Text.ToLower());
+                                cmd.ExecuteReader();
+                                MessageBox.Show("Неверный логин или пароль");
                             }
                         }
                     }
@@ -366,6 +363,13 @@ namespace ITBankBigFarm.Windows
                                 cmd.Parameters.AddWithValue("@IPReg", IPReg);
                                 cmd.Parameters.AddWithValue("@IPLast", IPLast);
                                 cmd.Parameters.AddWithValue("@IDStatus", 2);
+                                cmd.ExecuteNonQuery();
+                                query = $@"INSERT INTO Proverka ('TimeBegin','TimeEnd','Kolltry',Login) VALUES (@TimeBegin,@TimeEnd,@Kolltry,@Login)";
+                                cmd = new SQLiteCommand(query, connection);
+                                cmd.Parameters.AddWithValue("@TimeBegin","00:00");
+                                cmd.Parameters.AddWithValue("@TimeEnd", "00:00");
+                                cmd.Parameters.AddWithValue("@Kolltry", "0");
+                                cmd.Parameters.AddWithValue("@Login", txtlogreg.Text.ToLower());
                                 cmd.ExecuteNonQuery();
                                 connection.Close();
                                 MessageBox.Show("Аккаунт зарегистрирован.", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
