@@ -457,8 +457,8 @@
                 <hc:TextBox x:Name="txtfame" hc:InfoElement.Placeholder="Фамилия" HorizontalAlignment="Left" Height="36.5" Margin="205.5,0,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="300"/>
                 <hc:TextBox x:Name="txtname" hc:InfoElement.Placeholder="Имя" HorizontalAlignment="Left" Height="36.5" Margin="205.5,50,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="300"/>
                 <hc:TextBox x:Name="txtOtchest" hc:InfoElement.Placeholder="Отчество" HorizontalAlignment="Left" Height="36.5" Margin="205.5,100,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="300"/>
-                <hc:TextBox x:Name="txtserpass" hc:InfoElement.Placeholder="Серия паспорта" HorizontalAlignment="Left" Height="36.5" Margin="205.5,200,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="300"/>
-                <hc:TextBox x:Name="txtnumberpas" hc:InfoElement.Placeholder="Номер паспорта" HorizontalAlignment="Left" Height="36.5" Margin="205.5,250,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="300"/>
+                <hc:TextBox x:Name="txtserpass" hc:InfoElement.Placeholder="Серия паспорта" MaxLength="4" HorizontalAlignment="Left" Height="36.5" Margin="205.5,200,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="300"/>
+                <hc:TextBox x:Name="txtnumberpas" hc:InfoElement.Placeholder="Номер паспорта" MaxLength="6" HorizontalAlignment="Left" Height="36.5" Margin="205.5,250,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="300"/>
                 <hc:ComboBox x:Name="cmbPols" hc:InfoElement.Placeholder="Пол" HorizontalAlignment="Left" Height="36.5" Margin="205.5,150,0,0" VerticalAlignment="Top"  Width="300"/>
             </Grid>
             <Button x:Name="btnsave" Content="Сохранить" HorizontalAlignment="Left" Height="36" Margin="320,428.53,0,-30.363" VerticalAlignment="Top" Width="131" Click="btnsave_Click" RenderTransformOrigin="0.5,0.5" >

@@ -28,7 +28,6 @@ namespace ITBankBigFarm.Windows
         {
             InitializeComponent();
             LoadScore();
-
         }
         public void LoadScore() //данные для комбобокса
         {
@@ -83,7 +82,7 @@ namespace ITBankBigFarm.Windows
         public void Open()
         {
             Saver.Date = DateTime.Now.ToString("dd/MM/yyyy");
-             MessageBox.Show(Saver.Date);
+            MessageBox.Show(Saver.Date);
             //DispatcherTimer timer = new DispatcherTimer(TimeSpan.FromSeconds(1), DispatcherPriority.Normal, (object s, EventArgs ev) =>
             //{
             //    Saver.Date = DateTime.Now.ToString("yyyy/MM/dd");

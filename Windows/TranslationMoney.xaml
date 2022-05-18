@@ -6,17 +6,19 @@
         xmlns:hc="https://handyorg.github.io/handycontrol" 
         xmlns:local="clr-namespace:ITBankBigFarm.Windows"
         mc:Ignorable="d"
-       Title="OpenScore"  Height="400" Width="381.5" AllowsTransparency="True" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+       Title="OpenScore"  Height="307" Width="381.5" AllowsTransparency="True" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" MouseLeftButtonDown="Window_MouseLeftButtonDown">
     <Grid>
-        <Rectangle Fill="#262f34" HorizontalAlignment="Left" Height="400" VerticalAlignment="Top" Width="382"/>
+        <Rectangle Fill="#262f34" HorizontalAlignment="Left" Height="308" VerticalAlignment="Top" Width="382"/>
         <TextBlock HorizontalAlignment="Left" Margin="67,21,0,0" TextWrapping="Wrap" FontSize="22" FontWeight="Bold" Foreground="#f1d3bc" Text="Перевод на счет" VerticalAlignment="Top" Width="190" TextAlignment="Center"/>
         <TextBlock HorizontalAlignment="Left" Margin="20,71,0,0" TextWrapping="Wrap" FontSize="22" FontWeight="Bold" Foreground="#f1d3bc" Text="Ваш счет" VerticalAlignment="Top" Width="181" TextAlignment="Center"/>
         <TextBlock HorizontalAlignment="Left" Margin="20,111,0,0" TextWrapping="Wrap" FontSize="22" FontWeight="Bold" Foreground="#f1d3bc" Text="Тип счета" VerticalAlignment="Top" Width="181" TextAlignment="Center"/>
-        <TextBlock HorizontalAlignment="Left" Margin="20,152,0,0" TextWrapping="Wrap" FontSize="22" FontWeight="Bold" Foreground="#f1d3bc" Text="Счет получателя" VerticalAlignment="Top" Width="181" TextAlignment="Center"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="206,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="154"/>
+        <TextBlock HorizontalAlignment="Left" Margin="20,153,0,0" TextWrapping="Wrap" FontSize="22" FontWeight="Bold" Foreground="#f1d3bc" Text="Счет получателя" VerticalAlignment="Top" Width="181" TextAlignment="Center"/>
+        <TextBox x:Name="TxtScoreyou" HorizontalAlignment="Left" Height="23" Margin="206,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="154"/>
         <hc:ComboBox x:Name="cmbScoreTranslt" hc:InfoElement.Placeholder="Тип счета" HorizontalAlignment="Left" Height="23" Margin="206,110,0,0"  VerticalAlignment="Top" Width="154"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="206,152,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="154"/>
-        <Button Content="Отправить" HorizontalAlignment="Left" Margin="127,210,0,0" VerticalAlignment="Top" Height="35" Width="130" Background="#f34a4a" Foreground="#f1d3bc"/>
+        <TextBox x:Name="TxtFriend" HorizontalAlignment="Left" Height="23" Margin="206,153,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="154" PreviewTextInput="TxtFriend_PreviewTextInput"/>
+        <Button x:Name="btnotpravka" Content="Отправить" HorizontalAlignment="Left" Margin="127,262,0,0" VerticalAlignment="Top" Height="35" Width="130" Background="#f34a4a" Foreground="#f1d3bc" Click="btnotpravka_Click"/>
         <Image x:Name="imgback" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="42" Source="../Img/left-arrow.png" MouseLeftButtonDown="imgback_MouseLeftButtonDown" />
+        <TextBlock HorizontalAlignment="Left" Margin="20,195,0,0" TextWrapping="Wrap" FontSize="22" FontWeight="Bold" Foreground="#f1d3bc" Text="Сумма" VerticalAlignment="Top" Width="181" TextAlignment="Center"/>
+        <hc:TextBox hc:InfoElement.Placeholder="Введите сумму" x:Name="TxtMoney" HorizontalAlignment="Left" Height="23" Margin="206,195,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="154" PreviewTextInput="TxtMoney_PreviewTextInput"/>
     </Grid>
 </Window>

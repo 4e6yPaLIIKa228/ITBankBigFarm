@@ -63,7 +63,7 @@
                     <TranslateTransform/>
                 </TransformGroup>
             </TextBlock.RenderTransform></TextBlock>
-        <Image x:Name="imgclouse" HorizontalAlignment="Left" Height="50" Margin="10,10,0,0" VerticalAlignment="Top" Width="50" Source="/ITBankBigFarm;component/Img/free-icon-cross-rounded-outline-54822.png" Grid.ColumnSpan="2" OpacityMask="Black" MouseLeftButtonUp="imgclouse_MouseLeftButtonUp"/>
+        <Image x:Name="imgclouse" HorizontalAlignment="Left" Height="50" Margin="10,10,0,0" VerticalAlignment="Top" Width="50" Source="../Img/left-arrow.png" Grid.ColumnSpan="2" OpacityMask="Black" MouseLeftButtonUp="imgclouse_MouseLeftButtonUp"/>
 
     </Grid>
 </Window>

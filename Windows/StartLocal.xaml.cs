@@ -23,7 +23,7 @@ namespace ITBankBigFarm.Windows
     /// </summary>
     public partial class StartLocal : Window
     {
-       string  IPReg, IPLast;
+       string  IPReg, IPLast, koll;
         int provekraLogin = 0;
         public StartLocal()
         {
@@ -41,6 +41,45 @@ namespace ITBankBigFarm.Windows
             // MessageBox.Show(IPReg.ToString());
         }
 
+        public void GoHome()
+        {
+            try
+            {
+               using (SQLiteConnection connection = new SQLiteConnection(SqlDBConnection.connection))
+                {
+                    InfoIP();
+                    string query = $@"UPDATE Account SET IPLast=@IPLast WHERE Login=@Login;";
+                    SQLiteCommand cmd = new SQLiteCommand(query, connection);
+                    cmd.Parameters.AddWithValue("@IPLast", IPLast);
+                    cmd.Parameters.AddWithValue("@Login", txtlog.Text.ToLower());
+                    cmd.ExecuteReader();
+                    string smaltxt = txtlog.Text.ToLower();
+                    query = $@"SELECT ID FROM Account WHERE Login={smaltxt}";
+                    // cmd.Parameters.AddWithValue("@Login", txtlog.Text.ToLower());
+                    // int countID = Convert.ToInt32(cmd.ExecuteScalar());
+                    Saver.Login = txtlog.Text.ToLower();
+                    SQLiteDataReader dr = null;
+                    SQLiteCommand cmd1 = new SQLiteCommand(query, connection);
+                    dr = cmd1.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        Saver.IDAcc = dr["ID"].ToString();
+                        //  Saver.IDAcc = countID;
+                    }
+
+                    connection.Close();
+                    MessageBox.Show("Добро пожаловать! " + $@"{txtlog.Text}");
+                    MenuBank Aftoriz = new MenuBank();
+                    this.Close();
+                    Aftoriz.ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка" + ex);
+            }
+        }
+
         private void btnavtoriz_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -53,12 +92,34 @@ namespace ITBankBigFarm.Windows
                         MessageBox.Show("1");
                         var Pass = SimpleComand.GetHash(txtpass.Password);
                         connection.Open();
-                        string query = $@"SELECT  COUNT(1) FROM Account WHERE Login=@Login AND Pass=@Pass";
+                        string query = $@"SELECT  COUNT(1) FROM Account WHERE Login=@Login AND Pass=@Pass and IDStatus != 3";
                         SQLiteCommand cmd = new SQLiteCommand(query, connection);
                         string LoginLower = txtlog.Text.ToLower();
                         cmd.Parameters.AddWithValue("@Login", txtlog.Text.ToLower());
                         cmd.Parameters.AddWithValue("@Pass", Pass);
                         int count = Convert.ToInt32(cmd.ExecuteScalar());
+                        query = $@"SELECT  COUNT(1) FROM Account WHERE Login = {txtlog.Text.ToLower()} and Pass != @Pass";
+                        cmd = new SQLiteCommand(query, connection);
+                        cmd.Parameters.AddWithValue("@Pass", Pass);
+                        int proverka = Convert.ToInt32(cmd.ExecuteScalar());
+                        query = $@"SELECT  COUNT(1) FROM Account WHERE Login = {txtlog.Text.ToLower()} and Pass = @Pass and IDStatus = 3";
+                        cmd = new SQLiteCommand(query, connection);
+                        cmd.Parameters.AddWithValue("@Pass", Pass);
+                        int proverkanapazban = Convert.ToInt32(cmd.ExecuteScalar());
+                        if (proverkanapazban == 1)
+                        {
+                            query = $@"UPDATE Account SET IDStatus=@IDStatus WHERE Login=@Login;";
+                            cmd = new SQLiteCommand(query, connection);
+                            cmd.Parameters.AddWithValue("@IDStatus", 2);
+                            cmd.Parameters.AddWithValue("@Login", txtlog.Text.ToLower());
+                            cmd.ExecuteReader();
+                            query = $@"UPDATE Proverka SET Kolltry=@Kolltry WHERE Login=@Login;";
+                            cmd = new SQLiteCommand(query, connection);
+                            cmd.Parameters.AddWithValue("@Kolltry", 0);
+                            cmd.Parameters.AddWithValue("@Login", txtlog.Text.ToLower());
+                            cmd.ExecuteReader();
+                            GoHome();
+                        }
                         if (count == 1)
                         {
                             InfoIP();
@@ -69,8 +130,8 @@ namespace ITBankBigFarm.Windows
                             cmd.ExecuteReader();
                             string smaltxt = txtlog.Text.ToLower();
                             query = $@"SELECT ID FROM Account WHERE Login={smaltxt}";
-                           // cmd.Parameters.AddWithValue("@Login", txtlog.Text.ToLower());
-                           // int countID = Convert.ToInt32(cmd.ExecuteScalar());
+                            // cmd.Parameters.AddWithValue("@Login", txtlog.Text.ToLower());
+                            // int countID = Convert.ToInt32(cmd.ExecuteScalar());
                             Saver.Login = txtlog.Text.ToLower();
                             SQLiteDataReader dr = null;
                             SQLiteCommand cmd1 = new SQLiteCommand(query, connection);
@@ -89,10 +150,73 @@ namespace ITBankBigFarm.Windows
                         }
                         else
                         {
-                                MessageBox.Show("Неверный логин или пароль");
+                          //MessageBox.Show("BANNN");
                         }
+                       
+                        if (proverka == 1)
+                        {
+                            query = $@"SELECT Kolltry,TimeEnd FROM Proverka WHERE Login= {txtlog.Text.ToLower()};";
+                            cmd = new SQLiteCommand(query, connection);
+                            string dateOpen = DateTime.Now.ToString("t");
+                            TimeSpan s2 = TimeSpan.Parse(dateOpen);
+                            SQLiteDataReader dr = null;
+                            string dateban="00:00";
+                            dr = cmd.ExecuteReader();
+                            while (dr.Read())
+                            {
+                                koll = dr["Kolltry"].ToString();
+                                dateban = dr["TimeEnd"].ToString();
+                            }
+                            TimeSpan s4 = TimeSpan.Parse(dateban);
+                            if (koll == "3" && (TimeSpan.Parse(dateOpen) < TimeSpan.Parse(dateban)))
+                            {
 
+                                MessageBox.Show("Ban");
+                                query = $@"UPDATE Account SET IDStatus=@IDStatus WHERE Login=@Login;";
+                                cmd = new SQLiteCommand(query, connection);
+                                cmd.Parameters.AddWithValue("@IDStatus", 3);
+                                cmd.Parameters.AddWithValue("@Login", txtlog.Text.ToLower());
+                                cmd.ExecuteReader();
+                            }
+                            else 
+                            {
+                                query = $@"UPDATE Account SET IDStatus=@IDStatus WHERE Login=@Login;";
+                                cmd = new SQLiteCommand(query, connection);
+                                cmd.Parameters.AddWithValue("@IDStatus", 2);
+                                cmd.Parameters.AddWithValue("@Login", txtlog.Text.ToLower());
+                                cmd.ExecuteReader();
+                                query = $@"UPDATE Proverka SET Kolltry=@Kolltry WHERE Login=@Login;";
+                                cmd = new SQLiteCommand(query, connection);
+                                cmd.Parameters.AddWithValue("@Kolltry", 0);
+                                cmd.Parameters.AddWithValue("@Login", txtlog.Text.ToLower());
+                                cmd.ExecuteReader();
+                            }                                
+                            if (koll != "3")
+                            {
+                               int kolint =  Convert.ToInt32(koll);
+                              
+                               MessageBox.Show(dateOpen);
+                               //kolint = 0;
+                               kolint++;
+                               query = $@"UPDATE Proverka SET Kolltry=@Kolltry,TimeBegin=@TimeBegin,TimeEnd=@TimeEnd WHERE Login=@Login;";
+                               cmd = new SQLiteCommand(query, connection);
+                                // DateTime s1 = DateTime.Parse(dateOpen);
+                                //DateTime s2 = DateTime.Parse("0:01");
+                                // DateTime s3 = s1.TimeOfDay + s2.TimeOfDay;
+                                string timeban = "0:01";
+                                TimeSpan s1 = TimeSpan.Parse("0:01");
+                                TimeSpan s3 = s1 + s2;
+                               string times3 = s3.ToString("hh':'mm");
+                               cmd.Parameters.AddWithValue("@Kolltry", kolint);
+                               cmd.Parameters.AddWithValue("@TimeBegin", dateOpen);
+                               cmd.Parameters.AddWithValue("@TimeEnd", times3);
+                               cmd.Parameters.AddWithValue("@Login", txtlog.Text.ToLower());
+                               cmd.ExecuteReader();
+                               MessageBox.Show("Неверный логин или пароль");
+                            }
+                        }
                     }
+
                     else
                     {
                         CheckerLog();
