@@ -222,6 +222,7 @@ namespace ITBankBigFarm.Windows
                // NumberFaceFiz = 1;
                 FizFace();
                 FuzPerson.Visibility = Visibility.Visible;
+                YurFace.Visibility = Visibility.Hidden;
             }
             else
             {
@@ -230,6 +231,8 @@ namespace ITBankBigFarm.Windows
             if (cmbFace.SelectedIndex == 1)
             {
                 MessageBox.Show("Юр");
+                YurFace.Visibility = Visibility.Visible;
+                FuzPerson.Visibility = Visibility.Hidden;
                 NumberFaceYur = 1;
             }
             else

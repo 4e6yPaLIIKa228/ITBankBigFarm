@@ -155,6 +155,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <Resource Include="Img\CaptchaBack.png" />
+    <Resource Include="Img\Refresh.png" />
+    <Resource Include="Img\Speaker.png" />
     <Content Include="ITBank.db">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
