@@ -32,6 +32,7 @@ namespace ITBankBigFarm.Windows
             LoadProfelComb();
             LoadcmbTypeScore();
             LoadHome();
+            TimeLoad();
         }
 
         private void imgclouse_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -296,6 +297,7 @@ namespace ITBankBigFarm.Windows
                 textBlock5.Foreground = new SolidColorBrush(color: (Color)ColorConverter.ConvertFromString("Black"));
                 textBlock7.Foreground = new SolidColorBrush(color: (Color)ColorConverter.ConvertFromString("Black"));
                 FuzPerson.Visibility = Visibility.Hidden;
+                YurFace.Visibility = Visibility.Hidden;
                 btnsave.Visibility = Visibility.Hidden;
                 btneddit.Visibility = Visibility.Hidden;
                 Profile.Visibility = Visibility.Hidden;
@@ -396,22 +398,33 @@ namespace ITBankBigFarm.Windows
         }
         private void btnsave_Click(object sender, RoutedEventArgs e)
         {
-                if(txtfame.Text != "" && txtname.Text != "" && cmbPols.SelectedIndex !=-1 && txtserpass.Text != "" && txtserpass.Text.Length ==4 && txtnumberpas.Text.Length ==6 && txtnumberpas.Text != "")
+            int countfiz = 0, countyur = 0;
+                if (txtfame.Text != "" && txtname.Text != "" && cmbPols.SelectedIndex !=-1 && txtserpass.Text != "" && txtserpass.Text.Length ==4 && txtnumberpas.Text.Length ==6 && txtnumberpas.Text != "")
                 {
                     try
                     {
                         using (SQLiteConnection connection = new SQLiteConnection(SqlDBConnection.connection))
                         {
-                        MessageBox.Show("111");
-                        Checker();
-                        connection.Open();
-                        bool resultClass = int.TryParse(cmbPols.SelectedValue.ToString(), out int idPols);
-                        string query = $@"INSERT INTO PhysicalPerson ('ID','Name','Family','MiddleName','SerriaPas','NumberPas','IDPol') VALUES ({Saver.IDAcc},{txtname.Text},{txtfame.Text},{txtOtchest.Text},{txtserpass.Text},{txtnumberpas.Text},{idPols})"; //Получение данных из таблицы Девайсы
-                        SQLiteCommand cmd = new SQLiteCommand(query, connection);
-                        cmd.ExecuteNonQuery();
-                        connection.Close();
-                        MessageBox.Show("Данные сохранены");
-                        FizFace();
+                        ProverkaNaFace();
+                        if (countfiz != 1 && countyur != 1)
+                        {
+
+
+                            MessageBox.Show("111");
+                            Checker();
+                            connection.Open();
+                            bool resultClass = int.TryParse(cmbPols.SelectedValue.ToString(), out int idPols);
+                            string query = $@"INSERT INTO PhysicalPerson ('ID','Name','Family','MiddleName','SerriaPas','NumberPas','IDPol') VALUES ({Saver.IDAcc},{txtname.Text},{txtfame.Text},{txtOtchest.Text},{txtserpass.Text},{txtnumberpas.Text},{idPols})"; //Получение данных из таблицы Девайсы
+                            SQLiteCommand cmd = new SQLiteCommand(query, connection);
+                            cmd.ExecuteNonQuery();
+                            connection.Close();
+                            MessageBox.Show("Данные сохранены");
+                            FizFace();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Вы уже указали ,кто вы есть");
+                        }
                         }
                     }
                     catch (Exception ex)
@@ -426,6 +439,27 @@ namespace ITBankBigFarm.Windows
                 }
 
         }
+
+        public void ProverkaNaFace()
+        {
+            try
+            {
+                using (SQLiteConnection connection = new SQLiteConnection(SqlDBConnection.connection))
+                {
+                    connection.Open();
+                    string query = $@"SELECT COUNT(1) FROM PhysicalPerson WHERE ID = {Saver.IDAcc};";
+                    SQLiteCommand cmd = new SQLiteCommand(query, connection);
+                    int countfiz = Convert.ToInt32(cmd.ExecuteScalar());
+                    query = $@"SELECT COUNT(1) FROM LegalPerson WHERE ID = {Saver.IDAcc};"; //Получение данных из таблицы Юр.лица
+                    SQLiteCommand cmd1 = new SQLiteCommand(query, connection);
+                    int countyur = Convert.ToInt32(cmd1.ExecuteScalar());
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка" + ex);
+            }
+        }
         private void buttonopenscore_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -435,22 +469,13 @@ namespace ITBankBigFarm.Windows
                     connection.Open();
                     string query = $@"SELECT COUNT(1) FROM PhysicalPerson WHERE ID = {Saver.IDAcc};"; //Получение данных из таблицы Физ.лица
                     SQLiteCommand cmd = new SQLiteCommand(query, connection);
-                    // cmd3.Parameters.AddWithValue("IDBrand", IdKab);
                     int countfiz = Convert.ToInt32(cmd.ExecuteScalar());
                     query = $@"SELECT COUNT(1) FROM LegalPerson WHERE ID = {Saver.IDAcc};"; //Получение данных из таблицы Юр.лица
                     SQLiteCommand cmd1 = new SQLiteCommand(query, connection);
                     int countyur = Convert.ToInt32(cmd1.ExecuteScalar());
                     if (countfiz == 1 || countyur == 1)
                     {
-                        MessageBox.Show("Yes acc");
-                        //OpenScore EddTitl = new OpenScore();
-                        //EddTitl.Owner = this;
-                        //bool? result = EddTitl.ShowDialog();
-                        //switch (result)
-                        //{
-                        //    default:
-                        //    break;
-                        //}
+                        MessageBox.Show("Yes,acc");
                         OpenScore Aftoriz = new OpenScore();
                         this.Close();
                         Aftoriz.ShowDialog();
@@ -474,6 +499,19 @@ namespace ITBankBigFarm.Windows
             TranslationMoney Aftoriz = new TranslationMoney();
             this.Close();
             Aftoriz.ShowDialog();
+        }
+
+        public void TimeLoad()
+        {
+            txtTime.Visibility = Visibility.Hidden;
+            var timer = new System.Windows.Threading.DispatcherTimer();
+            timer.Interval = new TimeSpan(0, 0, 1);
+            timer.IsEnabled = true;
+            timer.Tick += (s, e) => { txtTime.Text = ("Время: " + DateTime.Now.ToString("T")); };
+            timer.Start();
+            txtTime.Visibility = Visibility.Visible;
+            txtDay.Text = "Дата: " + (DateTime.Now.ToString("d"));
+
         }
     }
 }

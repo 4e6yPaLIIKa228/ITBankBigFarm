@@ -9,7 +9,7 @@
         Title="MenuBank" Height="500" Width="900" AllowsTransparency="True" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" MouseLeftButtonDown="Window_MouseLeftButtonDown">
     <Window.Resources>
         <Storyboard x:Key="Home-Profile">
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="textBlock">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="txtDay">
                 <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="-25.333"/>
                 <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="-59.333"/>
                 <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="-81.333"/>
@@ -17,10 +17,10 @@
                 <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="-145.333"/>
                 <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="-168.333"/>
             </DoubleAnimationUsingKeyFrames>
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="textBlock">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="txtDay">
                 <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="1.333"/>
             </DoubleAnimationUsingKeyFrames>
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="textBlock1">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="txtTime">
                 <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="-28.667"/>
                 <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="-62.667"/>
                 <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="-84.667"/>
@@ -28,7 +28,7 @@
                 <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="-148.667"/>
                 <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="-171.667"/>
             </DoubleAnimationUsingKeyFrames>
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="textBlock1">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="txtTime">
                 <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="-0.667"/>
             </DoubleAnimationUsingKeyFrames>
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="buttonopenscore">
@@ -119,11 +119,11 @@
                 <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="266"/>
                 <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="298"/>
             </DoubleAnimationUsingKeyFrames>
-            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="textBlock">
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="txtDay">
                 <DiscreteObjectKeyFrame KeyTime="0:0:0.5" Value="{x:Static Visibility.Visible}"/>
                 <DiscreteObjectKeyFrame KeyTime="0:0:0.6" Value="{x:Static Visibility.Hidden}"/>
             </ObjectAnimationUsingKeyFrames>
-            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="textBlock1">
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="txtTime">
                 <DiscreteObjectKeyFrame KeyTime="0:0:0.5" Value="{x:Static Visibility.Visible}"/>
                 <DiscreteObjectKeyFrame KeyTime="0:0:0.6" Value="{x:Static Visibility.Hidden}"/>
             </ObjectAnimationUsingKeyFrames>
@@ -226,7 +226,7 @@
             <TextBlock HorizontalAlignment="Left" Height="32" Margin="10,17.333,0,0" TextWrapping="Wrap" Text="Login:" VerticalAlignment="Top" Width="56" FontSize="18" FontWeight="Bold"/>
         </Grid>
         <Grid x:Name="Home" Margin="152,17.333,34,75.5" d:IsHidden="True">
-            <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" VerticalAlignment="Top" Width="210.666" FontSize="18" FontWeight="Bold" Foreground="#f1d3bc" RenderTransformOrigin="0.5,0.5">
+            <TextBlock x:Name="txtDay" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" VerticalAlignment="Top" Width="210.666" FontSize="18" FontWeight="Bold" Foreground="#f1d3bc" RenderTransformOrigin="0.5,0.5">
                 <TextBlock.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -235,7 +235,7 @@
                         <TranslateTransform/>
                     </TransformGroup>
                 </TextBlock.RenderTransform><Run Text="Пятница"/><Run Text=", 29"/><Run Text="."/><Run Text="04.2022"/></TextBlock>
-            <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Height="32" Margin="0,32,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210.666" FontSize="18" FontWeight="Bold" Foreground="#f1d3bc" RenderTransformOrigin="0.5,0.5">
+            <TextBlock x:Name="txtTime" HorizontalAlignment="Left"   Height="32" Margin="0,32,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210.666" FontSize="18" FontWeight="Bold" Foreground="#f1d3bc" RenderTransformOrigin="0.5,0.5">
                 <TextBlock.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -243,7 +243,7 @@
                         <RotateTransform/>
                         <TranslateTransform/>
                     </TransformGroup>
-                </TextBlock.RenderTransform><Run Text="Время: "/><Run Text="13:23 "/></TextBlock>
+                </TextBlock.RenderTransform></TextBlock>
             <Button x:Name="buttonopenscore" Content="Отркыть счет" HorizontalAlignment="Left" Height="45" Margin="0,140.167,0,0" VerticalAlignment="Top" Width="300" Background="#f34a4a" Foreground="#f1d3bc" FontWeight="Bold" FontSize="16" RenderTransformOrigin="0.5,0.5" Click="buttonopenscore_Click">
                 <Button.RenderTransform>
                     <TransformGroup>
@@ -461,7 +461,7 @@
                 <hc:TextBox x:Name="txtnumberpas" hc:InfoElement.Placeholder="Номер паспорта" MaxLength="6" HorizontalAlignment="Left" Height="36.5" Margin="205.5,250,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="300"/>
                 <hc:ComboBox x:Name="cmbPols" hc:InfoElement.Placeholder="Пол" HorizontalAlignment="Left" Height="36.5" Margin="205.5,150,0,0" VerticalAlignment="Top"  Width="300"/>
             </Grid>
-            <Button x:Name="btnsave" Content="Сохранить" HorizontalAlignment="Left" Height="36" Margin="320,428.53,0,-30.363" VerticalAlignment="Top" Width="131" Click="btnsave_Click" RenderTransformOrigin="0.5,0.5" >
+            <Button x:Name="btnsave" Content="Сохранить" HorizontalAlignment="Left" Height="36" Margin="229,442.849,0,-44.682" VerticalAlignment="Top" Width="131" Click="btnsave_Click" RenderTransformOrigin="0.5,0.5" >
                 <Button.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -471,7 +471,7 @@
                     </TransformGroup>
                 </Button.RenderTransform>
             </Button>
-            <Button x:Name="btneddit" Content="Изменить" HorizontalAlignment="Left" Height="36" Width="131" Margin="320,428.53,0,-30.363" VerticalAlignment="Top"  RenderTransformOrigin="0.5,0.5">
+            <Button x:Name="btneddit" Content="Изменить" HorizontalAlignment="Left" Height="36" Width="131" Margin="229,442.849,0,-44.682" VerticalAlignment="Top"  RenderTransformOrigin="0.5,0.5">
                 <Button.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -481,8 +481,8 @@
                     </TransformGroup>
                 </Button.RenderTransform>
             </Button>
-            <Grid x:Name="YurFace" Margin="0,127.667,272.834,270" d:IsHidden="True" Visibility="Hidden">
-                <TextBlock x:Name="textBlock_Copy8" HorizontalAlignment="Left" Height="36.5" TextWrapping="Wrap" VerticalAlignment="Top" Width="72.666" FontSize="25" FontWeight="Bold" Foreground="#f1d3bc" RenderTransformOrigin="0.5,0.5" Text="ОГРН " TextAlignment="Center" Margin="5,0,0,0">
+            <Grid x:Name="YurFace" Margin="0,127.667,272.834,270">
+                <TextBlock x:Name="textBlock_Copy8" HorizontalAlignment="Left" Height="36.5" TextWrapping="Wrap" VerticalAlignment="Top" Width="72.664" FontSize="25" FontWeight="Bold" Foreground="#f1d3bc" RenderTransformOrigin="0.5,0.5" Text="ОГРН " TextAlignment="Center" Margin="20.084,0,0,0">
                     <TextBlock.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -491,7 +491,7 @@
                             <TranslateTransform/>
                         </TransformGroup>
                     </TextBlock.RenderTransform></TextBlock>
-                <TextBlock x:Name="textBlock_Copy9" HorizontalAlignment="Left" Height="36.5" TextWrapping="Wrap" VerticalAlignment="Top" Width="71.499" FontSize="25" FontWeight="Bold" Foreground="#f1d3bc" RenderTransformOrigin="0.5,0.5" Margin="240.334,0,0,0" Text="ИНН" TextAlignment="Center">
+                <TextBlock x:Name="textBlock_Copy9" HorizontalAlignment="Left" Height="36.5" TextWrapping="Wrap" VerticalAlignment="Top" Width="71.499" FontSize="25" FontWeight="Bold" Foreground="#f1d3bc" RenderTransformOrigin="0.5,0.5" Margin="268.334,0,0,0" Text="ИНН" TextAlignment="Center">
                     <TextBlock.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -500,9 +500,9 @@
                             <TranslateTransform/>
                         </TransformGroup>
                     </TextBlock.RenderTransform></TextBlock>
-                <hc:TextBox x:Name="hhh" hc:InfoElement.Placeholder="ОГРН" HorizontalAlignment="Left" Height="36.5" Margin="77.666,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140.501"/>
-                <hc:TextBox x:Name="hhh_Copy" hc:InfoElement.Placeholder="ИНН" HorizontalAlignment="Left" Height="36.5" Margin="311.833,0,-70.168,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140.501"/>
-                <TextBlock x:Name="textBlock_Copy10" HorizontalAlignment="Left" Height="36.5" TextWrapping="Wrap" VerticalAlignment="Top" Width="96.999" FontSize="25" FontWeight="Bold" Foreground="#f1d3bc" RenderTransformOrigin="0.5,0.5" Margin="492.334,0,-207.167,0" Text="ЕГРЮЛ" TextAlignment="Center">
+                <hc:TextBox x:Name="hhh" hc:InfoElement.Placeholder="ОГРН" HorizontalAlignment="Left" Height="35.125" Margin="95.112,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="139.055"/>
+                <hc:TextBox x:Name="hhh_Copy" hc:InfoElement.Placeholder="ИНН" HorizontalAlignment="Left" Height="35.125" Margin="339.833,0,-98.168,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140.501"/>
+                <TextBlock x:Name="textBlock_Copy10" HorizontalAlignment="Left" Height="36.5" TextWrapping="Wrap" VerticalAlignment="Top" Width="96.999" FontSize="25" FontWeight="Bold" Foreground="#f1d3bc" RenderTransformOrigin="0.5,0.5" Margin="511.334,0,-226.167,0" Text="ЕГРЮЛ" TextAlignment="Center">
                     <TextBlock.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -511,8 +511,8 @@
                             <TranslateTransform/>
                         </TransformGroup>
                     </TextBlock.RenderTransform></TextBlock>
-                <hc:TextBox x:Name="hhh_Copy1" hc:InfoElement.Placeholder="ЕГРЮЛ" HorizontalAlignment="Left" Height="36.5" Margin="589.333,0,-347.668,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140.501"/>
-                <TextBlock x:Name="textBlock_Copy11" HorizontalAlignment="Left" Height="36.5" TextWrapping="Wrap" VerticalAlignment="Top" Width="84.666" FontSize="25" FontWeight="Bold" Foreground="#f1d3bc" RenderTransformOrigin="0.5,0.5" Text="Адрес " TextAlignment="Center" Margin="5,66,0,-66">
+                <hc:TextBox x:Name="hhh_Copy1" hc:InfoElement.Placeholder="ЕГРЮЛ" HorizontalAlignment="Left" Height="35.125" Margin="608,0,-367.502,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="141.668"/>
+                <TextBlock x:Name="textBlock_Copy11" HorizontalAlignment="Left" Height="36.5" TextWrapping="Wrap" VerticalAlignment="Top" Width="76.666" FontSize="25" FontWeight="Bold" Foreground="#f1d3bc" RenderTransformOrigin="0.5,0.5" Text="Адрес " TextAlignment="Center" Margin="17.254,64,0,-64">
                     <TextBlock.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -521,8 +521,8 @@
                             <TranslateTransform/>
                         </TransformGroup>
                     </TextBlock.RenderTransform></TextBlock>
-                <hc:TextBox x:Name="hhh_Copy2" hc:InfoElement.Placeholder="Адрес" HorizontalAlignment="Left" Height="36.5" Margin="89.666,66,-347.668,-66" TextWrapping="Wrap" VerticalAlignment="Top" Width="640.168"/>
-                <TextBlock x:Name="textBlock_Copy12" HorizontalAlignment="Left" Height="36.5" TextWrapping="Wrap" VerticalAlignment="Top" Width="67.666" FontSize="25" FontWeight="Bold" Foreground="#f1d3bc" RenderTransformOrigin="0.5,0.5" Text="Имя" TextAlignment="Center" Margin="5,135,0,-135">
+                <hc:TextBox x:Name="hhh_Copy2" hc:InfoElement.Placeholder="Адрес" HorizontalAlignment="Left" Height="34.875" Margin="95.112,65.125,-367.502,-63.5" TextWrapping="Wrap" VerticalAlignment="Top" Width="654.556"/>
+                <TextBlock x:Name="textBlock_Copy12" HorizontalAlignment="Left" Height="36.5" TextWrapping="Wrap" VerticalAlignment="Top" Width="67.666" FontSize="25" FontWeight="Bold" Foreground="#f1d3bc" RenderTransformOrigin="0.5,0.5" Text="Имя" TextAlignment="Center" Margin="21.65,128.166,0,-128.166">
                     <TextBlock.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -531,8 +531,8 @@
                             <TranslateTransform/>
                         </TransformGroup>
                     </TextBlock.RenderTransform></TextBlock>
-                <hc:TextBox x:Name="hhh_Copy3" hc:InfoElement.Placeholder="Имя" HorizontalAlignment="Left" Height="36.5" Margin="77.666,135,0,-135" TextWrapping="Wrap" VerticalAlignment="Top" Width="234.001"/>
-                <TextBlock x:Name="textBlock_Copy13" HorizontalAlignment="Left" Height="36.5" TextWrapping="Wrap" VerticalAlignment="Top" Width="126.666" FontSize="25" FontWeight="Bold" Foreground="#f1d3bc" RenderTransformOrigin="0.5,0.5" Text="Фамилия" TextAlignment="Center" Margin="316.667,135,-61.167,-135">
+                <hc:TextBox x:Name="hhh_Copy3" hc:InfoElement.Placeholder="Имя" HorizontalAlignment="Left" Height="34.375" Margin="95.475,130.375,0,-128.25" TextWrapping="Wrap" VerticalAlignment="Top" Width="234.001"/>
+                <TextBlock x:Name="textBlock_Copy13" HorizontalAlignment="Left" Height="36.5" TextWrapping="Wrap" VerticalAlignment="Top" Width="126.666" FontSize="25" FontWeight="Bold" Foreground="#f1d3bc" RenderTransformOrigin="0.5,0.5" Text="Фамилия" TextAlignment="Center" Margin="338.667,128.75,-83.167,-128.75">
                     <TextBlock.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -541,8 +541,8 @@
                             <TranslateTransform/>
                         </TransformGroup>
                     </TextBlock.RenderTransform></TextBlock>
-                <hc:TextBox x:Name="hhh_Copy4" hc:InfoElement.Placeholder="Фамилия" HorizontalAlignment="Left" Height="36.5" Margin="448.333,135,-347.668,-135" TextWrapping="Wrap" VerticalAlignment="Top" Width="281.501"/>
-                <TextBlock x:Name="textBlock_Copy14" HorizontalAlignment="Left" Height="36.5" TextWrapping="Wrap" VerticalAlignment="Top" Width="120.166" FontSize="25" FontWeight="Bold" Foreground="#f1d3bc" RenderTransformOrigin="0.5,0.5" Text="Отчество" TextAlignment="Center" Margin="5,194,0,-194">
+                <hc:TextBox x:Name="hhh_Copy4" hc:InfoElement.Placeholder="Фамилия" HorizontalAlignment="Left" Height="34.625" Margin="465.625,130.375,-367.502,-128.5" TextWrapping="Wrap" VerticalAlignment="Top" Width="284.043"/>
+                <TextBlock x:Name="textBlock_Copy14" HorizontalAlignment="Left" Height="36.5" TextWrapping="Wrap" VerticalAlignment="Top" Width="120.166" FontSize="25" FontWeight="Bold" Foreground="#f1d3bc" RenderTransformOrigin="0.5,0.5" Text="Отчество" TextAlignment="Center" Margin="0.369,194,0,-194">
                     <TextBlock.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -551,8 +551,8 @@
                             <TranslateTransform/>
                         </TransformGroup>
                     </TextBlock.RenderTransform></TextBlock>
-                <hc:TextBox x:Name="hhh_Copy5" hc:InfoElement.Placeholder="Отчество" HorizontalAlignment="Left" Height="36.5" Margin="130.166,194,0,-194" TextWrapping="Wrap" VerticalAlignment="Top" Width="234.001"/>
-                <TextBlock x:Name="textBlock_Copy15" HorizontalAlignment="Left" Height="36.5" TextWrapping="Wrap" VerticalAlignment="Top" Width="84.666" FontSize="25" FontWeight="Bold" Foreground="#f1d3bc" RenderTransformOrigin="0.5,0.5" Text="Серия " TextAlignment="Center" Margin="8,245.333,0,-245.333">
+                <hc:TextBox x:Name="hhh_Copy5" hc:InfoElement.Placeholder="Отчество" HorizontalAlignment="Left" Height="36.5" Margin="120.871,194,0,-194" TextWrapping="Wrap" VerticalAlignment="Top" Width="234.001"/>
+                <TextBlock x:Name="textBlock_Copy15" HorizontalAlignment="Left" Height="36.5" TextWrapping="Wrap" VerticalAlignment="Top" Width="84.666" FontSize="25" FontWeight="Bold" Foreground="#f1d3bc" RenderTransformOrigin="0.5,0.5" Text="Серия " TextAlignment="Center" Margin="8,260.029,0,-260.029">
                     <TextBlock.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -561,8 +561,8 @@
                             <TranslateTransform/>
                         </TransformGroup>
                     </TextBlock.RenderTransform></TextBlock>
-                <hc:TextBox x:Name="hhh_Copy6" hc:InfoElement.Placeholder="Серия" HorizontalAlignment="Left" Height="36.5" Margin="92.666,245.333,0,-245.333" TextWrapping="Wrap" VerticalAlignment="Top" Width="140.501"/>
-                <TextBlock x:Name="textBlock_Copy16" HorizontalAlignment="Left" Height="36.5" TextWrapping="Wrap" VerticalAlignment="Top" Width="84.666" FontSize="25" FontWeight="Bold" Foreground="#f1d3bc" RenderTransformOrigin="0.5,0.5" Text="Номер " TextAlignment="Center" Margin="318.5,245.333,-21,-245.333">
+                <hc:TextBox x:Name="hhh_Copy6" hc:InfoElement.Placeholder="Серия" HorizontalAlignment="Left" Height="36.5" Margin="92.666,260.363,0,-260.363" TextWrapping="Wrap" VerticalAlignment="Top" Width="140.501"/>
+                <TextBlock x:Name="textBlock_Copy16" HorizontalAlignment="Left" Height="36.5" TextWrapping="Wrap" VerticalAlignment="Top" Width="84.666" FontSize="25" FontWeight="Bold" Foreground="#f1d3bc" RenderTransformOrigin="0.5,0.5" Text="Номер " TextAlignment="Center" Margin="519.501,260.363,-222.001,-260.363">
                     <TextBlock.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -571,8 +571,8 @@
                             <TranslateTransform/>
                         </TransformGroup>
                     </TextBlock.RenderTransform></TextBlock>
-                <hc:TextBox x:Name="hhh_Copy7" hc:InfoElement.Placeholder="Номер" HorizontalAlignment="Left" Height="36.5" Margin="408.166,245.333,-166.501,-245.333" TextWrapping="Wrap" VerticalAlignment="Top" Width="140.501"/>
-                <TextBlock x:Name="textBlock_Copy17" HorizontalAlignment="Left" Height="36.5" TextWrapping="Wrap" VerticalAlignment="Top" Width="71.333" FontSize="25" FontWeight="Bold" Foreground="#f1d3bc" RenderTransformOrigin="0.5,0.5" Text="Пол " TextAlignment="Center" Margin="421.001,190.243,-110.168,-190.243">
+                <hc:TextBox x:Name="hhh_Copy7" hc:InfoElement.Placeholder="Номер" HorizontalAlignment="Left" Height="36.5" Margin="609.167,259.778,-367.502,-259.778" TextWrapping="Wrap" VerticalAlignment="Top" Width="140.501"/>
+                <TextBlock x:Name="textBlock_Copy17" HorizontalAlignment="Left" Height="36.5" TextWrapping="Wrap" VerticalAlignment="Top" Width="71.333" FontSize="25" FontWeight="Bold" Foreground="#f1d3bc" RenderTransformOrigin="0.5,0.5" Text="Пол " TextAlignment="Center" Margin="548.03,193.082,-237.197,-193.082">
                     <TextBlock.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -581,8 +581,18 @@
                             <TranslateTransform/>
                         </TransformGroup>
                     </TextBlock.RenderTransform></TextBlock>
-                <hc:ComboBox x:Name="cmbPols2" hc:InfoElement.Placeholder="Пол" HorizontalAlignment="Left" Height="36.5" Margin="492.334,194,-235.168,-194" VerticalAlignment="Top"  Width="125"/>
+                <hc:ComboBox x:Name="cmbPols2" hc:InfoElement.Placeholder="Пол" HorizontalAlignment="Left" Height="36.5" Margin="624.668,195.25,-367.502,-195.25" VerticalAlignment="Top"  Width="125"/>
             </Grid>
+            <Button x:Name="btndell" Content="Удалить" HorizontalAlignment="Left" Height="36" Width="131" Margin="449,442.849,0,-44.682" VerticalAlignment="Top"  RenderTransformOrigin="0.5,0.5">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
 
         </Grid>
 
