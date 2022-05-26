@@ -481,7 +481,7 @@
                     </TransformGroup>
                 </Button.RenderTransform>
             </Button>
-            <Grid x:Name="YurFace" Margin="0,127.667,272.834,270">
+            <Grid x:Name="YurFace" Margin="0,127.667,272.834,270" Visibility="Hidden" d:IsHidden="True">
                 <TextBlock x:Name="textBlock_Copy8" HorizontalAlignment="Left" Height="36.5" TextWrapping="Wrap" VerticalAlignment="Top" Width="72.664" FontSize="25" FontWeight="Bold" Foreground="#f1d3bc" RenderTransformOrigin="0.5,0.5" Text="ОГРН " TextAlignment="Center" Margin="20.084,0,0,0">
                     <TextBlock.RenderTransform>
                         <TransformGroup>
