@@ -457,11 +457,11 @@
                 <hc:TextBox x:Name="txtfame" hc:InfoElement.Placeholder="Фамилия" HorizontalAlignment="Left" Height="36.5" Margin="205.5,0,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="300"/>
                 <hc:TextBox x:Name="txtname" hc:InfoElement.Placeholder="Имя" HorizontalAlignment="Left" Height="36.5" Margin="205.5,50,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="300"/>
                 <hc:TextBox x:Name="txtOtchest" hc:InfoElement.Placeholder="Отчество" HorizontalAlignment="Left" Height="36.5" Margin="205.5,100,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="300"/>
-                <hc:TextBox x:Name="txtserpass" hc:InfoElement.Placeholder="Серия паспорта" MaxLength="4" HorizontalAlignment="Left" Height="36.5" Margin="205.5,200,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="300"/>
-                <hc:TextBox x:Name="txtnumberpas" hc:InfoElement.Placeholder="Номер паспорта" MaxLength="6" HorizontalAlignment="Left" Height="36.5" Margin="205.5,250,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="300"/>
+                <hc:TextBox x:Name="txtserpass" hc:InfoElement.Placeholder="Серия паспорта" MaxLength="4" HorizontalAlignment="Left" Height="36.5" Margin="205.5,200,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="300" PreviewTextInput="txtserpass_PreviewTextInput"/>
+                <hc:TextBox x:Name="txtnumberpas" hc:InfoElement.Placeholder="Номер паспорта" MaxLength="6" HorizontalAlignment="Left" Height="36.5" Margin="205.5,250,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="300" PreviewTextInput="txtnumberpas_PreviewTextInput"/>
                 <hc:ComboBox x:Name="cmbPols" hc:InfoElement.Placeholder="Пол" HorizontalAlignment="Left" Height="36.5" Margin="205.5,150,0,0" VerticalAlignment="Top"  Width="300"/>
             </Grid>
-            <Button x:Name="btnsave" Content="Сохранить" HorizontalAlignment="Left" Height="36" Margin="229,442.849,0,-44.682" VerticalAlignment="Top" Width="131" Click="btnsave_Click" RenderTransformOrigin="0.5,0.5" >
+            <Button x:Name="btnsave" Content="Сохранить" HorizontalAlignment="Left" Height="36" Margin="340.217,442.849,0,-44.682" VerticalAlignment="Top" Width="131" Click="btnsave_Click" RenderTransformOrigin="0.5,0.5" >
                 <Button.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -471,7 +471,7 @@
                     </TransformGroup>
                 </Button.RenderTransform>
             </Button>
-            <Button x:Name="btneddit" Content="Изменить" HorizontalAlignment="Left" Height="36" Width="131" Margin="229,442.849,0,-44.682" VerticalAlignment="Top"  RenderTransformOrigin="0.5,0.5">
+            <Button x:Name="btneddit" Content="Изменить" HorizontalAlignment="Left" Height="36" Width="131" Margin="348.391,442.849,0,-44.682" VerticalAlignment="Top"  RenderTransformOrigin="0.5,0.5" d:IsHidden="True">
                 <Button.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -481,7 +481,7 @@
                     </TransformGroup>
                 </Button.RenderTransform>
             </Button>
-            <Grid x:Name="YurFace" Margin="0,127.667,272.834,270" Visibility="Hidden" d:IsHidden="True">
+            <Grid x:Name="YurFace" Margin="0,127.667,272.834,270">
                 <TextBlock x:Name="textBlock_Copy8" HorizontalAlignment="Left" Height="36.5" TextWrapping="Wrap" VerticalAlignment="Top" Width="72.664" FontSize="25" FontWeight="Bold" Foreground="#f1d3bc" RenderTransformOrigin="0.5,0.5" Text="ОГРН " TextAlignment="Center" Margin="20.084,0,0,0">
                     <TextBlock.RenderTransform>
                         <TransformGroup>
@@ -500,8 +500,8 @@
                             <TranslateTransform/>
                         </TransformGroup>
                     </TextBlock.RenderTransform></TextBlock>
-                <hc:TextBox x:Name="hhh" hc:InfoElement.Placeholder="ОГРН" HorizontalAlignment="Left" Height="35.125" Margin="95.112,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="139.055"/>
-                <hc:TextBox x:Name="hhh_Copy" hc:InfoElement.Placeholder="ИНН" HorizontalAlignment="Left" Height="35.125" Margin="339.833,0,-98.168,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140.501"/>
+                <hc:TextBox x:Name="txtOGPH" hc:InfoElement.Placeholder="ОГРН" HorizontalAlignment="Left" Height="35.125" Margin="95.112,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="139.055" UndoLimit="13" PreviewTextInput="txtOGPH_PreviewTextInput" MaxLength="13" />
+                <hc:TextBox x:Name="txtINN" hc:InfoElement.Placeholder="ИНН" HorizontalAlignment="Left" Height="35.125" Margin="339.833,0,-98.168,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140.501" MaxLength="10"/>
                 <TextBlock x:Name="textBlock_Copy10" HorizontalAlignment="Left" Height="36.5" TextWrapping="Wrap" VerticalAlignment="Top" Width="96.999" FontSize="25" FontWeight="Bold" Foreground="#f1d3bc" RenderTransformOrigin="0.5,0.5" Margin="511.334,0,-226.167,0" Text="ЕГРЮЛ" TextAlignment="Center">
                     <TextBlock.RenderTransform>
                         <TransformGroup>
@@ -511,7 +511,7 @@
                             <TranslateTransform/>
                         </TransformGroup>
                     </TextBlock.RenderTransform></TextBlock>
-                <hc:TextBox x:Name="hhh_Copy1" hc:InfoElement.Placeholder="ЕГРЮЛ" HorizontalAlignment="Left" Height="35.125" Margin="608,0,-367.502,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="141.668"/>
+                <hc:TextBox x:Name="txtEGPUL" hc:InfoElement.Placeholder="ЕГРЮЛ" HorizontalAlignment="Left" Height="35.125" Margin="608,0,-367.502,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="141.668" MaxLength="13"/>
                 <TextBlock x:Name="textBlock_Copy11" HorizontalAlignment="Left" Height="36.5" TextWrapping="Wrap" VerticalAlignment="Top" Width="76.666" FontSize="25" FontWeight="Bold" Foreground="#f1d3bc" RenderTransformOrigin="0.5,0.5" Text="Адрес " TextAlignment="Center" Margin="17.254,64,0,-64">
                     <TextBlock.RenderTransform>
                         <TransformGroup>
@@ -521,7 +521,7 @@
                             <TranslateTransform/>
                         </TransformGroup>
                     </TextBlock.RenderTransform></TextBlock>
-                <hc:TextBox x:Name="hhh_Copy2" hc:InfoElement.Placeholder="Адрес" HorizontalAlignment="Left" Height="34.875" Margin="95.112,65.125,-367.502,-63.5" TextWrapping="Wrap" VerticalAlignment="Top" Width="654.556"/>
+                <hc:TextBox x:Name="txtAdress" hc:InfoElement.Placeholder="Адрес" HorizontalAlignment="Left" Height="34.875" Margin="95.112,65.125,-367.502,-63.5" TextWrapping="Wrap" VerticalAlignment="Top" Width="654.556" PreviewTextInput="txtAdress_PreviewTextInput"/>
                 <TextBlock x:Name="textBlock_Copy12" HorizontalAlignment="Left" Height="36.5" TextWrapping="Wrap" VerticalAlignment="Top" Width="67.666" FontSize="25" FontWeight="Bold" Foreground="#f1d3bc" RenderTransformOrigin="0.5,0.5" Text="Имя" TextAlignment="Center" Margin="21.65,128.166,0,-128.166">
                     <TextBlock.RenderTransform>
                         <TransformGroup>
@@ -531,7 +531,7 @@
                             <TranslateTransform/>
                         </TransformGroup>
                     </TextBlock.RenderTransform></TextBlock>
-                <hc:TextBox x:Name="hhh_Copy3" hc:InfoElement.Placeholder="Имя" HorizontalAlignment="Left" Height="34.375" Margin="95.475,130.375,0,-128.25" TextWrapping="Wrap" VerticalAlignment="Top" Width="234.001"/>
+                <hc:TextBox x:Name="txtNameYur" hc:InfoElement.Placeholder="Имя" HorizontalAlignment="Left" Height="34.375" Margin="95.475,130.375,0,-128.25" TextWrapping="Wrap" VerticalAlignment="Top" Width="234.001"/>
                 <TextBlock x:Name="textBlock_Copy13" HorizontalAlignment="Left" Height="36.5" TextWrapping="Wrap" VerticalAlignment="Top" Width="126.666" FontSize="25" FontWeight="Bold" Foreground="#f1d3bc" RenderTransformOrigin="0.5,0.5" Text="Фамилия" TextAlignment="Center" Margin="338.667,128.75,-83.167,-128.75">
                     <TextBlock.RenderTransform>
                         <TransformGroup>
@@ -541,7 +541,7 @@
                             <TranslateTransform/>
                         </TransformGroup>
                     </TextBlock.RenderTransform></TextBlock>
-                <hc:TextBox x:Name="hhh_Copy4" hc:InfoElement.Placeholder="Фамилия" HorizontalAlignment="Left" Height="34.625" Margin="465.625,130.375,-367.502,-128.5" TextWrapping="Wrap" VerticalAlignment="Top" Width="284.043"/>
+                <hc:TextBox x:Name="txtFamYur" hc:InfoElement.Placeholder="Фамилия" HorizontalAlignment="Left" Height="34.625" Margin="465.625,130.375,-367.502,-128.5" TextWrapping="Wrap" VerticalAlignment="Top" Width="284.043"/>
                 <TextBlock x:Name="textBlock_Copy14" HorizontalAlignment="Left" Height="36.5" TextWrapping="Wrap" VerticalAlignment="Top" Width="120.166" FontSize="25" FontWeight="Bold" Foreground="#f1d3bc" RenderTransformOrigin="0.5,0.5" Text="Отчество" TextAlignment="Center" Margin="0.369,194,0,-194">
                     <TextBlock.RenderTransform>
                         <TransformGroup>
@@ -551,7 +551,7 @@
                             <TranslateTransform/>
                         </TransformGroup>
                     </TextBlock.RenderTransform></TextBlock>
-                <hc:TextBox x:Name="hhh_Copy5" hc:InfoElement.Placeholder="Отчество" HorizontalAlignment="Left" Height="36.5" Margin="120.871,194,0,-194" TextWrapping="Wrap" VerticalAlignment="Top" Width="234.001"/>
+                <hc:TextBox x:Name="txtOtchesYur" hc:InfoElement.Placeholder="Отчество" HorizontalAlignment="Left" Height="36.5" Margin="120.871,194,0,-194" TextWrapping="Wrap" VerticalAlignment="Top" Width="234.001"/>
                 <TextBlock x:Name="textBlock_Copy15" HorizontalAlignment="Left" Height="36.5" TextWrapping="Wrap" VerticalAlignment="Top" Width="84.666" FontSize="25" FontWeight="Bold" Foreground="#f1d3bc" RenderTransformOrigin="0.5,0.5" Text="Серия " TextAlignment="Center" Margin="8,260.029,0,-260.029">
                     <TextBlock.RenderTransform>
                         <TransformGroup>
@@ -561,7 +561,7 @@
                             <TranslateTransform/>
                         </TransformGroup>
                     </TextBlock.RenderTransform></TextBlock>
-                <hc:TextBox x:Name="hhh_Copy6" hc:InfoElement.Placeholder="Серия" HorizontalAlignment="Left" Height="36.5" Margin="92.666,260.363,0,-260.363" TextWrapping="Wrap" VerticalAlignment="Top" Width="140.501"/>
+                <hc:TextBox x:Name="txtSerPasportYur" hc:InfoElement.Placeholder="Серия" HorizontalAlignment="Left" Height="36.5" Margin="92.666,260.363,0,-260.363" TextWrapping="Wrap" VerticalAlignment="Top" Width="140.501" MaxLength="4" PreviewTextInput="txtSerPasportYur_PreviewTextInput"/>
                 <TextBlock x:Name="textBlock_Copy16" HorizontalAlignment="Left" Height="36.5" TextWrapping="Wrap" VerticalAlignment="Top" Width="84.666" FontSize="25" FontWeight="Bold" Foreground="#f1d3bc" RenderTransformOrigin="0.5,0.5" Text="Номер " TextAlignment="Center" Margin="519.501,260.363,-222.001,-260.363">
                     <TextBlock.RenderTransform>
                         <TransformGroup>
@@ -571,7 +571,7 @@
                             <TranslateTransform/>
                         </TransformGroup>
                     </TextBlock.RenderTransform></TextBlock>
-                <hc:TextBox x:Name="hhh_Copy7" hc:InfoElement.Placeholder="Номер" HorizontalAlignment="Left" Height="36.5" Margin="609.167,259.778,-367.502,-259.778" TextWrapping="Wrap" VerticalAlignment="Top" Width="140.501"/>
+                <hc:TextBox x:Name="txtNumberPasportYur" hc:InfoElement.Placeholder="Номер" HorizontalAlignment="Left" Height="36.5" Margin="609.167,259.778,-367.502,-259.778" TextWrapping="Wrap" VerticalAlignment="Top" Width="140.501" MaxLength="6" PreviewTextInput="txtNumberPasportYur_PreviewTextInput"/>
                 <TextBlock x:Name="textBlock_Copy17" HorizontalAlignment="Left" Height="36.5" TextWrapping="Wrap" VerticalAlignment="Top" Width="71.333" FontSize="25" FontWeight="Bold" Foreground="#f1d3bc" RenderTransformOrigin="0.5,0.5" Text="Пол " TextAlignment="Center" Margin="548.03,193.082,-237.197,-193.082">
                     <TextBlock.RenderTransform>
                         <TransformGroup>
@@ -583,7 +583,7 @@
                     </TextBlock.RenderTransform></TextBlock>
                 <hc:ComboBox x:Name="cmbPols2" hc:InfoElement.Placeholder="Пол" HorizontalAlignment="Left" Height="36.5" Margin="624.668,195.25,-367.502,-195.25" VerticalAlignment="Top"  Width="125"/>
             </Grid>
-            <Button x:Name="btndell" Content="Удалить" HorizontalAlignment="Left" Height="36" Width="131" Margin="449,442.849,0,-44.682" VerticalAlignment="Top"  RenderTransformOrigin="0.5,0.5">
+            <Button x:Name="btndell" Content="Удалить" HorizontalAlignment="Left" Height="36" Width="131" Margin="449,442.849,0,-44.682" VerticalAlignment="Top"  RenderTransformOrigin="0.5,0.5" Click="btndell_Click" Visibility="Hidden">
                 <Button.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>

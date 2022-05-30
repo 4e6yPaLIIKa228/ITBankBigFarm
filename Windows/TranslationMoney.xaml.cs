@@ -111,7 +111,7 @@ namespace ITBankBigFarm.Windows
                                 moneyyou = dr["Money"].ToString(); //колл денег на счете отрпавителя
                             }
                             //double moneyou = Convert.ToDouble(moneyyou);
-                           // MessageBox.Show($@"{moneyou}");
+                            //MessageBox.Show($@"{moneyou}");
                             if (Convert.ToDouble(sum) < Convert.ToSingle(moneyyou))
                             {
                                 MessageBox.Show("3.1");
@@ -126,7 +126,6 @@ namespace ITBankBigFarm.Windows
                                 }
 
                                 double sumfriend = Convert.ToSingle(moneyfriend); //сколько денег у получателя
-                                
                                 double totalsumfriend = sumfriend + Convert.ToSingle(sum); // итоговая сумма получателя
                                 Math.Round(totalsumfriend, 2);
                                 double output1 = Convert.ToDouble(totalsumfriend.ToString("N3"));

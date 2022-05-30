@@ -24,15 +24,17 @@ namespace ITBankBigFarm.Windows
     /// </summary>
     public partial class MenuBank : Window
     {
-        int NumberFaceFiz, NumberFaceYur,ClickProf, ClickHome=1;
+        int NumberFaceFiz, NumberFaceYur, countfiz, countyur, ClickProf, ClickHome=1;
         public MenuBank()
         {
             InitializeComponent();
             Profile.Visibility = Visibility.Hidden;
+            YurFace.Visibility = Visibility.Hidden;
             LoadProfelComb();
             LoadcmbTypeScore();
             LoadHome();
             TimeLoad();
+            btndell.Visibility = Visibility.Hidden;
         }
 
         private void imgclouse_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -183,7 +185,7 @@ namespace ITBankBigFarm.Windows
                         txtmoney.Text = dr["Money"].ToString();
                         txttypescope.Text = dr["NameType"].ToString();
                         //Saver.IDAcc = dr["ID"].ToString();
-                        //  Saver.IDAcc = countID;
+                        //Saver.IDAcc = countID;
                     }
                 }
             }
@@ -208,6 +210,13 @@ namespace ITBankBigFarm.Windows
                     cmbPols.ItemsSource = dt.DefaultView;
                     cmbPols.DisplayMemberPath = "Pol";
                     cmbPols.SelectedValuePath = "ID";
+                    //----------------------------------------------------------
+                    cmbPols2.ItemsSource = dt.DefaultView;
+                    cmbPols2.DisplayMemberPath = "Pol";
+                    cmbPols2.SelectedValuePath = "ID";
+
+
+
                 }
             }
             catch (Exception ex)
@@ -224,6 +233,7 @@ namespace ITBankBigFarm.Windows
                 FizFace();
                 FuzPerson.Visibility = Visibility.Visible;
                 YurFace.Visibility = Visibility.Hidden;
+               // btndell.Visibility = Visibility.Visible;
             }
             else
             {
@@ -232,8 +242,10 @@ namespace ITBankBigFarm.Windows
             if (cmbFace.SelectedIndex == 1)
             {
                 MessageBox.Show("Юр");
+                YurFacee();
                 YurFace.Visibility = Visibility.Visible;
                 FuzPerson.Visibility = Visibility.Hidden;
+               // btndell.Visibility = Visibility.Visible;
                 NumberFaceYur = 1;
             }
             else
@@ -256,6 +268,7 @@ namespace ITBankBigFarm.Windows
                     {
                             MessageBox.Show("1");
                             btneddit.Visibility = Visibility.Visible;
+                            btndell.Visibility = Visibility.Hidden;
                             query = $@"SELECT Name,Family,MiddleName,SerriaPas,NumberPas,Pols.Pol 
                                         FROM PhysicalPerson JOIN Pols 
                                         ON PhysicalPerson.IDPol = Pols.ID
@@ -280,13 +293,66 @@ namespace ITBankBigFarm.Windows
                         {
                             MessageBox.Show("0");
                             btnsave.Visibility = Visibility.Visible;
-                        }
+                            btneddit.Visibility = Visibility.Hidden;
+                            btndell.Visibility = Visibility.Hidden;
+                    }
                     }
            }
            catch (Exception ex)
            {
                     MessageBox.Show("Ошибка" + ex);
            }
+        }
+
+        public void YurFacee()
+        {
+            try
+            {
+                using (SQLiteConnection connection = new SQLiteConnection(SqlDBConnection.connection))
+                {
+                    connection.Open();
+                    string query = $@"SELECT COUNT(1) FROM LegalPerson WHERE ID = {Saver.IDAcc};"; //Получение данных из таблицы Девайсы
+                    SQLiteCommand cmd = new SQLiteCommand(query, connection);
+                    int count = Convert.ToInt32(cmd.ExecuteScalar());
+                    if (count == 1)
+                    {
+                        MessageBox.Show("1");
+                        btneddit.Visibility = Visibility.Visible;
+                        btndell.Visibility = Visibility.Hidden;
+                        string query2 = $@"SELECT OGPH,INN,EGPUL,LegalAdress,Doverinnosti,Name,Family,MiddleName,SerriaPas,NumberPas,Pols.Pol 
+                                        FROM LegalPerson JOIN Pols 
+                                        ON LegalPerson.IDPol = Pols.ID
+                                        WHERE LegalPerson.ID = {Saver.IDAcc};";
+                        SQLiteDataReader dr = null;
+                        SQLiteCommand cmd1 = new SQLiteCommand(query2, connection);
+                        dr = cmd1.ExecuteReader();
+                        while (dr.Read())
+                        {
+                            txtOGPH.Text = dr["OGPH"].ToString();
+                            txtINN.Text = dr["INN"].ToString();
+                            txtEGPUL.Text = dr["EGPUL"].ToString();
+                            txtAdress.Text = dr["LegalAdress"].ToString();
+                            txtFamYur.Text = dr["Family"].ToString();
+                            txtNameYur.Text = dr["Name"].ToString();
+                            txtOtchesYur.Text = dr["MiddleName"].ToString();
+                            txtSerPasportYur.Text = dr["SerriaPas"].ToString();
+                            txtNumberPasportYur.Text = dr["NumberPas"].ToString();
+                            cmbPols2.Text = dr["Pol"].ToString();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("0");
+                        btnsave.Visibility = Visibility.Visible;
+                        btneddit.Visibility = Visibility.Hidden;
+                        btndell.Visibility = Visibility.Hidden;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка" + ex);
+            }
         }
         private void image_MouseEnter(object sender, MouseEventArgs e)
         {
@@ -398,33 +464,32 @@ namespace ITBankBigFarm.Windows
         }
         private void btnsave_Click(object sender, RoutedEventArgs e)
         {
-            int countfiz = 0, countyur = 0;
-                if (txtfame.Text != "" && txtname.Text != "" && cmbPols.SelectedIndex !=-1 && txtserpass.Text != "" && txtserpass.Text.Length ==4 && txtnumberpas.Text.Length ==6 && txtnumberpas.Text != "")
+            if (cmbFace.SelectedIndex == 0)
+            {
+                if (txtfame.Text != "" && txtname.Text != "" && cmbPols.SelectedIndex != -1 && txtserpass.Text != "" && txtserpass.Text.Length == 4 && txtnumberpas.Text.Length == 6 && txtnumberpas.Text != "")
                 {
                     try
                     {
                         using (SQLiteConnection connection = new SQLiteConnection(SqlDBConnection.connection))
                         {
-                        ProverkaNaFace();
-                        if (countfiz != 1 && countyur != 1)
-                        {
-
-
-                            MessageBox.Show("111");
-                            Checker();
-                            connection.Open();
-                            bool resultClass = int.TryParse(cmbPols.SelectedValue.ToString(), out int idPols);
-                            string query = $@"INSERT INTO PhysicalPerson ('ID','Name','Family','MiddleName','SerriaPas','NumberPas','IDPol') VALUES ({Saver.IDAcc},{txtname.Text},{txtfame.Text},{txtOtchest.Text},{txtserpass.Text},{txtnumberpas.Text},{idPols})"; //Получение данных из таблицы Девайсы
-                            SQLiteCommand cmd = new SQLiteCommand(query, connection);
-                            cmd.ExecuteNonQuery();
-                            connection.Close();
-                            MessageBox.Show("Данные сохранены");
-                            FizFace();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Вы уже указали ,кто вы есть");
-                        }
+                            ProverkaNaFace();
+                            if (countfiz != 1 && countyur != 1)
+                            {
+                                MessageBox.Show("111");
+                                Checker();
+                                connection.Open();
+                                bool resultClass = int.TryParse(cmbPols.SelectedValue.ToString(), out int idPols);
+                                string query = $@"INSERT INTO PhysicalPerson ('ID','Name','Family','MiddleName','SerriaPas','NumberPas','IDPol') VALUES ({Saver.IDAcc},{txtname.Text},{txtfame.Text},{txtOtchest.Text},{txtserpass.Text},{txtnumberpas.Text},{idPols})"; //Получение данных из таблицы Девайсы
+                                SQLiteCommand cmd = new SQLiteCommand(query, connection);
+                                cmd.ExecuteNonQuery();
+                                connection.Close();
+                                MessageBox.Show("Данные сохранены");
+                                FizFace();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Вы уже указали ,кто вы есть");
+                            }
                         }
                     }
                     catch (Exception ex)
@@ -437,7 +502,41 @@ namespace ITBankBigFarm.Windows
                     Checker();
                     MessageBox.Show("2222");
                 }
-
+            }
+            if (cmbFace.SelectedIndex == 1)
+            {
+                if(txtOGPH.Text != "" && txtINN.Text != "" && txtEGPUL.Text != "" && txtAdress.Text != "" && txtNameYur.Text != "" && txtFamYur.Text != "" && txtOtchesYur.Text != "" && txtSerPasportYur.Text != "" && txtNumberPasportYur.Text != "" && cmbPols2.SelectedIndex != -1)
+                {
+                    try
+                    {
+                        using (SQLiteConnection connection = new SQLiteConnection(SqlDBConnection.connection))
+                        {
+                            ProverkaNaFace();
+                            if (countfiz != 1 && countyur != 1)
+                            {
+                                MessageBox.Show("111");
+                                Checker();
+                                connection.Open();
+                                bool resultClass = int.TryParse(cmbPols2.SelectedValue.ToString(), out int idPols);
+                                string query = $@"INSERT INTO LegalPerson ('ID','OGPH','INN','EGPUL','LegalAdress','Name','Family','MiddleName','SerriaPas','NumberPas','IDPol') VALUES ({Saver.IDAcc},{txtOGPH.Text},{txtINN.Text},{txtEGPUL.Text},{txtAdress.Text},{txtNameYur.Text},{txtFamYur.Text},{txtOtchesYur.Text},{txtSerPasportYur.Text},{txtNumberPasportYur.Text},{idPols})"; //Получение данных из таблицы Девайсы
+                                SQLiteCommand cmd = new SQLiteCommand(query, connection);
+                                cmd.ExecuteNonQuery();
+                                connection.Close();
+                                MessageBox.Show("Данные сохранены");
+                                YurFacee();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Вы уже указали ,кто вы есть");
+                            }
+                        }
+                    } 
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Ошибка" + ex);
+                    }
+                }
+            }
         }
 
         public void ProverkaNaFace()
@@ -449,10 +548,10 @@ namespace ITBankBigFarm.Windows
                     connection.Open();
                     string query = $@"SELECT COUNT(1) FROM PhysicalPerson WHERE ID = {Saver.IDAcc};";
                     SQLiteCommand cmd = new SQLiteCommand(query, connection);
-                    int countfiz = Convert.ToInt32(cmd.ExecuteScalar());
+                    countfiz = Convert.ToInt32(cmd.ExecuteScalar());
                     query = $@"SELECT COUNT(1) FROM LegalPerson WHERE ID = {Saver.IDAcc};"; //Получение данных из таблицы Юр.лица
                     SQLiteCommand cmd1 = new SQLiteCommand(query, connection);
-                    int countyur = Convert.ToInt32(cmd1.ExecuteScalar());
+                    countyur = Convert.ToInt32(cmd1.ExecuteScalar());
                 }
             }
             catch (Exception ex)
@@ -460,6 +559,87 @@ namespace ITBankBigFarm.Windows
                 MessageBox.Show("Ошибка" + ex);
             }
         }
+
+        private void btndell_Click(object sender, RoutedEventArgs e)
+        {
+            if (cmbFace.SelectedIndex == 0) //физ
+            {
+                MessageBox.Show("1");
+                DellFuz();
+            }
+            else  if (cmbFace.SelectedIndex == 1)//юр
+            {
+                MessageBox.Show("2");
+            }
+        }
+
+        public void DellFuz()
+        {
+            try
+            {
+                using (SQLiteConnection connection = new SQLiteConnection(SqlDBConnection.connection))
+                {
+                    connection.Open();
+                    string query = $@"SELECT COUNT(1) FROM PhysicalPerson WHERE ID = {Saver.IDAcc};"; //Получение данных из таблицы Физ.лица
+                    SQLiteCommand cmd = new SQLiteCommand(query, connection);
+                    int countfiz = Convert.ToInt32(cmd.ExecuteScalar());
+                    if (countfiz == 1) //если есть
+                    {
+                    var result = MessageBox.Show("Вы хотите удалить данные?", "Предуприждение", MessageBoxButton.YesNo,MessageBoxImage.Warning);
+                        if (result == MessageBoxResult.Yes )
+                        {
+                            query = $@"DELETE FROM PhysicalPerson WHERE ID = '{Saver.IDAcc}'";
+                            cmd = new SQLiteCommand(query, connection);
+                            DataTable DT = new DataTable("PhysicalPerson");
+                            cmd.ExecuteNonQuery();
+                            txtfame.Text = "";
+                            txtname.Text = "";
+                            txtOtchest.Text = "";
+                            txtserpass.Text = "";
+                            txtnumberpas.Text = "";
+                            cmbPols.SelectedIndex = -1;
+                            MessageBox.Show("Данные удалены!");
+
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка" + ex);
+            }
+        }
+
+        private void txtAdress_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = "0123456789".IndexOf(e.Text) < 0;
+        }
+
+        private void txtOGPH_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = "0123456789".IndexOf(e.Text) < 0;
+        }
+
+        private void txtSerPasportYur_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = "0123456789".IndexOf(e.Text) < 0;
+        }
+
+        private void txtNumberPasportYur_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = "0123456789".IndexOf(e.Text) < 0;
+        }
+
+        private void txtserpass_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = "0123456789".IndexOf(e.Text) < 0;
+        }
+
+        private void txtnumberpas_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = "0123456789".IndexOf(e.Text) < 0;
+        }
+
         private void buttonopenscore_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -511,7 +691,6 @@ namespace ITBankBigFarm.Windows
             timer.Start();
             txtTime.Visibility = Visibility.Visible;
             txtDay.Text = "Дата: " + (DateTime.Now.ToString("d"));
-
         }
     }
 }
